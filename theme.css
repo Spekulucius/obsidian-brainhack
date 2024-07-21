@@ -445,6 +445,7 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active, body:not(.is-phone) .ver
 	padding-left: 20px;
 	box-shadow: inset 0 0 5px hsla(var(--accent-h), var(--accent-s), calc(0.1*var(--accent-l)), 1);
 	color: black;
+	border-radius: 4px;
 }
 
 
@@ -683,7 +684,10 @@ body:not(.native-scrollbars) .modal-close-button {
     display:none;
 }
 
-
+.tree-item.nav-folder:not(.is-collapsed) {
+	margin-left: 10px;
+	transition: all ease-in-out .5s;
+}
 
 button:not(.clickable-icon) {
 	background-color: var(--accent-color-light01);
@@ -707,10 +711,17 @@ button.mod-cta:hover {
 	border-radius: 4px;
 }
 
-.is-clickable:hover {
-	transition: all .4s;
+.nav-folder-title:hover {
 	background-color: var(--accent-color-light2) !important;
 	border-radius: 4px;
+	transition: background-color .2s linear;
+}
+
+.nav-file-title:hover {
+	background-color: var(--accent-color-light08) !important;
+	border-radius: 4px;
+	transition: background-color .2s linear, margin-left 2s;
+	margin-left: 100px !important;
 }
 
 .clickable-icon {
@@ -748,6 +759,8 @@ button.mod-cta:hover {
 .tree-item-self {
 	font-size: 15px;
 }
+
+
 
 .theme-light
 .nav-folder-title-content {
