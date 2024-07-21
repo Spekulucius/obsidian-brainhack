@@ -1,0 +1,959 @@
+/*STYLE SETTINGS**********************************************************************************************/
+/* @settings
+
+name: Brainhack
+id: Spekulucius
+settings:
+    - 
+        id: my-title
+        title: COLOR SETTINGS
+		description: "1_MAIN"
+        type: heading
+        level: 1
+    - 
+		id: my-title
+        title: CALLOUTS
+		description: "1_1"
+        type: heading
+        level: 2
+	-	
+    	id: callout-border-color
+    	title: Main Callout Border Color
+		description: "change border colors of all callouts"
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#000000'
+	-	
+    	id: callout-background-color
+    	title: Callout Background Color
+		description: "change background colors of all callouts"
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#f5f5f5'
+	- 
+        id: my-title
+        title: individual callouts
+		description: "1_1_1"
+        type: heading
+        level: 3
+	- 
+        id: my-title
+        title: TIP
+		description: "1_1_1_1"
+        type: heading
+        level: 4
+    - 
+		id: callout-title-color-tip
+    	title: TIP - Callout Title Color
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#000000'
+	- 
+    	id: callout-background-color-tip
+    	title: TIP - Callout Background Color
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#f5f5f5'
+	- 
+		id: callout-border-color-tip
+    	title: TIP - Callout Border Color
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#000000'
+	- 
+	    id: my-title
+        title: DANGER
+		description: "1_1_1_2"
+        type: heading
+        level: 4
+    - 
+		id: callout-title-color-danger
+    	title: DANGER - Callout Title Color
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#000000'
+	- 
+    	id: callout-background-color-danger
+    	title: DANGER - Callout Background Color
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#f5f5f5'
+	- 
+		id: callout-border-color-danger
+    	title: DANGER - Callout Border Color
+    	type: variable-color
+    	format: hex
+		opacity: true
+    	default: '#000000'
+	- 
+		id: my-title
+        title: more following soon
+        type: heading
+        level: 4
+    - 
+*/
+
+
+
+
+
+
+
+
+
+/*THEME**********************************************************************************************/
+/*V2*******************************************************************************************************************************************************************************************************************************************************************************************/
+.theme-dark {
+.markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
+    background-color: rgb(22, 22, 22);
+}
+}
+
+.theme-light {
+.markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
+    background-color: white;
+}
+}
+
+.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
+	background: transparent !important;
+}
+
+.theme-dark, .theme-light {
+	--text-faint: var(--accent-color-light10);
+}
+
+
+.search-result-file-matched-text {
+	background:var(--accent-color-light3);
+	border-radius: 3px;
+	padding-left:   2px;
+	padding-right:  2px;
+	padding-top:    0px;
+	padding-bottom: 0px;
+	border-radius: 3px;
+}
+.is-flashing {
+	background:var(--accent-color-light3) !important;
+	border-radius: 3px;
+	padding-left:   2px;
+	padding-right:  2px;
+	padding-top:    0px;
+	padding-bottom: 0px;
+	border-radius: 3px;
+}
+
+.markdown-source-view.mod-cm6 .cm-line > * {
+	text-transform: uppercase;
+}
+
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3, .markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6 {
+	text-transform: uppercase;
+}
+
+.HyperMD-header-2 {
+	color:var(--accent-color-light10);
+}
+.HyperMD-header-3 {
+	color:var(--accent-color-light8);
+}
+.HyperMD-header-4 {
+	color:var(--accent-color-light6);
+}
+.HyperMD-header-5 {
+	color:var(--accent-color-light5);
+}
+
+.markdown-rendered h2 {
+	color:var(--accent-color-light10);
+}
+.markdown-rendered h3 {
+	color:var(--accent-color-light8);
+}
+.markdown-rendered h4 {
+	color:var(--accent-color-light6);
+}
+.markdown-rendered h5 {
+	color:var(--accent-color-light5);
+}
+
+
+
+.markdown-source-view.mod-cm6 .cm-content > [contenteditable=false]:hover {
+	box-sizing: border-box !important;
+	transform:scale(101%);
+	transition: all 1s;
+}
+
+.cm-line {
+  caret-color: var(--accent-color-light10);
+}
+
+/*V2*******************************************************************************************************************************************************************************************************************************************************************************************/
+
+body {
+	--radius-s: 0px;
+	--radius-m: 0px;
+	--radius-l: 0px;
+	--input-radius: 0px;
+	--tab-radius-active: 0px;
+	--checkbox-radius: 0px;
+	--toggle-radius: 0px;
+	--toggle-thumb-radius: 0px;
+	--slider-thumb-radius: 0px;
+}
+
+.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+	display: none;
+}
+
+svg * {
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+	rx: 0;
+	ry: 0;
+}
+
+.menu {
+	padding: var(--size-2-1);
+}
+
+.menu-item {
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+.menu-separator {
+	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+/*change font*/
+body {
+	--font-text-theme: 'Cascadia Mono', Sans-serif;
+}
+
+/*dark theme colors*/
+.theme-dark {
+	--background-primary: #000000;
+	--background-secondary: #000000;
+}
+
+/*light theme colors*/
+.theme-light {
+	--background-primary: white;
+	-s-background-secondary: var(--accent-color-bright);
+	--background-secondary: white;
+	--highlight-mix-blend-mode: ;
+}
+
+/*UI colors*/
+.workspace-leaf-content {
+	background:var(--accent-color-bright);
+}
+
+/*accent-color-light*/
+.theme-light, .theme-dark {
+	--accent-color-light10: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 1);
+	--accent-color-light9: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .9);
+	--accent-color-light8: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .8);
+	--accent-color-light7: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .7);
+	--accent-color-light6: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .6);
+	--accent-color-light5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .5);
+	--accent-color-light4: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .4);
+	--accent-color-light3: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .3);
+	--accent-color-light2: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .2);
+	--accent-color-light1: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .1);
+	--accent-color-light09: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .09);
+	--accent-color-light08: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .08);
+	--accent-color-light07: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .07);
+	--accent-color-light06: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .06);
+	--accent-color-light05: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .05);
+	--accent-color-light04: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .04);
+	--accent-color-light03: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .03);
+	--accent-color-light02: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .02);
+	--accent-color-light01: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .01);
+	--accent-color-bright: hsla(var(--accent-h), calc(1*var(--accent-s)), calc(1*var(--accent-l)), .1);
+	--accent-color-bright2: hsl(var(--accent-h), calc(1*var(--accent-s)), calc(1*var(--accent-l)), .01);
+	--accent-color-alt: hsl(var(--accent-h), calc(1*var(--accent-s)), calc(1.5*var(--accent-l)), 1);
+}
+
+/**************************************************************************************************************************************************************************************************************/
+/*MISC*/
+/*remove space above and below horizontal lines*/
+button.mod-warning {
+	color:black;
+}
+
+.markdown-preview-view hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*******************************************************************************************************/
+/*adjust latex font size*/
+mjx-math {
+	font-size: 200% !important;
+}
+  
+  
+/*******************************************************************************************************/
+/*increase popup size*/
+.theme-light, .theme-dark {
+	--popover-width: 1050px;
+	--popover-height: 1250px;
+}
+  
+  
+
+/**************************************************************************************************************************************************************************************************************/
+/*CALLOUTS*/
+/*******************************************************************************************************/
+/*better callouts*/
+
+.theme-light
+.callout {
+	  --callout-border-width:0.05rem;
+	  --callout-border-opacity:0.8 !important;
+	  border-radius: 8px;
+	  border-color: var(--accent-color-light9);
+	  background-color: var(--accent-color-light01, var(--callout-background-color, #f5f5f5));
+	  box-shadow: 0 0 5px var(--accent-color-light9, var(--callout-background-color, #f5f5f5));
+	  padding: 1.2em 1.2em 1.2em 1.2em;
+	  margin-left: 5px !important;
+	  margin-right: 5px !important;
+	  margin-bottom: 10px !important;
+	  margin-top: 10px !important;
+
+	  .callout-title {
+		margin-top: .1em;
+		text-transform: uppercase;
+		margin-bottom: 0em;
+		margin-left: -.5em;
+	}
+	.callout-title-inner {
+		font-size: 1.4em;
+		position: relative;
+		top: -.7em;
+		left: -.1em;
+		color: var(--callout-title-color, #000000);
+	}
+	.callout-icon {
+		display: none;
+ 	}
+	.callout-content {
+		margin: -1.5em -.5em -1.5em;
+	}
+}
+
+.theme-dark
+.callout {
+	  --callout-border-width:0.05rem;
+	  --callout-border-opacity:0.8 !important;
+	  border-radius: 8px;
+	  border-color: var(--accent-color-light9);
+	  background-color: var(--accent-color-light01, var(--callout-background-color, #f5f5f5));
+	  box-shadow: 0 0 5px var(--accent-color-light9, var(--callout-background-color, #f5f5f5));
+	  padding: 1.2em 1.2em 1.2em 1.2em;
+	  margin-left: 5px !important;
+	  margin-right: 5px !important;
+	  margin-bottom: 10px !important;
+	  margin-top: 10px !important;
+
+	  .callout-title {
+		margin-top: .1em;
+		text-transform: uppercase;
+		margin-bottom: 0em;
+		margin-left: -.5em;
+	}
+	.callout-title-inner {
+		font-size: 1.4em;
+		position: relative;
+		top: -.7em;
+		left: -.1em;
+		color: var(--callout-title-color, white);
+	}
+	.callout-icon {
+		display: none;
+ 	}
+	.callout-content {
+		margin: -1.5em -.5em -1.5em;
+	}
+}
+
+/*******************************************************************************************************/
+/*add a line below the callout heading*/
+div.callout-content:before {
+	content:'';
+	display:block;
+	margin: 0em -2em 0em;
+	border:1px solid #bfbfbf;
+	border-block-style: dashed;
+	border-radius:1px;
+	position: relative;
+	top: 10px;
+}
+  
+div.callout-content {
+	overflow: visible;
+}
+
+/*******************************************************************************************************/
+/*CUSTOM CALLOUTS - ADD MORE*/
+.theme-light
+.callout[data-callout="tip"] {
+	background-color: var(--accent-color-light02);
+	.callout-title-inner {
+		color: var(--callout-title-color-tip, var(--callout-title-color, black));
+	}
+}
+
+.theme-dark
+.callout[data-callout="tip"] {
+	background-color: var(--accent-color-light02);
+	.callout-title-inner {
+		color: var(--callout-title-color-tip, var(--callout-title-color, white));
+	}
+}
+
+.theme-light
+.callout[data-callout="danger"] {
+	background-color: var(--accent-color-light05);
+	.callout-title-inner {
+		color: var(--callout-title-color-danger, var(--callout-title-color, black));
+		filter: drop-shadow(0 0 1px var(--accent-color-light1))
+	}
+}
+
+.theme-dark
+.callout[data-callout="danger"] {
+	background-color: var(--accent-color-light05);
+	.callout-title-inner {
+		color: var(--callout-title-color-danger, var(--callout-title-color, white));
+		filter: drop-shadow(0 0 1px var(--accent-color-light1))
+	}
+}
+/**************************************************************************************************************************************************************************************************************/
+/*QOL*/
+/*******************************************************************************************************/
+body:not(.is-phone) .horizontal-tab-nav-item.is-active, body:not(.is-phone) .vertical-tab-nav-item.is-active  {
+	transition: .5s ease-in-out;
+	padding-left: 20px;
+	box-shadow: inset 0 0 5px hsla(var(--accent-h), var(--accent-s), calc(0.1*var(--accent-l)), 1);
+	color: black;
+}
+
+
+.modal.mod-settings .vertical-tab-header, .horizontal-tab-content, .vertical-tab-content, .modal-container.mod-dim .modal {
+	background-color: rgba(255, 255, 255, 0) !important;
+	backdrop-filter: blur(10px);
+}
+
+.workspace-tab-header-container-inner:not(.workspace-split) {
+	justify-content: none !important;
+}
+
+/*decrease font weight*/
+.markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
+	font-weight: 300;
+}
+  
+.cm-html-embed th, .markdown-rendered th {
+	font-weight: 300;
+}
+  
+table {
+	font-weight: 300;
+}
+
+.view-content {
+	border: 0px;
+}
+
+.workspace-tab-container {
+	border: 0px solid black;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+	background-color: var(--accent-color-bright) !important;
+	border-top:10px !important;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+	border-radius: 5px;
+}
+
+.tooltip {
+	background-color:var(--accent-color-light2) !important;
+	border-radius: 10px;
+	backdrop-filter: blur(100px);
+	color: black;
+}
+
+div.menu {
+	border-radius: 5px;
+	backdrop-filter: blur(100px);
+	background-color: transparent !important;
+}
+
+
+.setting-item-control input {
+	border: 1px solid var(--accent-color-light5) !important;
+	border-radius: 10px;
+
+}
+
+.setting-item-control input:hover {
+	transition: all 1s;
+	background: var(--accent-color-light1);
+}
+
+.setting-item-control input:focus {
+	transition: all 1s;
+	background: var(--accent-color-light1);
+}
+
+
+.setting-item-control input:not(input.slider){
+	border: 0px solid black !important;
+}
+
+.setting-item-control input.slider{
+	padding-top: 9px;
+	padding-bottom: 11px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-radius: 100px;
+	background-color: var(--accent-color-light2);
+	box-shadow: inset 0 0 3px var(--accent-color-light6);
+}
+
+
+
+input.slider::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	width: 19px; 
+	height: 19px; 
+	background: white;
+	cursor: pointer; /* Cursor on hover */
+	border-radius: 100px;
+	box-shadow: inset 0 -1px 3px var(--accent-color-light9);
+}
+
+input.slider::-webkit-slider-thumb:hover {
+	background-color:white !important;
+	box-shadow: inset 0 -1px 3px var(--accent-color-light9);
+}
+
+.status-bar {
+	background-color: transparent;
+	border: 0px;
+}
+
+
+/*******************************************************************************************************/
+/*increase spacing between h1 header and previous text*/
+h1, .markdown-rendered h1 {
+	margin-top: 2em;
+}
+  
+/*******************************************************************************************************/
+/*increase spacing between paragraphs that are following each other - GAMECHANGER - requieres contextual typography plugin*/
+.el-p + .el-p {
+	margin-top: 2em;
+}
+  
+/*******************************************************************************************************/
+/*decrease blockquote padding*/
+.markdown-preview-view blockquote {
+	padding-left: .5em;
+}
+
+/*******************************************************************************************************/
+/*remove spacing between first item in blockquote and following*/
+.markdown-rendered blockquote > :first-child {
+	margin-bottom: -1em;
+}
+
+/*******************************************************************************************************/
+/*add spacing after last item in blockquote -> importand, otherwise adjacent blockquotes will merge*/
+.markdown-rendered blockquote > :last-child {
+	margin-bottom: 1em;
+}
+
+  
+/**************************************************************************************************************************************************************************************************************/
+/*HIGHLIGHTING*/
+.markdown-rendered mark {
+	background-color: var(--accent-color-light3, #ff4151);
+	padding-left:   2px;
+	padding-right:  2px;
+	padding-top:    0px;
+	padding-bottom: 0px;
+	border-radius: 3px;
+}
+
+.cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
+	background-color: var(--accent-color-light3, #ff4151);
+}
+
+/**************************************************************************************************************************************************************************************************************/
+/*LISTS*/
+/*******************************************************************************************************/
+/*more spaces between listed items without breaking listed blockquotes*/
+s.markdown-rendered ul > li, .markdown-rendered ol > li {
+	margin-top: 2em;
+}
+
+/*******************************************************************************************************/
+/*increase spacing between list items*/
+ul > li, ol > li {
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: unset;
+	}
+}
+
+/*******************************************************************************************************/
+/*increase spacing between list items -> indented lists -> IMPORTANT, OTHERWISE INDENT WILL FAIL*/
+ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
+	padding-top: 1em;
+}
+
+/*******************************************************************************************************/
+/*fix listed blockquotes*/
+.el-ul blockquote {
+	margin-top: .1em;
+}
+
+.markdown-preview-view blockquote {
+	margin-top: 0em !important;
+}
+
+/**************************************************************************************************************************************************************************************************************/
+/*BLOCKQUOTES*/
+.markdown-preview-view blockquote {
+    background-color: var(--accent-color-light07);
+	border-inline-start-width: var(--callout-border-thickness, 3px);
+	border-left-style: .none; /*DEACTIVATED*/
+	
+}
+
+
+
+
+
+
+
+
+
+
+/*Checkboxes-BUTTONS***************************************************************************************************************************************************************************************************************/
+
+.checkbox-container {
+	border-radius: 20px;
+	background-color: var(--accent-color-light2);
+	box-shadow: inset 0 0 4px var(--accent-color-light6);
+}
+
+
+.checkbox-container:after {
+	border-radius: 20px;
+	background-color: white;
+	box-shadow: inset 0px -2px 5px var(--accent-color-light2);
+	filter: drop-shadow(0 0 1px grey);
+}
+
+
+.checkbox-container.is-enabled {
+	background-color: var(--accent-color-light5);
+	box-shadow: inset 0 0 4px var(--accent-color-light10);
+}
+
+/*UI-BUTTONS***************************************************************************************************************************************************************************************************************/
+body:not(.native-scrollbars) .modal-close-button {
+    display:none;
+}
+
+
+
+button:not(.clickable-icon) {
+	background-color: var(--accent-color-light01);
+	border-radius: 5px;
+}
+
+button.mod-cta {
+	background-color: var(--accent-color-light5);
+	box-shadow: inset 0 10px 10px -10px #ffffff54, inset 0 -10px 10px -10px #0000003d;
+	color: black;
+	-webkit-transition: background-color .4s ease-out;
+}
+button.mod-cta:hover {
+	background-color: var(--accent-color-light10);
+	color: black;
+}
+
+/*text and button selection*****************************************/
+.is-clickable.is-active {
+	background:var(--accent-color-light5);
+	border-radius: 4px;
+}
+
+.is-clickable:hover {
+	transition: all .4s;
+	background-color: var(--accent-color-light2) !important;
+	border-radius: 4px;
+}
+
+.clickable-icon {
+	border-radius: 10px;
+	transition: all .5s;
+}
+
+.clickable-icon:hover {
+	transition: all .4s;
+	background-color: var(--accent-color-light2) !important;
+	border-radius: 2px;
+}
+
+.tappable {
+	height: 30px;
+	border-radius:4px ;
+}
+
+.workspace-tab-header-inner {
+	border-radius: 5px;
+	transition: all .5s;
+}
+
+.workspace-tab-header.tappable.is-active {
+	background:var(--accent-color-light4);
+	border-radius: 10px;
+	transition: all .2s;
+}
+
+.nav-buttons-container {
+	border-radius: 10px;
+	transition: all .5s;
+}
+
+.tree-item-self {
+	font-size: 15px;
+}
+
+.theme-light
+.nav-folder-title-content {
+	color:black;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.theme-dark
+.nav-folder-title-content {
+	color:white;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.sidebar-toggle-button.mod-right{
+	margin-right:24px;
+}
+
+/*UI-CORNERS***************************************************************************************************************************************************************************************************************/
+
+.modal {
+	border-radius:15px;
+}
+
+.vertical-tab-nav-item {
+	border-radius: 5px;
+}
+
+.dropdown {
+	border-radius: 5px;
+	background-color: var(--accent-color-light1);
+}
+
+.dropdown:hover{
+	background-color: var(--accent-color-light5);
+	transition: all .2s;
+}
+
+.search-input-container input {
+	border: 1px solid var(--accent-color-light5) !important;
+	border-radius: 10px;
+
+}
+
+.search-input-container input:hover {
+	transition: all 1s;
+	background: var(--accent-color-light1);
+}
+
+.search-input-container input:focus {
+	transition: all 1s;
+	background: var(--accent-color-light1);
+}
+
+/*WORKSPACE-TAB-HEADERS***************************************************************************************************************************************************************************************************************/
+/*tab color active*/
+.workspace-tab-header-inner-title:not(.workspace-split) {
+	text-align: center !important;
+	color: black;
+	font-size: 15px;
+}
+
+.mod-root.workspace-tab-header-inner:not(.workspace-split) {
+	color: black;
+	border-radius: 50px !important;
+}
+
+.mod-root .workspace-tab-header.tappable {
+	padding: 0px !important;	
+	overflow: hidden !important;
+}
+
+
+
+.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+	flex-grow: 1;
+	background-color: var(--accent-color-light3);
+	margin: 0 2.5px 5px 2.5px;
+	height: 35px;
+	transition: 1s, background-color 200ms ease-in-out, max-width 2000ms !important;
+	max-width: var(--tab-max-width);
+	border: 1px solid var(--accent-color-light10);
+	border-radius: 5px;
+	color: black;
+	font-weight: 600 !important;
+	text-align: center !important;
+}
+
+/*tab color inactive*/
+.mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+	flex-grow: .06;
+	background-color: var(--accent-color-light1);
+	font-weight: 300;
+	position: relative;
+	align-items: center;
+	justify-content: var(--anp-safari-tab-align, center);
+	border-radius: 5px;
+	margin: 0 2.5px 5px 2.5px;
+	height:35px;
+	transition: 1s, background-color 200ms ease-in-out, max-width 2000ms;
+}
+
+/*active tab width*/
+.theme-light, .theme-dark {
+	--tab-max-width: 35%;
+}
+
+/*remove lines beween tabs*/
+.workspace-tab-header-inner:after{
+	display:none;
+}
+
+/*TITLEBAR***************************************************************************************************************************************************************************************************************/
+/*tab bar sizing*/
+.workspace-tab-header-container-inner:not(.workspace-split) {
+	position: relative;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.workspace-tab-header-container:not(.workspace-split){
+	align-items: center;
+	position: relative;
+	border: none;
+	height: 50px;
+	background-color: var(--accent-color-bright);
+}
+
+body.is-frameless.is-hidden-frameless .titlebar {
+	height: 50px;
+}
+
+.titlebar-button-container {
+	background-color: var(--accent-color-bright2) !important;
+	height: 50px !important;
+}
+
+.titlebar-button-container .mod-minimize , .mod-maximize, .mod-close{
+	width: 35px !important;
+	height: 35px !important;
+	padding: 0px !important;
+	margin: 7.5px !important;
+	align-items: center !important;
+	justify-content: center !important;
+	border-radius: 10px !important;
+}
+
+
+
+/*rounded tables***************************************************************************************************************************************************************************************************************/
+/* TABLES: Fix the borders and add a radius variable */
+:root table {
+	--table-border-radius: 8px;
+	border-collapse: separate;
+	border-spacing: 0;
+  }
+  /* Add the radius */
+  th:first-child {border-top-left-radius: var(--table-border-radius)}
+  th:last-child {border-top-right-radius: var(--table-border-radius)}
+  tr:last-child td:first-child {border-bottom-left-radius: var(--table-border-radius)}
+  tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radius)}
+  
+  /* Redo the borders */
+  :root :is(td, th) {
+	border-width: 0 var(--table-border-width) var(--table-border-width) 0;
+  }
+  
+.cm-html-embed table, .markdown-rendered table {
+	margin-top: 15px;
+}
+  
+  
+/*rounded workspace***************************************************************************************************************************************************************************************************************/
+
+.mod-root .workspace-leaf {
+	background-color:var(--accent-color-bright) !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.mod-root .workspace-leaf-content:not(.workspace-split) {
+	display: flex;
+	min-width: 100px;
+	max-height: 98%;
+	border-radius: 10px;
+	border: solid 1px var(--accent-color-light10);
+	box-shadow: 0px 0px 10px var(--accent-color-light5);
+
+}
+
+
+
+/*resize handle***************************************************************************************************************************************************************************************************************/
+.workspace-leaf-resize-handle {
+	border-width: 0px !important;
+	width: 20px !important;
+	margin-right: -30px;
+	margin-left: -30px;
+	transition: none !important;
+	opacity: 0 !important;
+}
+
+
+
+
