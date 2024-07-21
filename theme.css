@@ -150,7 +150,7 @@ settings:
 	border-radius: 3px;
 }
 
-.markdown-source-view.mod-cm6 .cm-line > * {
+.cm-header {
 	text-transform: uppercase;
 }
 
@@ -252,9 +252,16 @@ body {
 }
 
 /*UI colors*/
+.theme-light
 .workspace-leaf-content {
-	background:var(--accent-color-bright);
+	background:var(--accent-color-bg);
 }
+
+.theme-dark
+.workspace-leaf-content {
+	background:var(--accent-color-bg_d);
+}
+
 
 /*accent-color-light*/
 .theme-light, .theme-dark {
@@ -280,6 +287,9 @@ body {
 	--accent-color-bright: hsla(var(--accent-h), calc(1*var(--accent-s)), calc(1*var(--accent-l)), .1);
 	--accent-color-bright2: hsl(var(--accent-h), calc(1*var(--accent-s)), calc(1*var(--accent-l)), .01);
 	--accent-color-alt: hsl(var(--accent-h), calc(1*var(--accent-s)), calc(1.5*var(--accent-l)), 1);
+	--accent-color-bg: hsl(var(--accent-h),var(--accent-s), 97%, 1);
+	--accent-color-bg2: hsl(var(--accent-h),var(--accent-s), 85%, 1);
+	--accent-color-bg_d: hsl(var(--accent-h),10%, 10%, 1);
 }
 
 /**************************************************************************************************************************************************************************************************************/
@@ -322,12 +332,12 @@ mjx-math {
 	  border-radius: 8px;
 	  border-color: var(--accent-color-light9);
 	  background-color: var(--accent-color-light01, var(--callout-background-color, #f5f5f5));
-	  box-shadow: 0 0 5px var(--accent-color-light9, var(--callout-background-color, #f5f5f5));
+	  box-shadow: 0 0 5px var(--accent-color-bg2, var(--callout-background-color, #f5f5f5));
 	  padding: 1.2em 1.2em 1.2em 1.2em;
 	  margin-left: 5px !important;
 	  margin-right: 5px !important;
 	  margin-bottom: 30px !important;
-	  margin-top: 10px !important;
+	  margin-top: 30px !important;
 
 	  .callout-title {
 		margin-top: .1em;
@@ -346,7 +356,8 @@ mjx-math {
 		display: none;
  	}
 	.callout-content {
-		margin: -1.5em -.5em -1.5em;
+		overflow: visible;
+		margin: -1.5em -.5em -1.8em;
 	}
 }
 
@@ -357,12 +368,12 @@ mjx-math {
 	  border-radius: 8px;
 	  border-color: var(--accent-color-light9);
 	  background-color: var(--accent-color-light01, var(--callout-background-color, #f5f5f5));
-	  box-shadow: 0 0 5px var(--accent-color-light9, var(--callout-background-color, #f5f5f5));
+	  box-shadow: 0 0 5px var(--accent-color-bg2, var(--callout-background-color, #f5f5f5));
 	  padding: 1.2em 1.2em 1.2em 1.2em;
 	  margin-left: 5px !important;
 	  margin-right: 5px !important;
 	  margin-bottom: 30px !important;
-	  margin-top: 0px !important;
+	  margin-top: 10px !important;
 
 	  .callout-title {
 		margin-top: .1em;
@@ -390,12 +401,12 @@ mjx-math {
 div.callout-content:before {
 	content:'';
 	display:block;
-	margin: 0em -2em 0em;
+	margin: 0em 0em 0em;
 	border:1px solid #bfbfbf;
 	border-block-style: dashed;
 	border-radius:1px;
 	position: relative;
-	top: 10px;
+	top: 8px;
 }
   
 div.callout-content {
@@ -448,10 +459,19 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active, body:not(.is-phone) .ver
 	border-radius: 4px;
 }
 
+/*readable line width*/
+body {
+	--file-line-width:750px;
+  }
 
-.modal.mod-settings .vertical-tab-header, .horizontal-tab-content, .vertical-tab-content, .modal-container.mod-dim .modal {
-	background-color: rgba(255, 255, 255, 0) !important;
-	backdrop-filter: blur(10px);
+  /*hide scrollbar*/
+::-webkit-scrollbar {
+	display: none;
+}
+
+.modal.mod-settings .vertical-tab-header, .horizontal-tab-content, .vertical-tab-content, .modal-container.mod-dim{
+	background-color: rgba(255, 255, 255, 0.162) !important;
+	backdrop-filter: blur(2px);
 }
 
 .workspace-tab-header-container-inner:not(.workspace-split) {
@@ -479,13 +499,21 @@ table {
 	border: 0px solid black;
 }
 
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-	background-color: var(--accent-color-bright) !important;
+.theme-light
+.workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+	background-color: var(--accent-color-bg) !important;
 	border-top:10px !important;
 	padding-top:10px;
 	padding-bottom:10px;
 }
 
+.theme-dark
+.workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+	background-color: var(--accent-color-bg_d) !important;
+	border-top:10px !important;
+	padding-top:10px;
+	padding-bottom:10px;
+}
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
 	border-radius: 5px;
@@ -636,8 +664,16 @@ ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 .markdown-preview-view blockquote {
-	margin-top: 0em !important;
+	margin-top: 0em;
 }
+
+/*fix top blockquotes in callouts*/
+.callout-content > blockquote:first-child {
+	margin-top: 25px; !important;
+}
+
+
+
 
 /**************************************************************************************************************************************************************************************************************/
 /*BLOCKQUOTES*/
@@ -883,20 +919,37 @@ button.mod-cta:hover {
 	justify-content: center;
 }
 
+.theme-light
 .workspace-tab-header-container:not(.workspace-split){
 	align-items: center;
 	position: relative;
 	border: none;
 	height: 50px;
-	background-color: var(--accent-color-bright);
+	background-color: var(--accent-color-bg);
+}
+
+.theme-dark
+.workspace-tab-header-container:not(.workspace-split){
+	align-items: center;
+	position: relative;
+	border: none;
+	height: 50px;
+	background-color: var(--accent-color-bg_d);
 }
 
 body.is-frameless.is-hidden-frameless .titlebar {
 	height: 50px;
 }
 
+.theme-light
 .titlebar-button-container {
-	background-color: var(--accent-color-bright2) !important;
+	background-color: var(--accent-color-bg) !important;
+	height: 50px !important;
+}
+
+.theme-dark
+.titlebar-button-container {
+	background-color: var(--accent-color-bg_d) !important;
 	height: 50px !important;
 }
 
@@ -937,8 +990,18 @@ body.is-frameless.is-hidden-frameless .titlebar {
   
 /*rounded workspace***************************************************************************************************************************************************************************************************************/
 
+.theme-light
 .mod-root .workspace-leaf {
-	background-color:var(--accent-color-bright) !important;
+	background-color:var(--accent-color-bg) !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.theme-dark
+.mod-root .workspace-leaf {
+	background-color:var(--accent-color-bg_d) !important;
 	padding-left: 20px !important;
 	padding-right: 20px !important;
 	padding-top: 10px;
@@ -950,8 +1013,8 @@ body.is-frameless.is-hidden-frameless .titlebar {
 	min-width: 100px;
 	max-height: 98%;
 	border-radius: 10px;
-	border: solid 1px var(--accent-color-light10);
-	box-shadow: 0px 0px 10px var(--accent-color-light5);
+	border: solid 1px var(--accent-color-bg2);
+	box-shadow: 0px 0px 10px var(--accent-color-bg2);
 
 }
 
