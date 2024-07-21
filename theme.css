@@ -326,7 +326,7 @@ mjx-math {
 	  padding: 1.2em 1.2em 1.2em 1.2em;
 	  margin-left: 5px !important;
 	  margin-right: 5px !important;
-	  margin-bottom: 10px !important;
+	  margin-bottom: 30px !important;
 	  margin-top: 10px !important;
 
 	  .callout-title {
@@ -361,8 +361,8 @@ mjx-math {
 	  padding: 1.2em 1.2em 1.2em 1.2em;
 	  margin-left: 5px !important;
 	  margin-right: 5px !important;
-	  margin-bottom: 10px !important;
-	  margin-top: 10px !important;
+	  margin-bottom: 30px !important;
+	  margin-top: 0px !important;
 
 	  .callout-title {
 		margin-top: .1em;
