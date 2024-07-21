@@ -3,7 +3,7 @@
 ![](/images/brainhack-theme-overview-darkmode.png)
 ***
 
-This is Brainhack Theme: a robust theme with only one customizable option: the ==accent color==.
+This is Brainhack Theme: a robust theme with only one customizable option: the **accent color**.
 ## customizing with only accent color
 >Using the accent color, you can customize the entire look of this theme. Every color will adjust to one single change.
 >
@@ -16,7 +16,7 @@ This is Brainhack Theme: a robust theme with only one customizable option: the =
 ## Other components
 + listed blockquotes
 + indent listed blockquotes
-+ ==better marking with nice, rounded corners==
++ better marking with nice, rounded corners
 + *lighter font weight*
 + sweet workspace, inspired by the "Border" theme
 + safari-styled tab heads, inspired by the "AnuPpuccin" theme
