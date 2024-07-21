@@ -4,7 +4,7 @@
 ***
 
 This is Brainhack Theme: a robust theme with only one customizable option: the **accent color**.
-## customizing with only accent color
+## customize with the accent color only!
 >Using the accent color, you can customize the entire look of this theme. Every color will adjust to one single change.
 >
 >>No more fiddling with theme settings, adjusting several sliders etc. 
@@ -30,5 +30,5 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 + overall spacing adjust, paragraphs, callouts, blockquotes and lists will flow better → **better readability**
 + nested callouts
 + sweet shadows
-+ In callouts, and the workspace overall
+	+ In callouts, and the workspace overall
 ### Supports light mode *and* dark mode
