@@ -519,11 +519,20 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 	border-radius: 5px;
 }
 
+.theme-light
 .tooltip {
 	background-color:var(--accent-color-light2) !important;
 	border-radius: 10px;
 	backdrop-filter: blur(100px);
 	color: black;
+}
+
+.theme-dark
+.tooltip {
+	background-color:var(--accent-color-light2) !important;
+	border-radius: 10px;
+	backdrop-filter: blur(100px);
+	color: white;
 }
 
 div.menu {
@@ -854,9 +863,17 @@ button.mod-cta:hover {
 
 /*WORKSPACE-TAB-HEADERS***************************************************************************************************************************************************************************************************************/
 /*tab color active*/
+.theme-light
 .workspace-tab-header-inner-title:not(.workspace-split) {
 	text-align: center !important;
-	color: black;
+	color: var(--accent-color-light9);
+	font-size: 15px;
+}
+
+.theme-dark
+.workspace-tab-header-inner-title:not(.workspace-split) {
+	text-align: center !important;
+	color: var(--accent-color-light9);
 	font-size: 15px;
 }
 
