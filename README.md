@@ -19,14 +19,14 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 + better marking with nice, rounded corners
 + *lighter font weight*
 + sweet workspace, inspired by the "Border" theme
-+ safari-styled tab heads, inspired by the "AnuPpuccin" theme
++ safari-styled tab headers, inspired by the "AnuPpuccin" theme
 + animated interface and buttons
 + more visible folders in the files browser
 + adjustable workspace → drag "the white window" to your liking
 + custom-styled callouts
 	+ atm only !tip and !danger have individual colors, others use the same color as !tip
 	+ more will be added in the future
-+ custom styled bullet lists whith more spacing
++ custom styled bullet lists with more spacing
 + overall spacing adjust, paragraphs, callouts, blockquotes and lists will flow better → **better readability**
 + nested callouts
 + sweet shadows
