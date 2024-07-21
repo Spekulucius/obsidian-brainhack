@@ -11,7 +11,7 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 >>→ only one change is enough!
 
 >I made this theme *(mainly for myself)*, because I like to adjust the look of Obsidian on a regular basis. However, it needed adjusting more than one variable, to get everything going.
->>Thats why I made Brainhack - **its for changing to the color you feel comfortable on the fly, without distracting yourself from the workflow!**
+>>Thats why I made Brainhack - **it is for changing to the color you feel comfortable on the fly, without distracting yourself from the workflow!**
 
 ## Other components
 + listed blockquotes
