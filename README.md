@@ -3,7 +3,6 @@
 ![](/images/brainhack-theme-overview-darkmode.png)
 ***
 
-# Brainhack Theme
 This is Brainhack Theme: a robust theme with only one customizable option: the ==accent color==.
 ## customizing with only accent color
 >Using the accent color, you can customize the entire look of this theme. Every color will adjust to one single change.
