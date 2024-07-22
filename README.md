@@ -1,6 +1,6 @@
 # Brainhack Theme
-![](/images/brainhack-theme-overview-lightmode.png)
-![](/images/brainhack-theme-overview-darkmode.png)
+![](/images/brainhack-theme-overview.png)
+
 ***
 
 This is Brainhack Theme: a robust theme with only one customizable option: the **accent color**.
