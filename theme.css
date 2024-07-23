@@ -257,6 +257,22 @@ svg * {
 
 
 
+/*Heading background*
+.markdown-rendered h1{
+    content: "";
+    border-radius: 10px;
+    padding-left: 10px !important;
+    pointer-events: none !important;
+    background-image: linear-gradient(var(--accent-color-light5), var(--accent-color-light10)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+}
+
+*/
+
+
+
+
 /*increase spacing between h1 header and previous text*/
 h1, .markdown-rendered h1 {
     margin-top: 2em;
@@ -415,8 +431,10 @@ tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radi
 
 
 
-
-
+/*rounded checkboxes*/
+.task-list-item-checkbox {
+    border-radius: 100px !important;
+}
 
 
 
@@ -1286,4 +1304,25 @@ position: absolute;
 width: 100%;
 height: 100%;
 pointer-events: none !important;
+}
+
+
+
+
+
+
+
+
+
+/*NEW CHANGES-IMPLEMENTED; DISABLED -> under headings
+MAY PUT THIS INTO STYLE SETTINGS*/
+/*Heading background*/
+.markdown-rendered h1{
+    content: "";
+    border-radius: 10px;
+    padding-left: 10px !important;
+    pointer-events: none !important;
+    background-image: linear-gradient(var(--accent-color-light5), var(--accent-color-light10)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
 }
