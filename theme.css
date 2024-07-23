@@ -216,7 +216,10 @@ svg * {
     }
 }
 
-
+/*ITALIC TEXT COLOR*/
+i, em, span.cm-em {
+    color: var(--accent-color-light10); 
+}
 
 /*HEADINGS-uppercase*/
 .cm-header {
@@ -1341,3 +1344,5 @@ MAY PUT THIS INTO STYLE SETTINGS*/
     border-radius: 10px;
     filter: grayscale(1);
 }
+
+
