@@ -44,7 +44,6 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 
 ***
 ### known issues
-+ [x] checkboxes not rounded yet
 + some colors are not set on IPADOS yet
 
  _If you encounter a bug, please let me know!_
