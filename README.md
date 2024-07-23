@@ -54,6 +54,9 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 + even nicer looking blockquotes
 
 # patchnotes
+## 1.2.6
++ fixed a bug regarding the background of several tabs
+
 ## 1.2.5
 + added italic text color
 
