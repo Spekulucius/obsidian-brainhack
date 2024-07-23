@@ -45,6 +45,7 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 ***
 ### known issues
 + some colors are not set on IPADOS yet
++ ribbon not adjusted yet
 
  _If you encounter a bug, please let me know!_
 
