@@ -382,6 +382,10 @@ ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
 }
 
 
+/*fix listed blockquotes in callouts*/
+.callout-content .has-list-bullet blockquote {
+    margin-top: 0px !important;
+}
 
 
 
@@ -1179,8 +1183,6 @@ div.callout-content {
 .callout-content > blockquote:first-child {
     margin-top: 25px; !important;
 }
-
-
 
 
 
