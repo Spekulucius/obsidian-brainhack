@@ -37,3 +37,5 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 + sweet shadows
 	+ In callouts, and the workspace overall
 
+***
+_It is advised to install the "contextual typography" plugin, as it enhances the themes capabilities_
