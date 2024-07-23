@@ -1292,8 +1292,8 @@ body.is-frameless.is-hidden-frameless .titlebar:before,
 .titlebar-button-container:before,
 .workspace-split.mod-left-split .workspace-sidedock-vault-profile:before,
 .workspace-leaf:before,
-body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container > div:nth-child(3) > div:before,
-body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div:nth-child(3) > div:before
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container > div > div:before,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div > div:before
  {
 content: "";
 background-color: transparent;
