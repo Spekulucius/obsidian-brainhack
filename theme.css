@@ -530,6 +530,14 @@ mjx-math {
 
 
 
+/*UI SLIDERS*/
+input.slider::-webkit-slider-thumb {
+    background: white;
+    border-radius: 100px;
+    box-shadow: inset 0 -1px 3px var(--accent-color-light9);
+}
+
+
 
 
 
