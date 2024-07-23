@@ -1336,8 +1336,8 @@ MAY PUT THIS INTO STYLE SETTINGS*/
     filter: invert(1) grayscale(100%);
 }
 
+
 .theme-light img {
     border-radius: 10px;
-    mix-blend-mode:screen;
     filter: grayscale(1);
 }
