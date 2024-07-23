@@ -41,8 +41,13 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 _It is advised to install the "contextual typography" plugin, as it enhances the themes capabilities_
 
 ***
-+ known issues:
-	+ checkboxes not rounded yet
- 	+ some colors are not set on IPADOS yet
+### known issues
++ checkboxes not rounded yet
++ some colors are not set on IPADOS yet
 
  _If you encounter a bug, please let me know!_
+
+***
+### planned updates
++ better image embed: transparent backgrounds, rounded corners
++ even nicer looking blockquotes
