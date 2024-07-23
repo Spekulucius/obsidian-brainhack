@@ -1326,3 +1326,18 @@ MAY PUT THIS INTO STYLE SETTINGS*/
     background-repeat: repeat;
     background-size: 182px;
 }
+
+
+
+/*1.2.3 - better images*/
+.theme-dark img {
+    border-radius: 10px;
+    mix-blend-mode: screen;
+    filter: invert(1) grayscale(100%);
+}
+
+.theme-light img {
+    border-radius: 10px;
+    mix-blend-mode:screen;
+    filter: grayscale(1);
+}
