@@ -1,6 +1,6 @@
 # Brainhack Theme
 
-![](/images/brainhack-theme-overview-new.png)
+![](/images/brainhack-theme-overview.png)
 
 ***
 
