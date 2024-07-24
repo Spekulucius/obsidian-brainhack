@@ -48,14 +48,10 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 ***
 ### known issues
 + some colors are not set on IPADOS yet
-+ ribbon not adjusted yet
-+ no canvas rounded borders
 
  _If you encounter a bug, please let me know!_
 
 ***
-### planned updates
-+ even nicer looking blockquotes
 
 # patchnotes
 ## 1.2.6
