@@ -1028,18 +1028,19 @@ button.mod-cta:hover {
     transition: background-color .2s linear;
 }
 
-.nav-file-title {
+.nav-file-title, .nav-folder-title {
     border-radius: 40px;
-    left: 0px;
-    padding-left: 0px !important;
+
+}
+
+.nav-file-title-content, .nav-folder-title-content {
+    margin-left: 10px;
 }
 
 .nav-file-title:hover {
     background-color: var(--accent-color-light10) !important;
     border-radius: 10px;
     -webkit-transition:  1s;
-    margin-left: 0px;
-    padding-left: 0px;
 }
 
 
