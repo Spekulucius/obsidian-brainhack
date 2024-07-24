@@ -3,7 +3,7 @@
 
 ***
 
-![](/images/update130.png)
+![](/images/update-patchnotes-preview-130.png)
 
 ***
 
