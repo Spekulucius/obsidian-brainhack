@@ -1,5 +1,7 @@
 # Brainhack Theme
 
+![](/images/update-1-3.png)
+
 ![](/images/brainhack-theme-overview.png)
 
 ***
