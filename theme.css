@@ -1,16 +1,52 @@
+/*MACOS*/
+/*MOVE RIGHT COLLAPES BUTTON TO THE FAR RIGHT    and    fix macos right popup windows button alignment*/
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: 0px !important;
+}
+
+/**/
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+    background: transparent;
+    position: relative;
+    --frame-left-space: 0px !important;
+    margin-right: 0px !important;
+}
+.sidebar-toggle-button.mod-right{
+    margin-right:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*INI*/
 body {
-    --radius-s: 0px;
-    --radius-m: 0px;
-    --radius-l: 0px;
-    --input-radius: 0px;
-    --tab-radius-active: 0px;
-    --checkbox-radius: 0px;
-    --toggle-radius: 0px;
-    --toggle-thumb-radius: 0px;
-    --slider-thumb-radius: 0px;
+    --radius-s: 10px;
+    --radius-m: 10px;
+    --radius-l: 10px;
+    --input-radius: 10px;
+    --tab-radius-active: 10px;
+    --checkbox-radius: 10px;
+    --toggle-radius: 10px;
+    --toggle-thumb-radius: 10px;
+    --slider-thumb-radius: 10px;
 }
 
 
@@ -55,12 +91,11 @@ svg * {
 
 
 
-
 /**COLORS*************************************************************************************************************************************/
 /*dark theme colors*/
 .theme-dark {
     --background-primary: var(--accent-color-bg_d);
-    --background-secondary: #000000;
+    --background-secondary: #0e0e0e;
 }
 
 
@@ -69,7 +104,6 @@ svg * {
 /*light theme colors*/
 .theme-light {
     --background-primary: var(--accent-color-bg);
-    -s-background-secondary: var(--accent-color-bright);
     --background-secondary: rgb(255, 255, 255);
 }
 
@@ -111,16 +145,19 @@ svg * {
     --accent-color-light03: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .03);
     --accent-color-light02: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .02);
     --accent-color-light01: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .01);
+
     --accent-color-bright: hsla(var(--accent-h), calc(1*var(--accent-s)), calc(1*var(--accent-l)), .1);
     --accent-color-bright2: hsl(var(--accent-h), calc(1*var(--accent-s)), calc(1*var(--accent-l)), .01);
     --accent-color-alt: hsl(var(--accent-h), calc(1*var(--accent-s)), calc(1.5*var(--accent-l)), 1);
+
     --accent-color-bg: hsl(var(--accent-h),var(--accent-s), 98%, 1);
     --accent-color-bg2: hsl(var(--accent-h),var(--accent-s), 85%, 1);
-    --accent-color-bg_d: hsl(var(--accent-h),10%, 10%, 1);
+    --accent-color-bg2c: hsl(var(--accent-h),var(--accent-s), 85%, 1);
+    --accent-color-bg_d: hsl(var(--accent-h),calc(.1*var(--accent-s)), 10%, 1);
+    --accent-color-bg_dc: hsl(var(--accent-h), calc(.1*var(--accent-s)), 15%, 1);
+
+    --accent-color-h1: hsl(var(--accent-h), var(--accent-s), calc(calc(var(--accent-l) - 49%)*-100));
 }
-
-
-
 
 
 
@@ -155,16 +192,24 @@ svg * {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-    
+
+.theme-light
 .mod-root .workspace-leaf-content:not(.workspace-split) {
     display: flex;
     min-width: 100px;
     max-height: 98%;
     border-radius: 15px;
-    box-shadow: 0px 0px 5px var(--accent-color-bg2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.26);
 }
 
-
+.theme-dark
+.mod-root .workspace-leaf-content:not(.workspace-split) {
+    display: flex;
+    min-width: 100px;
+    max-height: 98%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.596);
+}
 
 
 /*RESIZE HANDLE AND MAKE IT INVISIBLE*/
@@ -203,32 +248,238 @@ svg * {
 
 
 
-/**TEXT*************************************************************************************************************************************/
-.theme-dark {
-    .markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
-        background-color: rgb(22, 22, 22);
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*GRAINY BACKGROUND********************************************************************************************************************************************************************/
+/*LIGHT THEME*/
+.theme-light.is-frameless.is-hidden-frameless .titlebar:before,
+.theme-light div.app-container:before,
+.theme-light .titlebar-button-container:before,
+.theme-light .workspace-split.mod-left-split .workspace-sidedock-vault-profile:before,
+.theme-light .workspace-leaf:before,
+.theme-light div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container > div > div:before,
+.theme-light div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div > div:before
+ {
+content: "";
+background-color: transparent;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+background-repeat: repeat;
+background-size: 182px;
+opacity: .5;
+top: 0;
+left: 0;
+position: absolute;
+width: 100%;
+height: 100%;
+pointer-events: none !important;
 }
 
-.theme-light {
-    .markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
-        background-color: white;
-    }
+/*MACOS FIX*/
+.mod-macos.theme-light .workspace-tab-header-container:not(.workspace-split):before
+{
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
 }
 
-/*ITALIC TEXT COLOR*/
-i, em, span.cm-em {
-    color: var(--accent-color-light10); 
+
+
+
+
+
+
+
+
+
+/*DARK THEME*/
+.theme-dark.is-frameless.is-hidden-frameless .titlebar:before,
+.theme-dark div.app-container:before,
+.theme-dark .titlebar-button-container:before,
+.theme-dark .workspace-split.mod-left-split .workspace-sidedock-vault-profile:before,
+.theme-dark .workspace-leaf:before,
+.theme-dark div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container > div > div:before,
+.theme-dark div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div > div:before
+ {
+content: "";
+background-color: transparent;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+background-repeat: repeat;
+background-size: 182px;
+opacity: .2;
+top: 0;
+left: 0;
+position: absolute;
+width: 100%;
+height: 100%;
+pointer-events: none !important;
 }
+
+/*MACOS FIX*/
+.mod-macos.theme-dark .workspace-tab-header-container:not(.workspace-split):before
+{
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+    opacity: .2;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
+}
+
+
+
+
+
+
+
+
+
+/*RIBBON FIX*/
+div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left > div.sidebar-toggle-button.mod-left {
+    top: 0px;
+    height: 50px;
+}
+
+div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left {
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HEADINGS**************************************************************************************************************************************/
+
+/*AUTOMATIC ADJUSTIC H1 TEXT COLOR*/
+.markdown-rendered h1 {
+    color: var(--accent-color-h1);
+}
+
+
+
+/*Heading background*/
+.theme-dark
+.markdown-rendered h1{
+    content: "";
+    border-radius: 10px;
+    padding-left: 10px !important;
+    pointer-events: none !important;
+    background-image: linear-gradient(var(--accent-color-light6), var(--accent-color-light10)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+}
+
+.theme-light
+.markdown-rendered h1{
+    content: "";
+    border-radius: 10px;
+    padding-left: 10px !important;
+    pointer-events: none !important;
+    background-image: linear-gradient(var(--accent-color-light2), var(--accent-color-light6)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+}
+
+
+
+/*DYNAMIC HEADING SPACING ADJUST, headings will only leave space if there is no heading above*/
+:not(.el-h1) + .el-h1 {
+    margin-top: 5em !important;
+}
+
+:not(.el-h1, .el-h2) + .el-h2 {
+    margin-top: 5em !important;
+}
+
+:not(.el-h1, .el-h2, .el-h3) + .el-h3 {
+    margin-top: 5em !important;
+}
+
+:not(.el-h1, .el-h2, .el-h3, .el-h4) + .el-h4 {
+    margin-top: 5em !important;
+}
+
+:not(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5) + .el-h5 {
+    margin-top: 5em !important;
+}
+
+:not(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) + .el-h6 {
+    margin-top: 5em !important;
+}
+
+
+
+
+
+
 
 /*HEADINGS-uppercase*/
 .cm-header {
     text-transform: uppercase;
 }
 
+/*HEADINGS-uppercase + increase spacing between header and previous text -> reading view*/
 .markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3, .markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6 {
     text-transform: uppercase;
+    padding-top: .1em;
 }
+
+
+
+
+
+
+
 
 /*HEADINGS - colors*/
 .HyperMD-header-2 {
@@ -260,26 +511,37 @@ i, em, span.cm-em {
 
 
 
-/*Heading background*
-.markdown-rendered h1{
-    content: "";
-    border-radius: 10px;
-    padding-left: 10px !important;
-    pointer-events: none !important;
-    background-image: linear-gradient(var(--accent-color-light5), var(--accent-color-light10)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 182px;
+
+
+
+
+
+
+
+
+
+
+
+/**TEXT*************************************************************************************************************************************/
+.theme-dark {
+    .markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
+        background-color: rgb(22, 22, 22);
+    }
 }
 
-*/
-
-
-
-
-/*increase spacing between h1 header and previous text*/
-h1, .markdown-rendered h1 {
-    margin-top: 2em;
+.theme-light {
+    .markdown-preview-view, .view-content>.cm-s-obsidian, .view-content>.markdown-source-view.mod-cm6.is-live-preview>.cm-scroller, body {
+        background-color: white;
+    }
 }
+
+/*ITALIC TEXT COLOR*/
+i, em, span.cm-em {
+    color: var(--accent-color-light10); 
+}
+
+
+
 
 
 
@@ -310,26 +572,156 @@ table {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*BLOCKQUOTES*************************************************************************************/
+/*blockquote border sizing*/
+.markdown-preview-view blockquote {
+    border-inline-width: 10px;
+    border-radius: 5px;
+}
+
+
+
+/*BLOCKQUOTE COLORS AND SHADOWS*/
+.theme-light
+blockquote {
+    background-color: var(--accent-color-bg);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.26))
+}
+
+.theme-dark
+blockquote {
+    background-color: var(--accent-color-bg_dc);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.596))
+}
+
+
+
+
+
+
+/*fix listed blockquotes in callouts*/
+.callout-content .has-list-bullet blockquote {
+    margin-top: 0px !important;
+}
+
+
+/*blockquote padding*/
+.markdown-preview-view blockquote {
+    padding-left: .5em;
+    padding-right: 1em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    margin-top: -.2em !important;
+}
+
+
+/*
+DISABLED for now-> NO NECESSITY
+remove spacing between first item in blockquote and following
+.markdown-rendered blockquote > :first-child {
+    margin-bottom: -1em;
+}
+
+
+DISABLED -> NO NECESSITY
+add spacing after last item in blockquote -> importand, otherwise adjacent blockquotes will merge
+.markdown-rendered blockquote > :last-child {
+    margin-bottom: 1em;
+}
+*/
+
+
+/*fix listed blockquotes*/
+.el-ul blockquote {
+    margin-top: 0em;
+}
+.markdown-preview-view blockquote:first-child {
+    margin-top: 2em;
+}
+
+
+/*fix top blockquotes in callouts*/
+.callout-content > blockquote:first-child {
+    margin-top: 25px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TEXT - LITTLE QOL OPTIONS*************************************************************************************/
 /*increase spacing between paragraphs that are following each other - GAMECHANGER - requieres contextual typography plugin*/
 .el-p + .el-p {
     margin-top: 2em;
 }
 
-/*decrease blockquote padding*/
-.markdown-preview-view blockquote {
-    padding-left: .5em;
-}
-
-/*remove spacing between first item in blockquote and following*/
-.markdown-rendered blockquote > :first-child {
-    margin-bottom: -1em;
-}
-
-/*add spacing after last item in blockquote -> importand, otherwise adjacent blockquotes will merge*/
-.markdown-rendered blockquote > :last-child {
-    margin-bottom: 1em;
-}
 
 /*remove space above and below horizontal lines*/
 button.mod-warning {
@@ -350,7 +742,7 @@ body {
 
 /*HIGHLIGHTING*/
 .markdown-rendered mark {
-    background-color: var(--accent-color-light3, #ff4151);
+    background-color: var(--accent-color-light3);
     padding-left:   2px;
     padding-right:  2px;
     padding-top:    0px;
@@ -358,18 +750,17 @@ body {
     border-radius: 3px;
 }
 .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
-    background-color: var(--accent-color-light3, #ff4151);
-}
-
-/*more spaces between listed items without breaking listed blockquotes*/
-s.markdown-rendered ul > li, .markdown-rendered ol > li {
-    margin-top: 2em;
+    background-color: var(--accent-color-light3);
 }
 
 
 
 
-/*LISTS*/
+
+
+
+
+/*LISTS**********************************/
 /*increase spacing between list items*/
 ul > li, ol > li {
     margin-bottom: 1em;
@@ -383,28 +774,17 @@ ul ul, ol ul, ol ol ul, ol ul ul, ul ol ul, ul ul ul {
     padding-top: 1em;
 }
 
-/*fix listed blockquotes*/
-.el-ul blockquote {
-    margin-top: .1em;
-}
-.markdown-preview-view blockquote:first-child {
-    margin-top: 0em;
+/*more spaces between listed items without breaking listed blockquotes*/
+s.markdown-rendered ul > li, .markdown-rendered ol > li {
+    margin-top: 2em;
 }
 
 
 
 
-/*BLOCKQUOTES*/
-.markdown-preview-view blockquote {
-    background-color: var(--accent-color-light07);
-    border-inline-start-width: var(--callout-border-thickness, 3px);
-}
 
 
-/*fix listed blockquotes in callouts*/
-.callout-content .has-list-bullet blockquote {
-    margin-top: 0px !important;
-}
+
 
 
 
@@ -433,11 +813,6 @@ tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radi
 }
 
 
-
-/*rounded checkboxes*/
-.task-list-item-checkbox {
-    border-radius: 100px !important;
-}
 
 
 
@@ -505,6 +880,28 @@ mjx-math {
 .theme-dark, .theme-light {
     --text-faint: var(--accent-color-light10);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -764,6 +1161,36 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active, body:not(.is-phone) .ver
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*VAULT****************************************************************************************************************************************************************************/
 .theme-light
 .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
@@ -782,6 +1209,36 @@ body:not(.is-phone) .horizontal-tab-nav-item.is-active, body:not(.is-phone) .ver
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
     border-radius: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -827,6 +1284,108 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     font-weight: 600;
     text-transform: uppercase;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RIBBON***********************************************************************************************************************************************************************/
+
+/*Ribbon colors*/
+.theme-light
+div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left {
+background-color: transparent;
+border: 0px !important;
+}
+
+.theme-light
+div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left > div.sidebar-toggle-button.mod-left {
+    background-color: var(--accent-color-bg);
+    border: 0px !important;
+}
+
+.theme-dark
+div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left {
+background-color: transparent;
+border: 0px !important;
+}
+
+.theme-dark
+div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left > div.sidebar-toggle-button.mod-left {
+    background-color: var(--accent-color-bg_d);
+    border: 0px !important;
+}
+
+
+
+
+/*remove ribbon border line*/
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left:before {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -913,6 +1472,23 @@ body.is-frameless.is-hidden-frameless .titlebar {
     border-radius: 10px !important;
     padding: 0px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1042,6 +1618,30 @@ body.is-frameless.is-hidden-frameless .titlebar {
 .workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
     display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1200,10 +1800,7 @@ div.callout-content {
 
 
 
-/*fix top blockquotes in callouts*/
-.callout-content > blockquote:first-child {
-    margin-top: 25px; !important;
-}
+
 
 
 
@@ -1242,22 +1839,6 @@ div.callout-content {
 
 
 
-/*MACOS*/
-/*MOVE RIGHT COLLAPES BUTTON TO THE FAR RIGHT    and    fix macos right popup windows button alignment*/
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: 0px !important;
-}
-
-/**/
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-    background: transparent;
-    position: relative;
-    --frame-left-space: 0px !important;
-    margin-right: 0px !important;
-}
-.sidebar-toggle-button.mod-right{
-    margin-right:0px;
-}
 
 
 
@@ -1285,52 +1866,9 @@ div.callout-content {
 
 
 
-/*GRAINY BACKGROUND*/
-
-.mod-macos .workspace-tab-header-container:not(.workspace-split):before,
-body.is-frameless.is-hidden-frameless .titlebar:before,
-.titlebar-button-container:before,
-.workspace-split.mod-left-split .workspace-sidedock-vault-profile:before,
-.workspace-leaf:before,
-body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container > div > div:before,
-body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div > div:before
- {
-content: "";
-background-color: transparent;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
-background-repeat: repeat;
-background-size: 182px;
-opacity: .1;
-top: 0;
-left: 0;
-position: absolute;
-width: 100%;
-height: 100%;
-pointer-events: none !important;
-}
 
 
-
-
-
-
-
-
-
-/*NEW CHANGES-IMPLEMENTED; DISABLED -> under headings
-MAY PUT THIS INTO STYLE SETTINGS*/
-/*Heading background*/
-.markdown-rendered h1{
-    content: "";
-    border-radius: 10px;
-    padding-left: 10px !important;
-    pointer-events: none !important;
-    background-image: linear-gradient(var(--accent-color-light5), var(--accent-color-light10)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 182px;
-}
-
-
+/*EMBEDS********************************************************************************************************************************************************************/
 
 /*1.2.3 - better images*/
 .theme-dark img {
@@ -1339,10 +1877,122 @@ MAY PUT THIS INTO STYLE SETTINGS*/
     filter: invert(1) grayscale(100%);
 }
 
-
 .theme-light img {
     border-radius: 10px;
     filter: grayscale(1);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CANVAS********************************************************************************************************************************************************************/
+
+
+/*NODE BACKGROUND*/
+.theme-light
+.canvas-wrapper:not(.mod-readonly) .canvas-node-content.markdown-embed > .markdown-embed-content > .markdown-preview-view {
+    background-color: var(--accent-color-bg);
+}
+
+.theme-dark
+.canvas-wrapper:not(.mod-readonly) .canvas-node-content.markdown-embed > .markdown-embed-content > .markdown-preview-view {
+    background-color: var(--accent-color-bg_d);
+}
+
+
+
+
+
+
+
+/*NODE GROUP BACKGROUND*/
+.theme-light
+.canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) .canvas-node-container {
+    background: var(--accent-color-bg) !important;
+}
+
+.theme-dark
+.canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) .canvas-node-container {
+    background: var(--accent-color-bg_d) !important;
+}
+
+
+
+
+
+
+
+/*NODE GROUP GRAINY BACKGROUND*/
+.theme-dark
+.canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) .canvas-node-container:before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+    opacity: .1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
+}
+
+.theme-light
+.canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) .canvas-node-container:before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+    opacity: .3;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
+}
+
+
+
+
+
+
+/*NODE SHADOWS*/
+.theme-light
+.canvas-node {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26) !important;
+}
+
+.theme-dark
+.canvas-node {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.748) !important;
+}
+
 
 
