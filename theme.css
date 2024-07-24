@@ -1018,7 +1018,7 @@ button.mod-cta:hover {
 
 /*TEXT AND BUTTON SELECTION - HOVER*/
 .is-clickable.is-active {
-    background:var(--accent-color-light5);
+    background:var(--accent-color-light10);
     border-radius: 4px;
 }
 
@@ -1028,23 +1028,12 @@ button.mod-cta:hover {
     transition: background-color .2s linear;
 }
 
-.nav-file-title, .nav-folder-title {
-    border-radius: 40px;
-
-}
-
-.nav-file-title-content, .nav-folder-title-content {
-    margin-left: 10px;
-}
-
 .nav-file-title:hover {
     background-color: var(--accent-color-light10) !important;
     border-radius: 10px;
-    -webkit-transition:  1s;
+    transition: .2s linear, margin-left 2s;
+    margin-left: 100px !important;
 }
-
-
-
 
 .clickable-icon {
     border-radius: 20px;
@@ -1081,6 +1070,7 @@ button.mod-cta:hover {
 .tree-item-self {
     font-size: 15px;
 }
+
 
 
 
