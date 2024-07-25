@@ -1,4 +1,12 @@
 # Brainhack Theme
+# Update 1.4 preview:
++ style settings incorporation:
+	+ overriding the accent color will be possible
+ 	+ disabling greyscali images will be possible -> as of now, please add the snippet you can find on my github profile under "overrides"
+
++ preview mode improvements
+***
+# Overview
 ![](/images/brainhack-theme-overview.png)
 
 ***
