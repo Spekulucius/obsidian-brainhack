@@ -5,6 +5,7 @@
  	+ disabling greyscale images will be possible -> as of now, please add the snippet you can find on my github repo under "overrides"
 
 + preview mode improvements
++ kanban plugin support
 ***
 # Overview
 ![](/images/brainhack-theme-overview.png)
