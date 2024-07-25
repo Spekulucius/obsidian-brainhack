@@ -1,0 +1,10 @@
+.theme-dark img {
+    border-radius: 10px;
+    mix-blend-mode: normal !important;
+    filter: invert(0) grayscale(0%) !important;
+}
+
+.theme-light img {
+    border-radius: 10px;
+    filter: grayscale(0%) !important;
+}
