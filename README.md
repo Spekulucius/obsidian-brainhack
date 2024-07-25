@@ -48,12 +48,14 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 ***
 ### known issues
 + some colors are not set on IPADOS yet
++ collapsibles not aligned correctly
 
  _If you encounter a bug, please let me know!_
 
 ***
 
 # patchnotes
+will update soon
 ## 1.2.6
 + fixed a bug regarding the background of several tabs
 
