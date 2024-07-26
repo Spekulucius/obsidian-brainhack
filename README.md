@@ -1,8 +1,8 @@
 # Brainhack Theme
 # Update 1.4 is out!
-## override the accent color
-## disable grayscale images
-### some improvements and bug fixes
++ override the accent color
++ disable grayscale images
++ some improvements and bug fixes
 
 ***
 # Overview
