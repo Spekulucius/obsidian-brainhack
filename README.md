@@ -4,6 +4,7 @@
 + disable grayscale images
 + some improvements and bug fixes
 
+**Please use the style settings plugin for the overrides!**
 ***
 # Overview
 ![](/images/brainhack-theme-overview.png)
