@@ -51,14 +51,46 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 ***
 ### known issues
 + some colors are not set on IPADOS yet
-+ collapsibles not aligned correctly
 
  _If you encounter a bug, please let me know!_
 
 ***
 
 # patchnotes
-will update soon
+## 1.4.0
++ Preview Mode
+	+ Lots of features previously only available in reading mode are now available in source- and preview mode!
+
++ Style Settings
+	+ Accent color, grayscale images and background noise are now adjustable via the "style settings" plugin
+
++ Animations
+	+ Added some animations to make this theme more unique
+
++ Fixes
+	+ made some quality of life changes, including:
+	+ collapsible headings and callouts
+	+ changes to existing features making them more accessible
+	+ improved readability on some elements
+	+ minor bug fixes
+
+## 1.3.0
++ styled headings
+	+ heading color adapts to the accent color: if you chose a darker accent color, headings will be colored white and vice versa
+
++ smart headings
+	+ in reading mode, headings will leave space above, resulting in better readability
+
++ new blockquotes: rounded borders, shadows
++ better workspace
++ better accent colors
+	+ the theme will adjust to accent colors event better, allowing for some bold color choices!
+
++ canvas support
++ ribbon support
++ A LOT of bug fixes
+
+
 ## 1.2.6
 + fixed a bug regarding the background of several tabs
 
