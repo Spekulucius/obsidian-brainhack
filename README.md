@@ -42,8 +42,6 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 + nested callouts
 + sweet shadows
 	+ In callouts, and the workspace overall
-+ as of now, images are in greyscale _(I think it fits better)_
-	+ I'm thinking about adding an option to turn it off via the "style settings" plugin
 
 ***
 _It is advised to install the "contextual typography" plugin, as it enhances the themes capabilities_
