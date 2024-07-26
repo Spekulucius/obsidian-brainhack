@@ -1,7 +1,7 @@
 # Brainhack Theme
 ***
 # Overview
-![](/images/brainhack-theme-overview.png)
+![](/images/brainhack-theme.png)
 
 ***
 ![](/images/update-patchnotes-preview-140.png)
@@ -17,12 +17,12 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 >>No more fiddling with theme settings, adjusting several sliders etc. 
 >>→ only one change is enough!
 
-![](/images/brainhack-color-overview.gif)
+![](/images/brainhack-color.gif)
 
 >I made this theme *(mainly for myself)*, because I like to adjust the look of Obsidian on a regular basis. However, it needed adjusting more than one variable, to get everything going.
 >>Thats why I made Brainhack - **it is for changing to the color you are comfortable with on the fly, without distracting yourself from the workflow!**
 
-![](/images/brainhack-ui-overview.gif)
+![](/images/brainhack-ui.gif)
 
 ## Other components
 + listed blockquotes
