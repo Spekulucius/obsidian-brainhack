@@ -1,11 +1,9 @@
 # Brainhack Theme
-# Update 1.4 preview:
-+ style settings incorporation:
-	+ overriding the accent color will be possible
- 	+ disabling greyscale images will be possible -> as of now, please add the snippet you can find on my github repo under "overrides"
+# Update 1.4 is out!
+## override the accent color
+## disable grayscale images
+### some improvements and bug fixes
 
-+ preview mode improvements
-+ kanban plugin support
 ***
 # Overview
 ![](/images/brainhack-theme-overview.png)
