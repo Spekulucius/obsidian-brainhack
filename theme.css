@@ -720,18 +720,26 @@ table {
 
 /*HEADINGS*/
 .theme-dark
-.view-content .is-collapsed .list-collapse-indicator svg.svg-icon, .view-content .is-collapsed .collapse-indicator svg.svg-icon,
+.view-content .is-collapsed .list-collapse-indicator svg.svg-icon, 
 .theme-dark
-.view-content .list-collapse-indicator svg.svg-icon, .view-content .collapse-indicator svg.svg-icon {
-    color: white;
+.view-content .is-collapsed .collapse-indicator svg.svg-icon,
+.theme-dark
+.view-content .list-collapse-indicator svg.svg-icon, 
+.theme-dark
+.view-content .collapse-indicator svg.svg-icon {
+    color: white !important;
     filter: drop-shadow(0 0 1px);
     transition: all .2s;
 }
 
-.theme-dark
-.view-content .is-collapsed .list-collapse-indicator svg.svg-icon, .view-content .is-collapsed .collapse-indicator svg.svg-icon,
-.theme-dark
-.view-content .list-collapse-indicator svg.svg-icon, .view-content .collapse-indicator svg.svg-icon {
+.theme-light
+.view-content .is-collapsed .list-collapse-indicator svg.svg-icon, 
+.theme-light
+.view-content .is-collapsed .collapse-indicator svg.svg-icon,
+.theme-light
+.view-content .list-collapse-indicator svg.svg-icon, 
+.theme-light
+.view-content .collapse-indicator svg.svg-icon {
     color: black;
     filter: drop-shadow(0 0 1px);
     transition: all .2s;
@@ -2242,7 +2250,6 @@ div.callout-content {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.748) !important;
 }
-
 
 
 
