@@ -1,15 +1,10 @@
 # Brainhack Theme
-# Update 1.4 is out!
-+ override the accent color
-+ disable grayscale images
-+ some improvements and bug fixes
-
-**Please use the style settings plugin for the overrides!**
 ***
 # Overview
 ![](/images/brainhack-theme-overview.png)
 
 ***
+![](/images/update-patchnotes-preview-140.png)
 
 ![](/images/update-patchnotes-preview-130.png)
 
