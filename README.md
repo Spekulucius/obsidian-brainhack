@@ -1,12 +1,4 @@
-# Brainhack Theme
-***
-# Overview
 ![](/images/brainhack-theme.png)
-
-***
-![](/images/update-patchnotes-preview-140.png)
-
-![](/images/update-patchnotes-preview-130.png)
 
 ***
 
@@ -52,7 +44,14 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 
  _If you encounter a bug, please let me know!_
 
-***
 
+
+
+***
 # patchnotes
 https://github.com/Spekulucius/obsidian-brainhack/blob/main/patchnotes.md
+
+***
+![](/images/update-patchnotes-preview-140.png)
+
+![](/images/update-patchnotes-preview-130.png)
