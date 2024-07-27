@@ -55,6 +55,10 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 ***
 
 # patchnotes
+## 1.4.3
++ added blockquote shadows to preview view
+	+ nested blockquotes are not supporting due to technical limitations
+
 ## 1.4.2
 + fixed a bug regarding titlebar mod buttons
 
