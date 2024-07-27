@@ -55,6 +55,9 @@ _It is advised to install the "contextual typography" plugin, as it enhances the
 ***
 
 # patchnotes
+## 1.4.2
++ fixed a bug regarding titlebar mod buttons
+
 ## 1.4.0
 + Preview Mode
 	+ Lots of features previously only available in reading mode are now available in source- and preview mode!
