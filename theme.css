@@ -551,6 +551,7 @@ div.HyperMD-header.HyperMD-header-1.cm-line {
     background-image: linear-gradient(var(--accent-color-light6), var(--accent-color-light10)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 182px;
+    transition: all 1s !important;
 }
 .theme-light
 div.HyperMD-header.HyperMD-header-1.cm-line {
@@ -563,6 +564,7 @@ div.HyperMD-header.HyperMD-header-1.cm-line {
     background-image: linear-gradient(var(--accent-color-light2), var(--accent-color-light6)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 182px;
+    transition: all 1s !important;
 }
 
 
@@ -803,16 +805,11 @@ table {
 
 /*BLOCKQUOTES*************************************************************************************/
 /*blockquote border sizing*/
-/*reading mode*/
-.markdown-preview-view blockquote {
-    border-inline-width: 10px;
-    border-radius: 5px;
-}
 
 
 
 
-/*preview mode - dark*/
+/*preview mode - dark */
 .theme-dark .markdown-rendered blockquote,
 .theme-dark .blockquote,
 .theme-dark .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote{
@@ -822,9 +819,10 @@ table {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
     border-left: 10px solid white;
+    
 }
 
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .cm-line {
+g.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .cm-line {
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
 }
@@ -842,17 +840,59 @@ table {
     border-left: 10px solid white;
 }
 
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .cm-line {
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
+/*BLOCKQUOTE PREVIEW VIEW SHADOW*/
+.theme-dark
+.is-live-preview
+.HyperMD-quote:before {
+    content: '';
+    box-shadow: 0 0 10px black;
+    z-index: -1;
+    position: absolute;
+    width: 100% !important;
+    left: -8px !important;
+    top: 1px !important;
+    padding-left: 4px;
+    height: 95%;
+       
+}
+
+.theme-light
+.is-live-preview
+.HyperMD-quote:before {
+    content: '';
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    z-index: -1;
+    position: absolute;
+    width: 100% !important;
+    left: -8px !important;
+    top: 1px !important;
+    padding-left: 4px;
+    height: 95%;
+       
+}
+
+
+
+/*BLOCKQUOTE PREVIEW VIEW BORDER FIX*/
+.HyperMD-quote + .HyperMD-quote {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+.HyperMD-quote:has(+.HyperMD-quote) {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
 }
 
 
 
 
 
-
-
+/*reading mode*/
+.markdown-preview-view blockquote {
+    border-inline-width: 10px;
+    border-radius: 5px;
+}
 
 /*BLOCKQUOTE COLORS AND SHADOWS*/
 .theme-light
@@ -2092,15 +2132,6 @@ div.callout-content {
 
 
 
-
-/*callout hover transition*/
-.callout:hover {
-    background: var(--accent-color-light2) !important;
-    transition: all 2s !important;
-}
-.callout {
-    transition: all 2s !important;
-}
 
 
 
