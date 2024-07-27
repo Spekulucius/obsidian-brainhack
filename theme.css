@@ -1716,7 +1716,7 @@ body.is-frameless.is-hidden-frameless .titlebar {
     height: 50px !important;
 }
     
-.titlebar-button-container .mod-minimize , .mod-maximize, .mod-close:not(.empty-state-action) {
+.titlebar-button-container .mod-minimize , .titlebar-button-container .mod-maximize, .titlebar-button-container .mod-close:not(.empty-state-action) {
     width: 30px !important;
     height: 30px !important;
     padding: 0px !important;
