@@ -1088,7 +1088,7 @@ body {
     background-size: 200% 200%;
     animation: animated-mark 5s linear infinite;  
     transition: all .2s;
-    color: white;
+    color: var(--accent-color-h1);
 }
 
 
