@@ -106,7 +106,8 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active, 
 .animation-toggle
 .nav-folder-title.is-active {
-animation: none !important;
+    animation: none !important;
+    color: var(--accent-color-light10);
 }
 
 
