@@ -1,3 +1,8 @@
+## 1.4.7
++ fixed a bug regarding tables in preview mode
++ reverted changes made to the active file in nav folder due to bad visiblity with some accent colors
++ further increased readability for highlighted text
+
 ## 1.4.6
 + increased readability of highlighted text
 
