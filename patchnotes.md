@@ -1,3 +1,7 @@
+## 1.4.4
++ added animated text highlighting
++ added animation override option to style settings
+
 ## 1.4.3
 + added blockquote shadows to preview view
 	+ nested blockquotes are not supported due to technical limitations
