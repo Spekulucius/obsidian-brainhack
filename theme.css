@@ -8,6 +8,10 @@ settings:
         title: Disable Grayscale Images
         type: class-toggle
     -
+        id: animation-toggle
+        title: Disable Animations
+        type: class-toggle
+    -
         id: accento
         title: Override Accent Color
         type: variable-color
@@ -40,7 +44,7 @@ settings:
 
 
 
-
+/*STYLE SETTINGS ROUNDED BUTTONS*/
 .pickr .pcr-button::after {
     border-radius: 100px !important;
 }
@@ -53,12 +57,62 @@ settings:
 }
 
 
+
+
 /*GRAYSCALE TOGGLE*/
 .grayscale-toggle img {
     border-radius: 10px;
     mix-blend-mode: normal !important;
     filter: invert(0) grayscale(0%) !important;
 }
+
+
+
+
+
+/*ANIMATION TOGGLE*/
+.animation-toggle 
+.cm-s-obsidian span.cm-formatting-highlight, 
+.animation-toggle
+.cm-s-obsidian span.cm-highlight,
+.animation-toggle
+.markdown-rendered mark {
+    animation: none !important;
+    background-color: var(--accent-color-light5);
+}
+
+
+.animation-toggle
+div.HyperMD-header.HyperMD-header-1.cm-line:hover,
+.animation-toggle
+span.cm-formatting.cm-formatting-quote.cm-hmd-callout,
+.animation-toggle
+.cm-formatting-header {
+    animation: none !important;
+}
+
+
+.animation-toggle
+.workspace-tab-header.tappable.is-active {
+    animation: none !important;
+    background: var(--accent-color-light5) !important;
+}
+
+.animation-toggle
+body:not(.is-grabbing) .nav-file-title.is-active:hover, 
+.animation-toggle
+body:not(.is-grabbing) .nav-folder-title.is-active:hover, 
+.animation-toggle
+.nav-file-title.is-active, 
+.animation-toggle
+.nav-folder-title.is-active {
+animation: none !important;
+}
+
+
+
+
+
 
 
 
@@ -1023,17 +1077,28 @@ body {
 /*HIGHLIGHTING*/
 .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight,
 .markdown-rendered mark {
-    background-color: var(--accent-color-light3);
     padding-left:   2px;
     padding-right:  2px;
     padding-top:    0px;
     padding-bottom: 0px;
     border-radius: 3px;
     pointer-events: none;
+    background: linear-gradient(-90deg, var(--accent-color-light3), var(--accent-color-light10), var(--accent-color-light3));
+    background-size: 200% 200%;
+    animation: animated-mark 5s linear infinite;  
+    transition: all .2s;
 }
 
 
 
+@keyframes animated-mark {
+    0% {background-position: 0% 0%;}
+    40% {filter: drop-shadow(0 0 5px var(--accent-color-light1));}
+    55% {filter: drop-shadow(0 0 5px var(--accent-color-light10));}
+    80% {filter: drop-shadow(0 0 5px var(--accent-color-light10));}
+    90% {filter: drop-shadow(0 0 5px var(--accent-color-light1));}
+    100% {background-position: -200% 0%;}
+}
 
 
 
@@ -1339,9 +1404,9 @@ button.mod-cta:hover {
 }
 
 .workspace-tab-header.tappable.is-active {
-    background: linear-gradient(-45deg, var(--accent-color-light7), rgba(255, 255, 255, 0.432), var(--accent-color-light7));
+    background: linear-gradient(-45deg, var(--accent-color-light1), var(--accent-color-light5), var(--accent-color-light1));
     background-size: 200% 200%;
-    animation: mainbar-buttons 25s linear infinite;  
+    animation: mainbar-buttons 5s ease-in-out infinite;  
     border-radius: 10px;
     transition: all .2s;
 }
@@ -1353,9 +1418,13 @@ button.mod-cta:hover {
 
 
 @keyframes mainbar-buttons {
-0% {background-position: 0% 0%;}
-50% {background-position: 100% 100%;}
-100% {background-position: 0% 0%;}
+0% {background-position: 100% 100%;}
+30% {background-position: 100% 100%;}
+40% {background-position: 50% 50%;}
+50% {background-position: 0% 0%;}
+60% {background-position: 50% 50%;}
+70% {background-position: 100% 100%;}
+100% {background-position: 100% 100%;}
 }
 
 
