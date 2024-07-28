@@ -78,7 +78,7 @@ settings:
 .animation-toggle
 .markdown-rendered mark {
     animation: none !important;
-    background-color: var(--accent-color-light5);
+    background: var(--accent-color-light10);
 }
 
 
@@ -1088,6 +1088,7 @@ body {
     background-size: 200% 200%;
     animation: animated-mark 5s linear infinite;  
     transition: all .2s;
+    color: white;
 }
 
 
@@ -1659,7 +1660,14 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 
 /*NAV TEXT ANIMATION*/
-body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .nav-folder-title.is-active:hover, .nav-file-title.is-active, .nav-folder-title.is-active {
+.theme-dark
+body:not(.is-grabbing) .nav-file-title.is-active:hover, 
+.theme-dark
+body:not(.is-grabbing) .nav-folder-title.is-active:hover, 
+.theme-dark
+.nav-file-title.is-active, 
+.theme-dark
+.nav-folder-title.is-active {
     font-weight: 900;
     color: transparent;
     background: linear-gradient(-90deg, var(--accent-color-light10), rgb(255, 255, 255), var(--accent-color-light10));
@@ -1667,6 +1675,25 @@ body:not(.is-grabbing) .nav-file-title.is-active:hover, body:not(.is-grabbing) .
     animation: animated-selection 15s linear infinite;
     background-clip: text;
 }
+
+.theme-light
+body:not(.is-grabbing) .nav-file-title.is-active:hover, 
+.theme-light
+body:not(.is-grabbing) .nav-folder-title.is-active:hover, 
+.theme-light
+.nav-file-title.is-active, 
+.theme-light
+.nav-folder-title.is-active {
+    font-weight: 900;
+    color: transparent;
+    background: linear-gradient(-90deg, var(--accent-color-light10), rgb(0, 0, 0), var(--accent-color-light10));
+    background-size: 200% 200%;
+    animation: animated-selection 15s linear infinite;
+    background-clip: text;
+}
+
+
+
 
 @keyframes animated-selection {
     0% {background-position: 0% 0%;}
