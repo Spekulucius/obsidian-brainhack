@@ -1,6 +1,8 @@
 ![](/images/brainhack-theme.png)
 
 ***
+_note: as of 1.4.4, you can disable all animations within the style settings plugin_
+***
 
 This is Brainhack Theme: a robust theme with only one customizable option: the **accent color**.
 ## customize with the accent color only!
