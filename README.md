@@ -27,7 +27,7 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 + safari-styled tab headers, inspired by the "AnuPpuccin" theme
 + animated interface and buttons
 + more visible folders in the files browser
-+ adjustable workspace → drag "the white window" to your liking
++ adjustable workspace
 + custom-styled callouts
 	+ atm only !tip and !danger have individual colors, others use the same color as !tip
 	+ more will be added in the future
