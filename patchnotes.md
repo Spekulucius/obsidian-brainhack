@@ -1,3 +1,6 @@
+## 1.4.6
++ increased readability of highlighted text
+
 ## 1.4.5
 + fixed a bug regarding disabled animations
 
