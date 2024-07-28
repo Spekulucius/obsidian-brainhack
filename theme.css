@@ -98,16 +98,11 @@ span.cm-formatting.cm-formatting-quote.cm-hmd-callout,
     background: var(--accent-color-light5) !important;
 }
 
+
 .animation-toggle
-body:not(.is-grabbing) .nav-file-title.is-active:hover, 
-.animation-toggle
-body:not(.is-grabbing) .nav-folder-title.is-active:hover, 
-.animation-toggle
-.nav-file-title.is-active, 
-.animation-toggle
-.nav-folder-title.is-active {
+.nav-file-title.is-active {
     animation: none !important;
-    color: var(--accent-color-light10);
+    background: var(--accent-color-light5) !important;
 }
 
 
@@ -314,6 +309,7 @@ svg * {
     --accent-color-bg_dc: hsl(var(--accento-h, var(--accent-h)), calc(.1*var(--accento-s, var(--accent-s))), 15%, 1);
 
     --accent-color-h1: hsl(var(--accento-h, var(--accent-h)), var(--accento-s, var(--accent-s)), calc(calc(var(--accento-l, var(--accent-l)) - 49%)*-100));
+    --accent-color-inverse2: hsl(var(--accento-h, var(--accent-h)), var(--accento-s, var(--accent-s)), calc(calc(var(--accento-l, var(--accent-l)) - 67%)*-100));
 }
 
 
@@ -1088,7 +1084,7 @@ body {
     background-size: 200% 200%;
     animation: animated-mark 5s linear infinite;  
     transition: all .2s;
-    color: var(--accent-color-h1);
+    color: var(--accent-color-inverse2);
 }
 
 
@@ -1660,36 +1656,23 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 
 
 /*NAV TEXT ANIMATION*/
+
 .theme-dark
-body:not(.is-grabbing) .nav-file-title.is-active:hover, 
-.theme-dark
-body:not(.is-grabbing) .nav-folder-title.is-active:hover, 
-.theme-dark
-.nav-file-title.is-active, 
-.theme-dark
-.nav-folder-title.is-active {
+.nav-file-title.is-active {
+    color: black;
     font-weight: 900;
-    color: transparent;
     background: linear-gradient(-90deg, var(--accent-color-light10), rgb(255, 255, 255), var(--accent-color-light10));
     background-size: 200% 200%;
     animation: animated-selection 15s linear infinite;
-    background-clip: text;
 }
 
 .theme-light
-body:not(.is-grabbing) .nav-file-title.is-active:hover, 
-.theme-light
-body:not(.is-grabbing) .nav-folder-title.is-active:hover, 
-.theme-light
-.nav-file-title.is-active, 
-.theme-light
-.nav-folder-title.is-active {
+.nav-file-title.is-active {
     font-weight: 900;
-    color: transparent;
-    background: linear-gradient(-90deg, var(--accent-color-light10), rgb(0, 0, 0), var(--accent-color-light10));
+    background: linear-gradient(-90deg, var(--accent-color-light10), var(--accent-color-light1), var(--accent-color-light10));
     background-size: 200% 200%;
-    animation: animated-selection 15s linear infinite;
-    background-clip: text;
+    animation: animated-selection 10s linear infinite;
+
 }
 
 
@@ -1697,10 +1680,8 @@ body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 
 @keyframes animated-selection {
     0% {background-position: 0% 0%;}
-    40% {filter: drop-shadow(0 0 5px var(--accent-color-light1));}
-    55% {filter: drop-shadow(0 0 5px var(--accent-color-light10));}
-    80% {filter: drop-shadow(0 0 5px var(--accent-color-light10));}
-    90% {filter: drop-shadow(0 0 5px var(--accent-color-light1));}
+    10% {filter: drop-shadow(0 0 5px var(--accent-color-light10));}
+    60% {filter: drop-shadow(0 0 0px var(--accent-color-light10));}
     100% {background-position: -200% 0%;}
 }
 
@@ -2224,7 +2205,6 @@ div.callout-content {
 .markdown-source-view.mod-cm6 .cm-embed-block:hover {
     border: 0px solid transparent !important;
     box-shadow: none !important;
-    padding: 0px !important;
 }
 
 
