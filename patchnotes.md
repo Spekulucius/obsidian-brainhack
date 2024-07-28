@@ -1,3 +1,6 @@
+## 1.4.5
++ fixed a bug regarding disabled animations
+
 ## 1.4.4
 + added animated text highlighting
 + added animation override option to style settings
