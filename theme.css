@@ -2362,8 +2362,12 @@ div.callout-content {
 
 
 
-
-
+/*HIDE ATTACHMENT FOLDER: "000_attachments_000" - if used*/
+div[data-path$='000_attachments_000'], 
+div[data-path$='000_attachments_000'] + div.nav-folder-children 
+{
+	display: none;
+}
 
 
 
