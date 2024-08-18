@@ -624,33 +624,32 @@ div.HyperMD-header.HyperMD-header-1.cm-line {
 
 
 
-
-
-
 /*DYNAMIC HEADING SPACING ADJUST, headings will only leave space if there is no heading above*/
-:not(.el-h1) + .el-h1 {
+.el-h1 ~ :not(.el-h1) + .el-h1 {
+    margin-top: 5em;
+}
+
+.el-h2 ~ :not(.el-h1, .el-h2) + .el-h2 {
     margin-top: 5em !important;
 }
 
-:not(.el-h1, .el-h2) + .el-h2 {
+.el-h3 ~ :not(.el-h1, .el-h2, .el-h3) + .el-h3 {
     margin-top: 5em !important;
 }
 
-:not(.el-h1, .el-h2, .el-h3) + .el-h3 {
+.el-h4 ~ :not(.el-h1, .el-h2, .el-h3, .el-h4) + .el-h4 {
     margin-top: 5em !important;
 }
 
-:not(.el-h1, .el-h2, .el-h3, .el-h4) + .el-h4 {
+.el-h5 ~ :not(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5) + .el-h5 {
     margin-top: 5em !important;
 }
 
-:not(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5) + .el-h5 {
+.el-h6 ~ :not(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) + .el-h6 {
     margin-top: 5em !important;
 }
 
-:not(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) + .el-h6 {
-    margin-top: 5em !important;
-}
+
 
 
 
@@ -2302,8 +2301,10 @@ div.callout-content {
     background: var(--accent-color-bg_d) !important;
 }
 
-
-
+/*NODE BORDER THICKNESS*/
+.canvas-node-container {
+    border: .2em solid;
+}
 
 
 
@@ -2349,13 +2350,13 @@ div.callout-content {
 /*NODE SHADOWS*/
 .theme-light
 .canvas-node {
-    border-radius: 10px;
+    border-radius: 10px !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.26) !important;
 }
 
 .theme-dark
 .canvas-node {
-    border-radius: 10px;
+    border-radius: 10px !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.748) !important;
 }
 
