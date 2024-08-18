@@ -1,3 +1,7 @@
+## 1.4.8
++ improved visibility of canvas node-borders
++ fixed a bug where the first heading of the document would leave space above
+
 ## 1.4.7
 + fixed a bug regarding tables in preview mode
 + reverted changes made to the active file in nav folder due to bad visiblity with some accent colors
