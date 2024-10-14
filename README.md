@@ -13,7 +13,7 @@ This is Brainhack Theme: a robust theme with only one customizable option: the *
 
 ![](/images/brainhack-color.gif)
 
->I made this theme *(mainly for myself)*, because I like to adjust the look of Obsidian on a regular basis. However, it needed adjusting more than one variable, to get everything going.
+>I made this theme *(mainly for myself)*, because I like to adjust the look of Obsidian on a regular basis. However, it needed adjusting more than one variable to get everything going.
 >>Thats why I made Brainhack - **it is for changing to the color you are comfortable with on the fly, without distracting yourself from the workflow!**
 
 ![](/images/brainhack-ui.gif)
