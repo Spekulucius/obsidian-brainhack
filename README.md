@@ -1,3 +1,11 @@
+# The description features an older version of this theme. I updated the theme entirely.
+
+-> please download **brainhack-legacy** if you prefer using the old version.
+
+>I will add a description when I have the time to do so
+
+
+
 ![](/images/brainhack-theme.png)
 
 ***
