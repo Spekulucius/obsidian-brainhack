@@ -637,8 +637,8 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     box-shadow: 0 0 0 1px var(--background-3-1);
 }
 .callout-content blockquote {
-    margin-bottom: 5px !important;
-    margin-top: 5px !important;
+    margin-bottom: .5em;
+    margin-top: .5em !important;
     padding-left: .5em;
 }
 .callout-content ol {
@@ -756,18 +756,18 @@ p:has(+ ul.has-list-bullet) {
     color: var(--colored-accent-i1);
     background-color: var(--colored-accent-1) !important;
     padding: 2px 8px 2px 8px;
-        -moz-border-bottom-left-radius: 10px;
-        -webkit-border-bottom-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        -moz-border-bottom-right-radius: 10px;
-        -webkit-border-bottom-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        -moz-border-top-right-radius: 10px;
-        -webkit-border-top-right-radius: 10px;
-        border-top-right-radius: 10px;
-        -moz-border-top-left-radius: 10px;
-        -webkit-border-top-left-radius: 10px;
-        border-top-left-radius: 10px;
+        -moz-border-bottom-left-radius: var(--radius-m);
+        -webkit-border-bottom-left-radius: var(--radius-m);
+        border-bottom-left-radius: var(--radius-m);
+        -moz-border-bottom-right-radius: var(--radius-m);
+        -webkit-border-bottom-right-radius: var(--radius-m);
+        border-bottom-right-radius: var(--radius-m);
+        -moz-border-top-right-radius: var(--radius-m);
+        -webkit-border-top-right-radius: var(--radius-m);
+        border-top-right-radius: var(--radius-m);
+        -moz-border-top-left-radius: var(--radius-m);
+        -webkit-border-top-left-radius: var(--radius-m);
+        border-top-left-radius: var(--radius-m);
         -webkit-box-decoration-break: clone;
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
@@ -957,7 +957,7 @@ tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radi
     border: 1px dashed grey !important;
 }
 
-span.cm-indent:before,
+
 ul:before {
     border-right: .15em solid var(--colored-accent-1) !important;
     translate: 1.2em !important;
