@@ -82,6 +82,11 @@ settings:
         max: 50
         step: 1
         format: px
+    -
+        id: status-bar-hover
+        title: Hide Status Bar
+        description: Only show the status bar when hovering over it
+        type: class-toggle
 */
 
 /*////////////////////////////////////////////////////////////////// COLORS ///////////////////////////////////////////////////////////////////////////////*/
@@ -250,10 +255,14 @@ body:has(.show-ribbon):not(.is-mobile),:has(.workspace-ribbon.side-dock-ribbon) 
 }
 
 /*================ ADJUST WORKSPACE BACKGROUND ========================*/
-.titlebar-button-container.mod-right,
-.workspace-split {
+.titlebar-button-container.mod-right:not(.is-mobile),
+.workspace-split:not(.is-mobile) {
     background: transparent !important;
 }
+
+/*===== mobile fix */ body.is-mobile .titlebar-button-container.mod-right, body.is-mobile .workspace-split {background: var(--background-4) !important;}
+
+
 .view-header,
 .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
 .empty-state,
@@ -1126,4 +1135,16 @@ tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radi
 
 .cm-s-obsidian .cm-line.HyperMD-header + .HyperMD-quote.HyperMD-quote-1.cm-line {
     padding-top: .5em !important;
+}
+
+
+
+
+/*status bar hider*/
+body.status-bar-hover .status-bar{
+    opacity: 0;
+    transition: all .5s;
+    &:hover {        
+        opacity: 1;
+    }
 }
