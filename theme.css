@@ -42,7 +42,7 @@ settings:
         type: variable-number-slider
         format:
         default: 1.5
-        min: 1
+        min: 1.5
         max: 2.5
         step: .1
     -
@@ -345,6 +345,7 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 .workspace-split.mod-vertical .workspace-tab-header-container-inner { 
     margin-top: 5px !important;
     padding-top: 1.5px !important;
+    gap: 2px;
 }
 .workspace .mod-root .workspace-tab-header {
     box-shadow: none;
@@ -360,13 +361,14 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 }
 /*Tabs text color */
 .mod-vertical .workspace-tab-header.tappable.is-active .workspace-tab-header-inner-title {
-    color: var(--colored-accent-i2) !important;
+    color: var(--text-color-inverted) !important;
 }
 .mod-vertical .workspace-tab-header.tappable .workspace-tab-header-inner-title {
-    color: var(--text-color-inverted) !important;
+    color: var(--tc) !important;
 }
 /*Tab headers*/
 .mod-vertical .workspace-tabs:not(.mod-stacked) .workspace-tab-header.tappable .workspace-tab-header-inner {
+    border-radius: 7px;
     position: relative;
     background-color: var(--background-6);
     transition: all .5s !important;
@@ -390,14 +392,17 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 
 .mod-vertical .workspace-tab-header.tappable.is-active .workspace-tab-header-inner {
     position: relative;
-    color: var(--colored-accent-i1) !important;
-    background-color: var(--colored-accent-2) !important;
+    background-color: var(--colored-accent-3) !important;
+    border: .05em dashed var(--colored-accent-1);
+    font-weight: 600;
     transition: all .5s !important;
+    transform: scale(1);
         &:hover {
         background-color: var(--colored-accent-2) !important;
         color: var(--colored-accent-i2) !important;
     }
 }
+
 .workspace-tab-header-inner-close-button {
     color: var(--colored-accent-i1) !important;
     transition: all .2s !important;
@@ -794,8 +799,8 @@ li > .callout {
 .markdown-rendered h1 {
     display: inline-block;
     color: var(--colored-accent-i1);
-    background: var(--colored-accent-1);
-    padding: 2px 8px 0px 8px;
+    background: var(--colored-accent-2);
+    padding: .1rem .3rem .1rem .3rem;
         -moz-border-bottom-left-radius: var(--h1-radius);
         -webkit-border-bottom-left-radius: var(--h1-radius);
         border-bottom-left-radius: var(--h1-radius);
@@ -812,7 +817,7 @@ li > .callout {
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
     --h1-radius: .3em;
-    box-shadow: 0px 0px 5em var(--colored-accent-4);
+    box-shadow: 0px 0px 5em var(--colored-accent-4), 0 0 0em .05em var(--colored-accent-1);
 }
 /* heading mark link color correction */
 h1 > a, 
@@ -828,13 +833,11 @@ h6 > a {
 .markdown-rendered h2 {
     display: inline-block;
     translate: -.05em;
-    padding-left:   .2em;
-    padding-right:  .2em;
+    padding: .1rem .3rem .1rem .3rem;
     margin-bottom: 0px;
     border: 2px dashed;
     font-weight: 600;
     border-color: var(--colored-accent-3);
-    pointer-events: none;
     background-color: var(--colored-accent-4);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
@@ -859,12 +862,10 @@ h6 > a {
 .markdown-rendered h3 {
     display: inline-block;
     translate: -.05em;
-    padding-left:   .2em;
-    padding-right:  .2em;
+    padding: .1rem .3rem .1rem .3rem;
     margin-bottom: 0px;
     border: 2px dashed;
     border-color: var(--colored-accent-4);
-    pointer-events: none;
     background-color: var(--colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
@@ -933,15 +934,12 @@ span.cm-highlight,
 
 span.cm-highlight:not(.cm-strong),
 .markdown-rendered mark:not(:has(strong), strong mark) {
-    padding-bottom: 0px !important;
-    padding-left:   .2em;
-    padding-right:  .2em;
-    margin-left: .1em;
-    margin-right: .1em;
-    border: 2px dashed;
+    font-size: .9em;
+    padding: 0rem .2rem 0rem .2rem;
+    margin: .1rem .1rem .1rem .1rem;
+    border: .1rem dashed;
     font-weight: 600;
-    border-color: var(--colored-accent-3);
-    pointer-events: none;
+    border-color: var(--colored-accent-2);
     background-color: var(--colored-accent-4);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
@@ -958,21 +956,17 @@ span.cm-highlight:not(.cm-strong),
         -webkit-box-decoration-break: clone;
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
-        box-shadow: 0px 0px 1em var(--colored-accent-4);
+        box-shadow: 0px 0px 1em var(--colored-accent-3);
     --mark-radius: .4em;
     font-weight: 600;
 }
 
 
-
-
 span.cm-strong:not(.cm-highlight),
 strong:not(:has(mark), mark strong)  {
-    padding-bottom: 0px !important;
-    padding-left: .2em;
-    padding-right: .2em;
-    pointer-events: none;
-    border: 2px dashed transparent;
+    padding: 0rem .2rem 0rem .2rem;
+    font-size: .9em;
+    margin: .1rem .1rem .1rem .1rem;
     background: var(--colored-accent-4) !important;
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
@@ -989,7 +983,7 @@ strong:not(:has(mark), mark strong)  {
         -webkit-box-decoration-break: clone;
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
-        box-shadow: 0px 0px .1em var(--colored-accent-1), 0px 0px 3em var(--colored-accent-4);
+        box-shadow: 0px 0px 0em .08rem var(--colored-accent-2), 0px 0px 3em var(--colored-accent-3);
     --mark-radius: .4em;
     color: var(--colored-accent-1);
     font-weight: 900;
