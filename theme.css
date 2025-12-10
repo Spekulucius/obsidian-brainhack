@@ -593,6 +593,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 
 /*================================= EDITOR =================================*/
 .callout {
+    --callout-color: 68, 138, 255; /* Default fallback color */
     color: inherit;
     margin-bottom: .5em !important;
     margin-top: .5em !important;
@@ -603,10 +604,52 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
     --callout-blend-mode: normal !important;
-    background: var(--background-3);
-    box-shadow: inset 0 0 0 1px var(--background-3-1), 0 0 .5em var(--shadow-3) !important;
+    background-color: rgba(var(--callout-color), 0.1);
+    box-shadow: inset 0 0 0 1px rgba(var(--callout-color), 0.5), 0 0 .5em var(--shadow-3) !important;
     overflow: hidden !important;
 }
+
+/* Callout Types */
+.callout[data-callout="note"] {
+    --callout-color: 68, 138, 255;
+}
+.callout[data-callout="abstract"], .callout[data-callout="summary"], .callout[data-callout="tldr"] {
+    --callout-color: 0, 176, 255;
+}
+.callout[data-callout="info"] {
+    --callout-color: 0, 184, 212;
+}
+.callout[data-callout="todo"] {
+    --callout-color: 0, 184, 212;
+}
+.callout[data-callout="tip"], .callout[data-callout="hint"], .callout[data-callout="important"] {
+    --callout-color: 0, 191, 165;
+}
+.callout[data-callout="success"], .callout[data-callout="check"], .callout[data-callout="done"] {
+    --callout-color: 0, 200, 83;
+}
+.callout[data-callout="question"], .callout[data-callout="help"], .callout[data-callout="faq"] {
+    --callout-color: 255, 160, 0;
+}
+.callout[data-callout="warning"], .callout[data-callout="caution"], .callout[data-callout="attention"] {
+    --callout-color: 255, 145, 0;
+}
+.callout[data-callout="failure"], .callout[data-callout="fail"], .callout[data-callout="missing"] {
+    --callout-color: 255, 82, 82;
+}
+.callout[data-callout="danger"], .callout[data-callout="error"] {
+    --callout-color: 255, 82, 82;
+}
+.callout[data-callout="bug"] {
+    --callout-color: 245, 0, 87;
+}
+.callout[data-callout="example"] {
+    --callout-color: 124, 77, 255;
+}
+.callout[data-callout="quote"], .callout[data-callout="cite"] {
+    --callout-color: 158, 158, 158;
+}
+
 .callout-content {
     padding-left: .5em;
     padding-right: .5em;
@@ -626,7 +669,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 .callout-title {
     color: var(--colored-accent-text-color-inverted);
     font-size: 1.5em;
-    border-bottom: dashed .1em var(--background-3-1);
+    border-bottom: dashed .1em rgba(var(--callout-color), 0.5);
     margin-left: 10px;
     margin-right: 10px;
     padding-left: 0px;
@@ -683,7 +726,9 @@ blockquote > ol>:first-child {
 
 
 .callout-icon {
-    display: none;
+    display: inline-flex;
+    margin-right: 0.5em;
+    color: rgb(var(--callout-color));
 }
 .markdown-preview-view .callout.is-collapsible:hover {
     box-shadow: 0 0 0px 2px rgba(115, 115, 115, 0.508);
