@@ -91,10 +91,10 @@ settings:
 
 /*////////////////////////////////////////////////////////////////// COLORS ///////////////////////////////////////////////////////////////////////////////*/
 body {
-	--file-line-width:1000px;
+
     --canvas-dot-pattern: var(--background-3-1);
     --colored-accent-4: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    --radius-m: .6em;
+    --radius-m: 1em;
 }
 
 .theme-light, .theme-dark {
@@ -595,16 +595,16 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 .callout {
     color: inherit;
     margin-bottom: .5em !important;
-    margin-top: .5em !important;
+    margin-top: 1em !important;
     border-radius: var(--radius-m);
-    --callout-padding: 0;
+    --callout-padding: 2px;
     --callout-title-color: inherit;
     --callout-title-padding: 4px 10px;
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
     --callout-blend-mode: normal !important;
     background: var(--background-3);
-    box-shadow: inset 0 0 0 1px var(--background-3-1), 0 0 .5em var(--shadow-3) !important;
+    box-shadow: inset 0 0 0 .1em var(--background-3-1), 0 0 .5em var(--shadow-3) !important;
     overflow: hidden !important;
 }
 .callout-content {
@@ -656,14 +656,14 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     z-index: -1;
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .5em var(--shadow-3);
+    box-shadow: 0 0 0 .1em var(--background-3-1), 0 0 .5em var(--shadow-3);
 }
 
 
 .el-blockquote, blockquote {
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .5em var(--shadow-3);
+    box-shadow: 0 0 0 .1em var(--background-3-1), 0 0 .5em var(--shadow-3);
 }
 
 .callout-content ol {
@@ -709,8 +709,9 @@ blockquote > ol>:first-child {
 
 
 .callout[data-callout="!"] {
-    box-shadow: 0 0 0em .1em var(--colored-accent-1) !important;
+    box-shadow: inset 0 0 0em .1em var(--colored-accent-1) !important;
 }
+
 
 
 
@@ -834,7 +835,7 @@ h6 > a {
 .markdown-rendered h2 {
     display: inline-block;
     translate: -.05em;
-    padding: .1rem .3rem .1rem .3rem;
+    padding: .1rem .3rem .08rem .3rem;
     margin-bottom: 0px;
     border: 2px dashed;
     font-weight: 600;
@@ -855,7 +856,6 @@ h6 > a {
         -webkit-box-decoration-break: clone;
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
-        box-shadow: 0px 0px 1em var(--colored-accent-4);
     --mark-radius: .4em;
 }
 
@@ -863,7 +863,7 @@ h6 > a {
 .markdown-rendered h3 {
     display: inline-block;
     translate: -.05em;
-    padding: .1rem .3rem .1rem .3rem;
+    padding: .1rem .3rem .08rem .3rem;
     margin-bottom: 0px;
     border: 2px dashed;
     border-color: var(--colored-accent-4);
@@ -883,7 +883,6 @@ h6 > a {
         -webkit-box-decoration-break: clone;
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
-        box-shadow: 0px 0px 1em var(--colored-accent-4);
     --mark-radius: .4em;
 }
 
