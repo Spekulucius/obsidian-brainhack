@@ -83,6 +83,15 @@ settings:
         step: 1
         format: px
     -
+        id: crm
+        title: Custom Workspace Element Radius
+        type: variable-number-slider
+        default: 0.5
+        min: 0
+        max: 2
+        step: 0.1
+        format: em
+    -
         id: status-bar-hover
         title: Hide Status Bar
         description: Only show the status bar when hovering over it
@@ -94,7 +103,7 @@ body {
 
     --canvas-dot-pattern: var(--background-3-1);
     --colored-accent-4: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    --radius-m: 1em;
+    --radius-m: var(--crm, .5em);
 }
 
 .theme-light, .theme-dark {
@@ -114,7 +123,7 @@ body {
 }
 
 .theme-light {
-    --background-primary: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .2) + calc(.5% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 5%) + calc(var(--bgt_l, 0) * 1%)));
+    --background-primary: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .2) + calc(.5% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 5%) + calc(calc(var(--bgt_l, 0) * 1%) + 4%)));
 
     --background-1: hsl(var(--accent-h), calc(var(--accent-s) - 20%), 90%, 100%);
     --background-1_2: rgb(234, 234, 234);
@@ -123,10 +132,10 @@ body {
 
     --background-2_h: var(--accent-h);
     --background-2_s: 10%;
-    --background-2_l: 96%;
-    --background-2: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .1) + calc(1% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) + 0%) + calc(var(--bgt_l, 0) * 1%)));
+    --background-2_l: 99%;
+    --background-2: rgb(255, 255, 255);
 
-    --background-3: hsl(0, 0%, 93%);
+    --background-3: hsl(0, 0%, 98%);
     --background-3-1: rgb(197, 197, 197);
     --background-3-2: rgba(197, 197, 197, 0.288);
     --background-4: white;
@@ -163,7 +172,7 @@ body {
     --background-2_h: var(--accent-h);
     --background-2_s: 0%;
     --background-2_l: 10%;
-    --background-2: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .01) + calc(.1% * var(--bgt_s, 1))), calc(var(--background-2_l) + calc(var(--bgt_l, 0) * 1%)));
+    --background-2: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .01) + calc(.1% * var(--bgt_s, 1))), calc(var(--background-2_l) + calc(calc(var(--bgt_l, 0) * 1%) + 2%)));
 
     --background-3: rgb(33, 33, 33);
     --background-3-1: rgb(70, 70, 70);
@@ -604,7 +613,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     --callout-content-radius: 0px;
     --callout-blend-mode: normal !important;
     background: var(--background-3);
-    box-shadow: inset 0 0 0 .1em var(--background-3-1), 0 0 .5em var(--shadow-3) !important;
+    box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .25em var(--shadow-3) !important;
     overflow: hidden !important;
 }
 .callout-content {
@@ -626,12 +635,16 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 .callout-title {
     color: var(--colored-accent-text-color-inverted);
     font-size: 1.5em;
-    border-bottom: dashed .1em var(--background-3-1);
+    border-bottom: dashed .07em var(--background-3-1);
     margin-left: 10px;
     margin-right: 10px;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
+}
+
+.callout.is-collapsible.is-collapsed .callout-title {
+    border-bottom: transparent !important;
 }
 
 .callout-title-inner {
@@ -656,14 +669,14 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     z-index: -1;
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .1em var(--background-3-1), 0 0 .5em var(--shadow-3);
+    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .5em var(--shadow-3);
 }
 
 
 .el-blockquote, blockquote {
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .1em var(--background-3-1), 0 0 .5em var(--shadow-3);
+    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .5em var(--shadow-3);
 }
 
 .callout-content ol {
