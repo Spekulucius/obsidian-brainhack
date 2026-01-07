@@ -86,7 +86,7 @@ settings:
         id: crm
         title: Custom Workspace Element Radius
         type: variable-number-slider
-        default: 0.5
+        default: 1
         min: 0
         max: 2
         step: 0.1
@@ -103,7 +103,7 @@ body {
 
     --canvas-dot-pattern: var(--background-3-1);
     --colored-accent-4: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    --radius-m: var(--crm, .5em);
+    --radius-m: var(--crm, 1em);
 }
 
 .theme-light, .theme-dark {
@@ -147,7 +147,7 @@ body {
     --highlight-2: rgba(214, 214, 214, 0.308);
 
     --shadow-2: rgba(0, 0, 0, 0.257);
-    --shadow-3: rgba(0, 0, 0, 0.089);
+    --shadow-3: rgba(0, 0, 0, 0.08);
     --shadow-4: hsla(var(--background-2_h), calc(calc(var(--accent-s) * .5) + calc(.1% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 20%) + calc(var(--bgt_l, 0) * 1%)), .2);
 
 
@@ -606,19 +606,19 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     margin-bottom: .5em !important;
     margin-top: 1em !important;
     border-radius: var(--radius-m);
-    --callout-padding: 2px;
+    --callout-padding: .4em;
     --callout-title-color: inherit;
     --callout-title-padding: 4px 10px;
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
     --callout-blend-mode: normal !important;
     background: var(--background-3);
-    box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .25em var(--shadow-3) !important;
+    box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3) !important;
     overflow: hidden !important;
 }
 .callout-content {
-    padding-left: .5em;
-    padding-right: .5em;
+    padding-left: .4em;
+    padding-right: .4em;
 }
 .cm-embed-block:hover {
     box-shadow: 0 0 rgba(255, 0, 0, 0) !important;
@@ -641,6 +641,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
+    padding-top:0;
 }
 
 .callout.is-collapsible.is-collapsed .callout-title {
@@ -669,14 +670,14 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     z-index: -1;
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .5em var(--shadow-3);
+    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3);
 }
 
 
 .el-blockquote, blockquote {
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .5em var(--shadow-3);
+    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3);
 }
 
 .callout-content ol {
@@ -703,6 +704,17 @@ blockquote > ol>:first-child {
 }
 .is-live-preview .HyperMD-quote:before {
     border: 0px solid transparent !important;
+}
+
+.callout-content blockquote {
+    border-radius: calc(var(--radius-m) - .3em);
+}
+.callout-content .callout {
+    border-radius: calc(var(--radius-m) - .3em);
+}
+
+blockquote > blockquote {
+    border-radius: calc(var(--radius-m) - .3em) !important;
 }
 
 
@@ -753,7 +765,7 @@ ul.has-list-bullet * blockquote {
     }    
 }
 .markdown-preview-view blockquote {
-   padding: .5em;
+   padding: .8em !important;
 }
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote {
     padding-top: 0em !important;
@@ -789,8 +801,20 @@ p:has(+ ul.has-list-bullet) {
 
 
 li {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: .8em;
+    margin-bottom: 0em;
+}
+li > ul li {
+    margin-top: .4em;
+}
+
+li:has(ul) + li:has(ul) {
+    margin-top: 1.2em;
+}
+
+ul {
+    margin-top: 0em !important;
+    margin-bottom: 0em !important;
 }
 
 li > blockquote {
