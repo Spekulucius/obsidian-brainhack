@@ -194,8 +194,8 @@ body {
     --color-base-00: var(--background-3);
     --color-base-50: var(--colored-accent-1) !important;
     --interactive-accent: var(--colored-accent-1);
-    --text-color-inverted: white;
-    --tc: rgb(174, 174, 174);
+    --text-color-inverted: rgb(223, 223, 223);
+    --tc: rgb(194, 194, 194);
     --italic-color: rgb(97, 97, 97);
 }
 
@@ -604,9 +604,9 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 .callout {
     color: inherit;
     margin-bottom: .5em !important;
-    margin-top: 1em !important;
+    margin-top: .5em !important;
     border-radius: var(--radius-m);
-    --callout-padding: .4em;
+    --callout-padding: 0;
     --callout-title-color: inherit;
     --callout-title-padding: 4px 10px;
     --callout-title-size: inherit;
@@ -616,9 +616,29 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3) !important;
     overflow: hidden !important;
 }
+.markdown-preview-view .callout:not(.callout-content .callout) {
+    margin-bottom: 2em !important;
+    margin-top: 1em !important;
+}
 .callout-content {
-    padding-left: .4em;
-    padding-right: .4em;
+    padding: .8em;
+    padding-top: .5em;
+}
+
+.callout-content > *:first-child {
+    margin-top: 0 !important;
+}
+.callout-content > *:first-child:is(blockquote) {
+    margin-top: .2em !important;
+}
+.callout-content > *:last-child {
+    margin-bottom: 0 !important;
+}
+blockquote > *:first-child {
+    margin-top: 0 !important;
+}
+blockquote > *:last-child {
+    margin-bottom: 0 !important;
 }
 .cm-embed-block:hover {
     box-shadow: 0 0 rgba(255, 0, 0, 0) !important;
@@ -633,15 +653,15 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     overflow: hidden !important;
 }
 .callout-title {
-    color: var(--colored-accent-text-color-inverted);
-    font-size: 1.5em;
-    border-bottom: dashed .07em var(--background-3-1);
-    margin-left: 10px;
+    color: var(--text-color-inverted);
+    font-size: 1.3em;
+    border-bottom: dashed .1em var(--background-3-1);
+    margin-left: .6em;
     margin-right: 10px;
-    padding-left: 0px;
+    padding-left: 0em;
     padding-right: 0px;
-    padding-bottom: 0px;
-    padding-top:0;
+    padding-bottom: .15em;
+    padding-top:.3em;
 }
 
 .callout.is-collapsible.is-collapsed .callout-title {
@@ -662,8 +682,8 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     padding-left: .5em;
     padding-top: .5em;
     padding-bottom: .5em !important;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 .markdown-rendered blockquote:before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
@@ -672,6 +692,7 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
     border-radius: var(--radius-m);
     box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3);
 }
+
 
 
 .el-blockquote, blockquote {
@@ -799,7 +820,7 @@ p:has(+ ul.has-list-bullet) {
 
 
 
-
+/*
 li {
     margin-top: .8em;
     margin-bottom: 0em;
@@ -811,7 +832,7 @@ li > ul li {
 li:has(ul) + li:has(ul) {
     margin-top: 1.2em;
 }
-
+*/
 ul {
     margin-top: 0em !important;
     margin-bottom: 0em !important;
