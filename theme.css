@@ -1042,12 +1042,12 @@ ul {
 
 li > blockquote {
     margin-bottom: 0em !important;
-    margin-top: 0em !important;
+    margin-top: .5em !important;
 }
 
 li > .callout {
     margin-bottom: 0em !important;
-    margin-top: 0em !important;
+    margin-top: .5em !important;
 }
 
 .heading-collapse-indicator.collapse-indicator.collapse-icon:before {
