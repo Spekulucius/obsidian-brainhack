@@ -162,6 +162,12 @@ body {
     --italic-color: rgb(154, 154, 154);
     --canvas-background: var(--background-2);
     --code-background: var(--background-1_2);
+
+    --main-color: black;
+    --main-color-2:rgb(56, 56, 56);
+    --main-color-inverted: white;
+    --main-color-inverted-2: rgb(252, 252, 252);
+    --main-color-05: rgba(0, 0, 0, 0.116);
 }
 
 .theme-dark {
@@ -197,6 +203,12 @@ body {
     --text-color-inverted: rgb(223, 223, 223);
     --tc: rgb(194, 194, 194);
     --italic-color: rgb(97, 97, 97);
+
+    --main-color: white;
+    --main-color-2: rgb(224, 224, 224);
+    --main-color-inverted: black;
+    --main-color-inverted-2: rgb(44, 44, 44);
+    --main-color-05: rgba(255, 255, 255, 0.116);
 }
 
 
@@ -475,7 +487,6 @@ div[data-path$='000_attachments_000'] + div.nav-folder-children
 }
 /* settings switches auto coloring */
 .checkbox-container.is-enabled::after {
-    background-color: var(--colored-accent-i2);
     transition: .2s;
 }
 
@@ -505,28 +516,50 @@ body:not(.native-scrollbars) ::-webkit-scrollbar {
 
 
 
+/***************SETTINGS MODS********************/
+.setting-item-control .mod-cta {
+    color: var(--main-color-inverted);
+    border-radius: 20em;
+    padding-top: var(--button-padding);
+    padding-bottom: var(--button-padding);
+    --button-padding: 1.3em;
+    background: var(--main-color);
+    &:hover {
+        background: var(--main-color-2);
+    }
+}
 
+.setting-item-control .dropdown {
+    height: 2.5em;
+    border-radius: 1em;
+    box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3) !important;
+}
 
+.setting-item-control button {
+    height: 2.5em;
+    border-radius: 10em;
+    box-shadow: inset 0 0 0 .05em var(--background-3-1);
+    background: var(--main-color-inverted-2);
+    &:hover {
+    box-shadow: inset 0 0 0 .05em var(--background-3-1), 0 0 .35em var(--shadow-3) !important;
+    }
+}
 
+body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout > div.modal-content.vertical-tabs-container > div.vertical-tab-header {
+    border: none;
+    background: var(--background-primary)
+}
 
+.modal-content.vertical-tabs-container .vertical-tab-header .vertical-tab-header-group .vertical-tab-header-group-items .vertical-tab-nav-item {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-radius: .8em;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.modal-content.vertical-tabs-container .vertical-tab-header .vertical-tab-header-group .vertical-tab-header-group-items .vertical-tab-nav-item.is-active {
+    background: var(--main-color-05);
+    color: var(--text-color-inverted)
+}
 
 
 
