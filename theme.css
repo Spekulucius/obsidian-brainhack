@@ -77,7 +77,7 @@ settings:
         id: cbr
         title: Custom Workspace Border Radius
         type: variable-number-slider
-        default: 7
+        default: 20
         min: 0
         max: 50
         step: 1
@@ -95,6 +95,10 @@ settings:
         id: status-bar-hover
         title: Hide Status Bar
         description: Only show the status bar when hovering over it
+        type: class-toggle
+    -
+        id: greyscale-toggle
+        title: Enable greyscale images
         type: class-toggle
 */
 
@@ -260,7 +264,7 @@ body:not(.is-mobile):not(.show-ribbon) .workspace:before {
     width: 100%;
     height: calc(100% - 40px);
     background-color: transparent;
-    border-radius: var(--cbr, 15px);
+    border-radius: var(--cbr, 20px);
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -318,47 +322,47 @@ body:has(.show-ribbon):not(.is-mobile),:has(.workspace-ribbon.side-dock-ribbon) 
 /*=================== workspace rounded corners ===================*/
 body:has(.workspace-ribbon.side-dock-ribbon.mod-left.is-collapsed):not(.is-mobile)
 .mod-root {
-    border-bottom-left-radius: var(--cbr, 15px) !important;
+    border-bottom-left-radius: var(--cbr, 20px) !important;
     overflow: hidden;
 }
 body:not(.is-mobile)
 .workspace:not(.is-right-sidedock-open)
 .mod-root {
-    border-bottom-right-radius: var(--cbr, 15px) !important;
+    border-bottom-right-radius: var(--cbr, 20px) !important;
     overflow: hidden;
 }
 body:not(.is-mobile)
 .workspace:not(.is-right-sidedock-open)
 .workspace-split:last-of-type .mod-top-right-space .workspace-tab-container {
-    border-top-right-radius: var(--cbr, 15px);
+    border-top-right-radius: var(--cbr, 20px);
 }
 body:not(.is-mobile)
 .mod-top-left-space .workspace-tab-container {
-    border-top-left-radius: var(--cbr, 15px) !important;
+    border-top-left-radius: var(--cbr, 20px) !important;
 }
 body:not(.is-mobile)
 .workspace:not(.is-right-sidedock-open)
 .workspace-tabs.mod-top-right-space:last-of-type .workspace-tab-container {
-    border-top-right-radius: var(--cbr, 15px);
+    border-top-right-radius: var(--cbr, 20px);
 }
 body:not(.is-mobile)
 .mod-sidedock.mod-right-split{
-    border-bottom-right-radius: var(--cbr, 15px);
+    border-bottom-right-radius: var(--cbr, 20px);
     overflow: hidden !important;
 }
 body:not(.is-mobile)
 .workspace-sidedock-vault-profile {
-    border-bottom-left-radius: var(--cbr, 15px);
+    border-bottom-left-radius: var(--cbr, 20px);
     background: var(--background-3) !important;
     border-bottom-right-radius: 0px !important;
 }
 body:not(.is-mobile)
 .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-container {
-    border-top-right-radius: var(--cbr, 15px);
+    border-top-right-radius: var(--cbr, 20px);
 }
 body:not(.is-mobile)
 .mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-container {
-    border-top-left-radius: var(--cbr, 15px);
+    border-top-left-radius: var(--cbr, 20px);
 }
 /*////////////////////////////////////////////////////////////////////////////// MAIN BODY - TAB BAR //////////////////////////////////////////////////////////////////////////////*/
 /*========================= TABS ===========================*/
@@ -1366,4 +1370,19 @@ body.status-bar-hover .status-bar{
     &:hover {        
         opacity: 1;
     }
+}
+
+
+/*grayscale toggle*/
+.greyscale-toggle.theme-dark img {
+   	border-radius: 10px;
+   	mix-blend-mode: screen !important;
+    filter: invert(1) grayscale(100%) !important;
+}
+
+
+.greyscale-toggle.theme-light img {
+	border-radius: 10px;
+ 	mix-blend-mode: multiply !important;
+	filter: grayscale(100%) !important;
 }
