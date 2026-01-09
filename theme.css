@@ -98,7 +98,12 @@ settings:
         type: class-toggle
     -
         id: greyscale-toggle
-        title: Enable greyscale images
+        title: Enable Greyscale Images
+        type: class-toggle
+    -
+        id: enhanced-folders
+        title: Enable Enhanced Folders
+        description: Opened folders get highlighted
         type: class-toggle
 */
 
@@ -465,11 +470,36 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
 
 /*////////////////////////////////////////////////////////////////////////////// LEFT WORKSPACE / RIBBON //////////////////////////////////////////////////////////////////////////////*/
 
+.tree-item.nav-file .tree-item-self.nav-file-title {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-radius: .8em;
+    &.is-active {
+        color:var(--main-color);
+    }
+}
+
+.tree-item-self.nav-folder-title.is-clickable {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-radius: .8em;
+}
 
 
-
-
-
+.tree-item.nav-folder .nav-folder-title:not(:has(.is-collapsed)) {
+    color: var(--main-color);
+    font-weight: 900;
+    &:hover {
+        color: var(--main-color);
+        font-weight: 900;
+    }
+}
+.enhanced-folders
+.tree-item.nav-folder:not(.is-collapsed):not(:has(.tree-item.nav-folder:not(.is-collapsed))) {
+    background: var(--background-3-2);
+    border-radius: .8em;
+    transition: .4s;
+}
 
 
 
