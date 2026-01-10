@@ -912,6 +912,7 @@ blockquote > *:last-child {
     background-color: var(--background-3);
     border-left: none;
     padding-left: .5em;
+    padding-right: .5em;
     padding-top: .5em;
     padding-bottom: .5em !important;
     margin-top: 1em;
@@ -1020,6 +1021,9 @@ ul.has-list-bullet * blockquote {
 .markdown-preview-view blockquote {
    padding: .8em !important;
 }
+blockquote {
+    padding-right: .8em;
+}
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote {
     padding-top: 0em !important;
 }
@@ -1052,8 +1056,8 @@ p:has(+ ul.has-list-bullet) {
 
 
 
-/*
-li {
+
+li:not(:first-of-type) {
     margin-top: .8em;
     margin-bottom: 0em;
 }
@@ -1064,12 +1068,13 @@ li > ul li {
 li:has(ul) + li:has(ul) {
     margin-top: 1.2em;
 }
-*/
+
+/*
 ul {
     margin-top: 0em !important;
     margin-bottom: 0em !important;
 }
-
+*/
 li > blockquote {
     margin-bottom: 0em !important;
     margin-top: .5em !important;
@@ -1091,6 +1096,7 @@ li > .callout {
 /*heading mark*/
 .cm-header.cm-header-1:not(.cm-formatting.cm-formatting-header.cm-formatting-header-1.cm-header.cm-header-1),
 .markdown-rendered h1 {
+    color: var(--main-color-2);
     display: inline-block;
     background: var(--background-7);
     padding: .1rem .3rem .1rem .3rem;
@@ -1109,7 +1115,7 @@ li > .callout {
         -webkit-box-decoration-break: clone;
         -o-box-decoration-break: clone;
         box-decoration-break: clone;
-    --h1-radius: .1em;
+    --h1-radius: .4em;
 }
 /* heading mark link color correction */
 h1 > a, 
@@ -1123,11 +1129,12 @@ h6 > a {
 
 .cm-header.cm-header-2:not(.cm-formatting.cm-formatting-header.cm-formatting-header-2.cm-header.cm-header-2),
 .markdown-rendered h2 {
+    color: var(--main-color-2);
     display: inline-block;
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
     margin-bottom: 0px;
-    border: 2px dashed;
+    border: .01em dashed;
     font-weight: 600;
     border-color: var(--colored-accent-3);
     background-color: var(--colored-accent-4);
@@ -1155,7 +1162,7 @@ h6 > a {
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
     margin-bottom: 0px;
-    border: 2px dashed;
+    border: .01em dashed;
     border-color: var(--colored-accent-4);
     background-color: var(--colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
