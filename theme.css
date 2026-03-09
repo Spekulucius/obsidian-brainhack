@@ -105,6 +105,10 @@ settings:
         title: Enable Enhanced Folders
         description: Opened folders get highlighted
         type: class-toggle
+    -
+        id: hide-scrollbars
+        title: Hide scrollbars
+        type: class-toggle
 */
 
 /*////////////////////////////////////////////////////////////////// COLORS ///////////////////////////////////////////////////////////////////////////////*/
@@ -150,7 +154,7 @@ body {
     --background-4: white;
     --background-5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 90%);
     --background-6: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .2);  
-    --background-7: rgb(206, 206, 206);
+    --background-7: rgb(221, 221, 221);
     
     --highlight-1: rgba(0, 0, 0, 0.056);
     --highlight-2: rgba(214, 214, 214, 0.308);
@@ -195,7 +199,7 @@ body {
     --background-4: rgb(12, 12, 12);
     --background-5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 30%);
     --background-6: hsla(var(--accent-h), calc(var(--accent-s) * .1), var(--accent-l), 0.2);
-    --background-7: rgb(46, 46, 46);
+    --background-7: rgb(53, 53, 53);
 
     --highlight-1: rgba(255, 255, 255, 0.075);
     --highlight-2: rgba(255, 255, 255, 0.075);
@@ -425,7 +429,7 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 .mod-vertical .workspace-tab-header.tappable.is-active .workspace-tab-header-inner {
     position: relative;
     background-color: var(--colored-accent-3) !important;
-    border: .05em dashed var(--colored-accent-1);
+    -border: .05em dashed var(--colored-accent-1);
     font-weight: 600;
     transition: all .5s !important;
     transform: scale(1);
@@ -485,6 +489,10 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
     border-radius: .8em;
 }
 
+.tree-item-self.nav-file-title.is-active .tree-item-inner {
+    border-bottom: inset 2px var(--main-color-2);
+    margin-bottom: -2px !important;
+}
 
 .tree-item.nav-folder .nav-folder-title:not(:has(.is-collapsed)) {
     color: var(--main-color);
@@ -537,8 +545,8 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 
 
 
-
-body:not(.native-scrollbars) ::-webkit-scrollbar {
+body:not(.native-scrollbars).hide-scrollbars
+::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
@@ -841,14 +849,14 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     --callout-title-padding: 4px 10px;
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
-    --callout-blend-mode: normal !important;
+    x--callout-blend-mode: multiply;
     background: var(--background-3);
     box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3) !important;
     overflow: hidden !important;
 }
 
 .markdown-preview-view .callout:not(.callout-content .callout) {
-    margin-bottom: 2em !important;
+    margin-bottom: 2em;
     margin-top: 1em !important;
 }
 .callout-content {
@@ -904,20 +912,33 @@ blockquote > *:last-child {
     font-weight: 700;
 }
 
+.callout-title:has(li) {
+    padding-left: 10px;
+}
 
 .markdown-rendered blockquote,
-.blockquote,
+.blockquote{
+    border-radius: var(--radius-m);
+    background-color: var(--background-3);
+    border-left: none;
+    padding-left: .8em;
+    padding-right: .8em !important;
+    padding-top: .8em;
+    padding-bottom: .8em !important;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote{
     border-radius: var(--radius-m);
     background-color: var(--background-3);
     border-left: none;
-    padding-left: .5em;
-    padding-right: .5em;
-    padding-top: .5em;
-    padding-bottom: .5em !important;
+    padding-right: .8em !important;
+    padding-top: .8em !important;
+    padding-bottom: .8em !important;
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
 .markdown-rendered blockquote:before,
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
     z-index: -1;
@@ -926,12 +947,10 @@ blockquote > *:last-child {
     box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3);
 }
 
-
-
 .el-blockquote, blockquote {
     width: 100%;
     border-radius: var(--radius-m);
-    box-shadow: 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3);
+    box-shadow: inset 0 0 0 .04em var(--background-3-1);
 }
 
 .callout-content ol {
@@ -1021,9 +1040,7 @@ ul.has-list-bullet * blockquote {
 .markdown-preview-view blockquote {
    padding: .8em !important;
 }
-blockquote {
-    padding-right: .8em;
-}
+
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote + .HyperMD-quote {
     padding-top: 0em !important;
 }
@@ -1057,15 +1074,15 @@ p:has(+ ul.has-list-bullet) {
 
 
 
-li:not(:first-of-type) {
+-li:not(:first-of-type) {
     margin-top: .8em;
     margin-bottom: 0em;
 }
-li > ul li {
+-li > ul li {
     margin-top: .4em;
 }
 
-li:has(ul) + li:has(ul) {
+-li:has(ul) + li:has(ul) {
     margin-top: 1.2em;
 }
 
@@ -1077,12 +1094,12 @@ ul {
 */
 li > blockquote {
     margin-bottom: 0em !important;
-    margin-top: .5em !important;
+    margin-top: 0em !important;
 }
 
 li > .callout {
     margin-bottom: 0em !important;
-    margin-top: .5em !important;
+    margin-top: 0em !important;
 }
 
 .heading-collapse-indicator.collapse-indicator.collapse-icon:before {
@@ -1098,8 +1115,8 @@ li > .callout {
 .markdown-rendered h1 {
     color: var(--main-color-2);
     display: inline-block;
-    background: var(--background-7);
-    padding: .1rem .3rem .1rem .3rem;
+    -background: var(--background-7);
+    margin: 0em !important;
         -moz-border-bottom-left-radius: var(--h1-radius);
         -webkit-border-bottom-left-radius: var(--h1-radius);
         border-bottom-left-radius: var(--h1-radius);
@@ -1133,11 +1150,11 @@ h6 > a {
     display: inline-block;
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
-    margin-bottom: 0px;
-    border: .01em dashed;
+    margin: 0px;
+    -border: .01em dashed;
     font-weight: 600;
-    border-color: var(--colored-accent-3);
-    background-color: var(--colored-accent-4);
+    border-color: var(--colored-accent-4);
+    background-color: var(--colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
         border-bottom-left-radius: var(--mark-radius);
@@ -1162,7 +1179,7 @@ h6 > a {
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
     margin-bottom: 0px;
-    border: .01em dashed;
+    -border: .01em dashed;
     border-color: var(--colored-accent-4);
     background-color: var(--colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
@@ -1185,15 +1202,15 @@ h6 > a {
 
 /*DYNAMIC HEADING SPACING ADJUST*/
 div.el-h1 {
-    margin-top: var(--dynamic-heading-spacing, 2em);
+    margin-top: var(--dynamic-heading-spacing, 0em);
 }
 
 div.el-h2 {
-    margin-top: var(--dynamic-heading-spacing, 2em) !important;
+    margin-top: var(--dynamic-heading-spacing, 0em) !important;
 }
 
 div.el-h3 {
-    margin-top: var(--dynamic-heading-spacing, 2em) !important;
+    margin-top: var(--dynamic-heading-spacing, 0em) !important;
 }
 
 
@@ -1258,7 +1275,7 @@ span.cm-highlight,
 span.cm-strong:not(.cm-highlight),
 strong:not(:has(mark), mark strong)  {
     padding: 0rem .2rem 0rem .2rem;
-    margin: .1rem .1rem .1rem .1rem;
+    margin: -.2rem .1rem .1rem -.2rem;
     background: var(--colored-accent-4) !important;
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
@@ -1389,13 +1406,9 @@ tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radi
 .markdown-preview-view hr,
 .markdown-source-view hr {
     border: .1em dashed rgba(128, 128, 128, 0.432) !important;
-    box-shadow: 0px 0px 5em var(--colored-accent-4);
 }
 
 
-.cm-s-obsidian .cm-line.HyperMD-header + .HyperMD-quote.HyperMD-quote-1.cm-line {
-    padding-top: .5em !important;
-}
 
 
 
@@ -1410,7 +1423,7 @@ body.status-bar-hover .status-bar{
 }
 
 
-/*grayscale toggle*/
+/*greyscale toggle*/
 .greyscale-toggle.theme-dark img {
    	border-radius: 10px;
    	mix-blend-mode: screen !important;
@@ -1423,3 +1436,5 @@ body.status-bar-hover .status-bar{
  	mix-blend-mode: multiply !important;
 	filter: grayscale(100%) !important;
 }
+
+
