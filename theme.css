@@ -646,18 +646,21 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 
 
 
-
+.callout-title {
+    border-color: var(--callout-border-color) !important;
+}
 
 
 
 .callout[data-callout="note"] {
     background: rgba(68, 138, 255, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(68, 138, 255, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(68, 138, 255, .5);
-    }
+    --callout-border-color: rgba(68, 138, 255, .5);
     & .callout-icon {
     display: flex;
+}
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(68, 138, 255, .5), 0 0 .35em var(--shadow-3);  
 }
 }
 
@@ -665,48 +668,51 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 .callout[data-callout="abstract"], .callout[data-callout="summary"], .callout[data-callout="tldr"] {
     background: rgba(0, 176, 255, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(0, 176, 255, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(0, 176, 255, .5);
-    }
+    --callout-border-color: rgba(0, 176, 255, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(0, 176, 255, .5), 0 0 .35em var(--shadow-3);
+    }
 }
-
 
 .callout[data-callout="info"] {
     background: rgba(0, 184, 212, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(0, 184, 212, .5);
-    }
+    --callout-border-color: rgba(0, 184, 212, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="todo"] {
     background: rgba(0, 184, 212, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(0, 184, 212, .5);
-    }
+    --callout-border-color: rgba(0, 184, 212, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="tip"], .callout[data-callout="hint"], .callout[data-callout="important"] {
     background: rgba(0, 191, 165, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(0, 191, 165, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(0, 191, 165, .5);
-    }
+    --callout-border-color: rgba(0, 191, 165, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(0, 191, 165, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
@@ -714,83 +720,88 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 .callout[data-callout="success"], .callout[data-callout="check"], .callout[data-callout="done"] {
     background: rgba(0, 200, 83, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(0, 200, 83, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(0, 200, 83, .5);
-    }
+    --callout-border-color: rgba(0, 200, 83, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(0, 200, 83, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="question"], .callout[data-callout="help"], .callout[data-callout="faq"] {
     background: rgba(255, 160, 0, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(255, 160, 0, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(255, 160, 0, .5);
-    }
+    --callout-border-color: rgba(255, 160, 0, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(255, 160, 0, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="warning"], .callout[data-callout="caution"], .callout[data-callout="attention"] {
     background: rgba(255, 145, 0, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(255, 145, 0, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(255, 145, 0, .5);
-    }
+    --callout-border-color: rgba(255, 145, 0, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(255, 145, 0, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="failure"], .callout[data-callout="fail"], .callout[data-callout="missing"] {
     background: rgba(255, 82, 82, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(255, 82, 82, .5);
-    }
+    --callout-border-color: rgba(255, 82, 82, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="danger"], .callout[data-callout="error"] {
     background: rgba(255, 82, 82, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(255, 82, 82, .5);
-    }
+    --callout-border-color: rgba(255, 82, 82, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(245, 0, 87, .5), 0 0 .35em var(--shadow-3);
+    }
 }
 
 
 .callout[data-callout="bug"] {
-    background: rgba(245, 0, 87, .1) !important;
+    background: rgba(255, 6, 93, 0.1) !important;
     box-shadow: inset 0 0 0 .04em rgba(245, 0, 87, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(245, 0, 87, .5);
-    }
+    --callout-border-color: rgba(245, 0, 87, .5);
     & .callout-icon {
     display: flex;
 }
+& .callout-content blockquote, .callout-content .callout {
+    box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5), 0 0 .35em var(--shadow-3);
+    }
 }
-
-
 .callout[data-callout="example"] {
     background: rgba(124, 77, 255, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(124, 77, 255, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(124, 77, 255, .5);
-    }
+    --callout-border-color: rgba(124, 77, 255, .5);
     & .callout-icon {
     display: flex;
+}
+    & .callout-content blockquote, .callout-content .callout {
+        box-shadow: inset 0 0 0 .04em rgba(124, 77, 255, .5), 0 0 .35em var(--shadow-3);
 }
 }
 
@@ -798,20 +809,22 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 .callout[data-callout="quote"], .callout[data-callout="cite"] {
     background: rgba(158, 158, 158, .1) !important;
     box-shadow: inset 0 0 0 .04em rgba(158, 158, 158, .5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: rgba(158, 158, 158, .5);
-    }
+    --callout-border-color: rgba(158, 158, 158, .5);
     & .callout-icon {
     display: flex;
-}
+    }
+    & .callout-content blockquote, .callout-content .callout {
+        box-shadow: inset 0 0 0 .04em rgba(158, 158, 158, .5), 0 0 .35em var(--shadow-3);    
+    }
 }
 
 
 .callout[data-callout="brainhack"] {
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1) !important;
     box-shadow: inset 0 0 0 .04em hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5), 0 0 .35em var(--shadow-3) !important;
-    & .callout-title {
-        border-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+    --callout-border-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+    & .callout-content blockquote, .callout-content .callout {
+        box-shadow: inset 0 0 0 .04em hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5), 0 0 .35em var(--shadow-3);
     }
 }
 
@@ -849,9 +862,9 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     --callout-title-padding: 4px 10px;
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
-    x--callout-blend-mode: multiply;
+    --callout-blend-mode: normal;
     background: var(--background-3);
-    box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3) !important;
+    box-shadow: inset 0 0 0 .04em var(--background-3-1), 0 0 .35em var(--shadow-3);
     overflow: hidden !important;
 }
 
@@ -894,7 +907,8 @@ blockquote > *:last-child {
 .callout-title {
     color: var(--text-color-inverted);
     font-size: 1.3em;
-    border-bottom: dashed .1em var(--background-3-1);
+    border-bottom: dashed .1em;
+    --callout-border-color: var(--background-3-1);
     margin-left: .6em;
     margin-right: 10px;
     padding-left: 0em;
@@ -969,7 +983,7 @@ blockquote > ol>:first-child {
 }
 
 
-.callout-icon {
+.callout-icon, .callout-content .callout-icon {
     display: none;
 }
 .markdown-preview-view .callout.is-collapsible:hover {
@@ -1148,13 +1162,13 @@ h6 > a {
 .markdown-rendered h2 {
     color: var(--main-color-2);
     display: inline-block;
-    translate: -.05em;
-    padding: .1rem .3rem .08rem .3rem;
-    margin: 0px;
+    -translate: -.05em;
+    -padding: .1rem .3rem .08rem .3rem;
+    -margin: 0px;
     -border: .01em dashed;
     font-weight: 600;
     border-color: var(--colored-accent-4);
-    background-color: var(--colored-accent-5);
+    -background-color: var(--colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
         border-bottom-left-radius: var(--mark-radius);
@@ -1181,7 +1195,7 @@ h6 > a {
     margin-bottom: 0px;
     -border: .01em dashed;
     border-color: var(--colored-accent-4);
-    background-color: var(--colored-accent-5);
+    -background-color: var(--colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
         border-bottom-left-radius: var(--mark-radius);
@@ -1403,10 +1417,7 @@ tr:last-child td:last-child {border-bottom-right-radius: var(--table-border-radi
     --popover-height: 1250px;
 }
 
-.markdown-preview-view hr,
-.markdown-source-view hr {
-    border: .1em dashed rgba(128, 128, 128, 0.432) !important;
-}
+
 
 
 
