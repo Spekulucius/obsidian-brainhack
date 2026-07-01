@@ -49,7 +49,7 @@ settings:
         description:
         type: variable-number-slider
         format:
-        default: 1.5
+        default: 2
         min: 1.5
         max: 2.5
         step: .1
@@ -203,7 +203,7 @@ body {
 
     --canvas-dot-pattern: var(--background-3-1);
     --colored-accent-4: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    --radius-m: var(--crm, 1em);
+    --radius-m: var(--crm, .7em);
 }
 
 .theme-light, .theme-dark {
@@ -219,10 +219,11 @@ body {
     --background-secondary: var(--background-2);
     --canvas-background: var(--background-2);
     --code-background: var(--background-3);
-
 }
 
 .theme-light {
+    --border-callout: white;
+    --text-faint: rgb(161, 161, 161);
     --background-primary: hsl(var(--background-2_h), calc(calc(var(--accent-s) * 0) + calc(.5% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 5%) + calc(calc(var(--bgt_l, 0) * 1%) + 2%)));
 
     --background-1: hsl(var(--accent-h), calc(var(--accent-s) - 20%), 90%, 100%);
@@ -235,9 +236,9 @@ body {
     --background-2_l: 99%;
     --background-2: rgb(255, 255, 255);
 
-    --background-3: hsl(0, 0%, 98%);
-    --background-3-1: rgb(197, 197, 197);
-    --background-3-2: rgba(197, 197, 197, 0.288);
+    --background-3: #f4f4f4;
+    --background-3-1: #ececec;
+    --background-3-2: rgb(202, 202, 202);
     --background-3-3: hsla(0, 0%, 73%, 0.112);
     --background-4: white;
     --background-5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 90%);
@@ -271,6 +272,8 @@ body {
 }
 
 .theme-dark {
+    --border-callout: rgb(0, 0, 0);
+    --text-faint: rgb(98, 98, 98);
     --background-1: #171717;
     --background-1-h: var(--colored-accent-1);
     --background-1-item: var(--nav-item-color);
@@ -281,7 +284,7 @@ body {
     --background-2: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .01) + calc(.1% * var(--bgt_s, 1))), calc(var(--background-2_l) + calc(calc(var(--bgt_l, 0) * 1%) + 2%)));
 
     --background-3: rgb(33, 33, 33);
-    --background-3-1: rgb(70, 70, 70);
+    --background-3-1: rgb(51, 51, 51);
     --background-3-2: rgba(70, 70, 70, 0.27);
     --background-3-3: hsla(0, 0%, 26%, 0.326);
     --background-4: rgb(12, 12, 12);
@@ -564,8 +567,8 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
 /*////////////////////////////////////////////////////////////////////////////// LEFT WORKSPACE / RIBBON //////////////////////////////////////////////////////////////////////////////*/
 
 .tree-item.nav-file .tree-item-self.nav-file-title {
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding-top: .7em;
+    padding-bottom: .7em;
     border-radius: .8em;
     &.is-active {
         color:var(--main-color);
@@ -573,8 +576,8 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
 }
 
 .tree-item-self.nav-folder-title.is-clickable {
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding-top: .7em;
+    padding-bottom: .7em;
     border-radius: .8em;
 }
 
@@ -582,6 +585,7 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
     border-bottom: inset 2px var(--main-color-2);
     margin-bottom: -2px !important;
 }
+
 
 .tree-item.nav-folder .nav-folder-title:not(:has(.is-collapsed)) {
     color: var(--main-color);
@@ -740,59 +744,64 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 
 
 .callout[data-callout="note"] {
+    outline: .1em solid rgba(68, 138, 255, .5) !important;
     background: rgba(68, 138, 255, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(68, 138, 255, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(68, 138, 255, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(68, 138, 255, .5), 0 0 .35em var(--shadow-3);  
+    outline: .1em solid rgba(68, 138, 255, .5) !important;  
 }
 }
 
 
 .callout[data-callout="abstract"], .callout[data-callout="summary"], .callout[data-callout="tldr"] {
+    outline: .1em solid rgba(0, 176, 255, .5) !important;
     background: rgba(0, 176, 255, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(0, 176, 255, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(0, 176, 255, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(0, 176, 255, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(0, 176, 255, .5) !important;
     }
 }
 
 .callout[data-callout="info"] {
+    outline: .1em solid rgba(0, 184, 212, .5) !important;
     background: rgba(0, 184, 212, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(0, 184, 212, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(0, 184, 212, .5) !important;
     }
 }
 
 
 .callout[data-callout="todo"] {
+    outline: .1em solid rgba(0, 184, 212, .5) !important;
     background: rgba(0, 184, 212, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(0, 184, 212, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(0, 184, 212, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(0, 184, 212, .5) !important;
     }
 }
 
 
 .callout[data-callout="tip"], .callout[data-callout="hint"], .callout[data-callout="important"] {
+    outline: .1em solid rgba(0, 191, 165, .5) !important;
     background: rgba(0, 191, 165, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(0, 191, 165, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(0, 191, 165, .5);
     & .callout-icon {
     display: flex;
@@ -805,113 +814,122 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 
 
 .callout[data-callout="success"], .callout[data-callout="check"], .callout[data-callout="done"] {
+    outline: .1em solid rgba(0, 200, 83, .5) !important;    
     background: rgba(0, 200, 83, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(0, 200, 83, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(0, 200, 83, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(0, 200, 83, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(0, 200, 83, .5) !important;  
     }
 }
 
 
 .callout[data-callout="question"], .callout[data-callout="help"], .callout[data-callout="faq"] {
+    outline: .1em solid rgba(255, 160, 0, .5) !important;  
     background: rgba(255, 160, 0, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(255, 160, 0, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(255, 160, 0, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(255, 160, 0, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(255, 160, 0, .5) !important;  
     }
 }
 
 
 .callout[data-callout="warning"], .callout[data-callout="caution"], .callout[data-callout="attention"] {
+    outline: .1em solid rgba(255, 145, 0, .5) !important;  
     background: rgba(255, 145, 0, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(255, 145, 0, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(255, 145, 0, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(255, 145, 0, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(255, 145, 0, .5) !important;  
     }
 }
 
 
 .callout[data-callout="failure"], .callout[data-callout="fail"], .callout[data-callout="missing"] {
+    outline: .1em solid rgba(255, 82, 82, .5) !important; 
     background: rgba(255, 82, 82, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(255, 82, 82, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(255, 82, 82, .5) !important; 
     }
 }
 
 
 .callout[data-callout="danger"], .callout[data-callout="error"] {
+    outline: .1em solid rgba(255, 82, 82, .5) !important; 
     background: rgba(255, 82, 82, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(255, 82, 82, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(255, 82, 82, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(255, 82, 82, .5) !important; 
     }
 }
 
 
 .callout[data-callout="bug"] {
+    outline: .1em solid rgba(245, 0, 87, .5) !important; 
     background: rgba(255, 6, 93, 0.1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(245, 0, 87, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(245, 0, 87, .5);
     & .callout-icon {
     display: flex;
 }
 & .callout-content blockquote, .callout-content .callout {
-    box-shadow: inset 0 0 0 .04em rgba(245, 0, 87, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(245, 0, 87, .5) !important; 
     }
 }
 .callout[data-callout="example"] {
+    outline: .1em solid rgba(124, 77, 255, .5) !important; 
     background: rgba(124, 77, 255, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(124, 77, 255, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(124, 77, 255, .5);
     & .callout-icon {
     display: flex;
 }
     & .callout-content blockquote, .callout-content .callout {
-        box-shadow: inset 0 0 0 .04em rgba(124, 77, 255, .5), 0 0 .35em var(--shadow-3);
+    outline: .1em solid rgba(124, 77, 255, .5) !important; 
 }
 }
 
 
 .callout[data-callout="quote"], .callout[data-callout="cite"] {
+    outline: .1em solid rgba(158, 158, 158, .5) !important; 
     background: rgba(158, 158, 158, .1) !important;
-    box-shadow: inset 0 0 0 .04em rgba(158, 158, 158, .5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: rgba(158, 158, 158, .5);
     & .callout-icon {
     display: flex;
     }
     & .callout-content blockquote, .callout-content .callout {
-        box-shadow: inset 0 0 0 .04em rgba(158, 158, 158, .5), 0 0 .35em var(--shadow-3);    
+    outline: .1em solid rgba(158, 158, 158, .5) !important;   
     }
 }
 
 
 .callout[data-callout="brainhack"] {
+    outline: .1em solid hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5) !important;
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1) !important;
-    box-shadow: inset 0 0 0 .04em hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5)!important;
+    box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
     --callout-border-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
     & .callout-content blockquote, .callout-content .callout {
-        box-shadow: inset 0 0 0 .04em hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5), 0 0 .35em var(--shadow-3);
+        outline: .1em solid hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5) !important;
     }
 }
 
@@ -945,18 +963,21 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 
 /*================================= EDITOR =================================*/
 body:not(.cv1) .callout {
+    outline: .1em solid var(--background-3-2);
     color: inherit;
-    margin-bottom: .5em !important;
-    margin-top: .5em !important;
+    margin-bottom: .6em !important;
+    margin-top: .6em !important;
+    margin-right: .1em !important;
+    margin-left: .1em !important;
     border-radius: var(--radius-m);
-    --callout-padding: 0;
+    --callout-padding: .5em;
     --callout-title-color: inherit;
     --callout-title-padding: 4px 10px;
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
     --callout-blend-mode: normal;
     background: var(--background-3);
-    box-shadow: inset 0 0 0 .04em var(--background-3-1);
+    box-shadow: inset 0 0 0 .05em var(--border-callout), inset 0 0 5em 1em var(--background-3-1);
     overflow: hidden !important;
 }
 body.cv1 .callout {
@@ -1020,7 +1041,7 @@ body.cv1 .cm-embed-block.cm-callout {
 .callout-title {
     color: var(--text-color-inverted);
     font-size: 1.3em;
-    border-bottom: dashed .1em;
+    border-bottom: dashed var(--text-faint) .1em !important;
     margin-left: .6em;
     margin-right: 10px;
     padding-left: 0em;
@@ -1615,7 +1636,7 @@ table {
 
 body {
     --bold-modifier: 300;
-    --line-height-normal: var(--custom-line-height, 1.5);
+    --line-height-normal: var(--custom-line-height, 2);
 }
 
 
