@@ -11,6 +11,7 @@ _If you encounter an issue or have a feature request, please feel free to open a
 
 ## About Brainhack
 
+- [Sleek UI](#sleek-ui)
 - [Quick adjustment via accent color](#quick-adjustment-via-accent-color)
 - [Light and dark mode compatibility](#light-and-dark-mode-compatibility)
 - [Callouts](#callouts)
@@ -18,6 +19,9 @@ _If you encounter an issue or have a feature request, please feel free to open a
 - [Colored folders](#colored-folders)
 - [Style Settings overview](#style-settings-overview)
 - [Little extras](#little-extras)
+
+## Sleek UI
+![](/images/uidemo.gif)
 
 ## Quick adjustment via accent color
 ![](/images/colorchangedemo.gif)
