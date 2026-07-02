@@ -4,7 +4,7 @@ Thank you for your support, it really means a lot! <3
 
 ---
 
-![](/images/demo1.png)
+![](/images/brainhack_preview-fullsize.png)
 # This is Brainhack: a minimal theme for Obsidian, that uses the accent color for customization.
 _If you encounter an issue, please feel free to open a ticket [here](https://github.com/Spekulucius/obsidian-brainhack/issues)_
 
