@@ -11,14 +11,6 @@ id: Brainhack
 description: "Thank you for using my theme. If you encounter issues or have suggestions, please open a ticket on my GitHub repo <3"
 settings:
     -
-        id: morespace
-        title: More Space
-        type: class-toggle
-    -
-        id: smartlists
-        title: Smart Lists (WIP)
-        type: class-toggle
-    -
         id: Text and Spacing
         title: Text and Spacing
         type: heading
@@ -75,6 +67,52 @@ settings:
             - 
                 label: Variant 2
                 value: hv2
+    -
+        id: coloredheadings
+        title: Colored Headings
+        type: class-toggle
+    - 
+        id: headingcolor1
+        title: Heading Color 1
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: headingcolor2
+        title: heading Color 2
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: headingcolor3
+        title: Heading Color 3
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: headingcolor4
+        title: Heading Color 4
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: headingcolor5
+        title: heading Color 5
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: headingcolor6
+        title: Heading Color 6
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
     -
         id: Blockquotes
         title: Blockquotes
@@ -133,8 +171,8 @@ settings:
                 label: Colored Nodes
                 value: nc
     -
-        id: Colors
-        title: Colors
+        id: Background
+        title: Background
         type: heading
         collapsed: ture
         level: 2
@@ -155,10 +193,48 @@ settings:
         max: 10
         step: 1
     -
+        id: Folder-settings
+        title: Folders
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: coloredfolders
+        title: Colored Folders
+        type: class-toggle
+    - 
+        id: foldercolor1
+        title: Folder Color 1
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: foldercolor2
+        title: Folder Color 2
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: foldercolor3
+        title: Folder Color 3
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: foldercolor4
+        title: Folder Color 4
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    -
         id: Experimental Settings
         title: Experimental Settings
         type: heading
-        collapsed: ture
+        collapsed: true
         level: 2
     - 
         id: cbr
@@ -169,15 +245,6 @@ settings:
         max: 50
         step: 1
         format: px
-    -
-        id: crm
-        title: Custom Workspace Element Radius
-        type: variable-number-slider
-        default: 1
-        min: 0
-        max: 2
-        step: 0.1
-        format: em
     -
         id: status-bar-hover
         title: Hide Status Bar
@@ -196,6 +263,10 @@ settings:
         id: hide-scrollbars
         title: Hide scrollbars
         type: class-toggle
+    -
+        id: smartlists
+        title: Smart Lists (WIP)
+        type: class-toggle
 */
 
 /*////////////////////////////////////////////////////////////////// COLORS ///////////////////////////////////////////////////////////////////////////////*/
@@ -203,7 +274,8 @@ body {
 
     --canvas-dot-pattern: var(--background-3-1);
     --colored-accent-4: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
-    --radius-m: var(--crm, .7em);
+    --radius-m: .7em;
+
 }
 
 .theme-light, .theme-dark {
@@ -223,6 +295,7 @@ body {
 
 .theme-light {
     --border-callout: white;
+    --border-2: rgb(205, 205, 205);
     --text-faint: rgb(161, 161, 161);
     --background-primary: hsl(var(--background-2_h), calc(calc(var(--accent-s) * 0) + calc(.5% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 5%) + calc(calc(var(--bgt_l, 0) * 1%) + 2%)));
 
@@ -236,11 +309,13 @@ body {
     --background-2_l: 99%;
     --background-2: rgb(255, 255, 255);
 
-    --background-3: #f4f4f4;
-    --background-3-1: #ececec;
+    --background-3: #f7f7f7;
+    --background-3-1: #00000010;
     --background-3-2: rgb(202, 202, 202);
     --background-3-3: hsla(0, 0%, 73%, 0.112);
-    --background-4: white;
+    --background-4: #F5F5F5;
+    --background-4-1: #d3d3d3;
+    --background-4-2: #e4e4e4;
     --background-5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 90%);
     --background-6: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .2);  
     --background-7: rgb(221, 221, 221);
@@ -272,7 +347,8 @@ body {
 }
 
 .theme-dark {
-    --border-callout: rgb(0, 0, 0);
+    --border-callout: rgba(0, 0, 0, 0);
+    --border-2: rgb(69, 69, 69);
     --text-faint: rgb(98, 98, 98);
     --background-1: #171717;
     --background-1-h: var(--colored-accent-1);
@@ -283,11 +359,13 @@ body {
     --background-2_l: 10%;
     --background-2: hsl(var(--background-2_h), calc(calc(var(--accent-s) * .01) + calc(.1% * var(--bgt_s, 1))), calc(var(--background-2_l) + calc(calc(var(--bgt_l, 0) * 1%) + 2%)));
 
-    --background-3: rgb(33, 33, 33);
-    --background-3-1: rgb(51, 51, 51);
-    --background-3-2: rgba(70, 70, 70, 0.27);
+    --background-3: #292929;
+    --background-3-1: rgb(43, 43, 43);
+    --background-3-2: rgba(70, 70, 70, 0.667);
     --background-3-3: hsla(0, 0%, 26%, 0.326);
-    --background-4: rgb(12, 12, 12);
+    --background-4: #191919;
+    --background-4-1: #000000;
+    --background-4-2: #1b1b1b;
     --background-5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 30%);
     --background-6: hsla(var(--accent-h), calc(var(--accent-s) * .1), var(--accent-l), 0.2);
     --background-7: rgb(53, 53, 53);
@@ -318,8 +396,8 @@ body {
 
 /*////////////////////////////////////////////////////////////////////////////// MAIN BODY - GENERAL CONFIG //////////////////////////////////////////////////////////////////////////////*/
 /*============================= ADJUST SPACING OF MAIN BODY ===================================*/
-body:not(.is-mobile, .morespace)
-.workspace {
+body:not(.is-mobile)
+.workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
     background-color: transparent;
     right: 10px !important;
     position: relative;
@@ -328,22 +406,29 @@ body:not(.is-mobile, .morespace)
     flex: 1 0 0;
     width: calc(100% - 10px) !important;
     margin-left: 10px;
+    transition: 5s !important;    
 }
-body:not(.is-mobile, .morespace)
-.horizontal-main-container {
+body:not(.is-mobile)
+.workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
     padding-bottom: 10px;
     display: flex;
     overflow: visible;
     flex: 1 0 0;
     background: transparent;
-}
-body:not(.is-mobile):not(.show-ribbon, .morespace)
-.horizontal-main-container {
-    padding-left: 10px;
+    transition: .5s !important;
 }
 
-body:not(.is-mobile):not(.show-ribbon, .morespace) .workspace:before {
+body > div.app-container > div.horizontal-main-container > .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) > div.workspace-split.mod-vertical.mod-root {
+    margin-left: .5em;
+}
+
+body:not(.is-mobile):not(.show-ribbon) .workspace:before {
     width: 100%;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space {
+    margin-left: .5em;
+    width: calc(100% - .5em)
 }
 /*============== Ribbon ===========================*/
 .workspace-ribbon.side-dock-ribbon.mod-left {
@@ -358,45 +443,29 @@ body:not(.is-mobile):not(.show-ribbon, .morespace) .workspace:before {
     background: transparent;
 }
 
-/*============== ADD NEW BORDERS =====================*/
-body:not(.morespace)
-.workspace:not(.is-mobile)::before {
-    content: " ";
-    width: 100%;
-    height: calc(100% - 40px);
-    background-color: transparent;
-    border-radius: var(--cbr, 20px);
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    box-shadow: 0px 0px 0px 1px var(--divider-color), 0 0 5px 1px var(--shadow-4);
-}
-/*adjust borders to align with ribbon animation*/
-body:has(.show-ribbon):not(.is-mobile, .morespace),:has(.workspace-ribbon.side-dock-ribbon:hover) .workspace::before {
-    width: calc(100% - 44px);
-    transition-duration: .1s;
-}
-
-body:has(.show-ribbon):not(.is-mobile, .morespace),:has(.workspace-ribbon.side-dock-ribbon) .workspace::before {
-    width: calc(100% - 44px);
-    transition: all .5s ease;
-}
 
 /*================ ADJUST WORKSPACE BACKGROUND ========================*/
 .titlebar-button-container.mod-right:not(.is-mobile),
+.workspace:is(.is-left-sidedock-open, .is-right-sidedock-open)
 .workspace-split:not(.is-mobile) {
     background: transparent !important;
+    transition: .5s;
+}
+
+.titlebar-button-container.mod-right:not(.is-mobile),
+.workspace:not(.is-left-sidedock-open)
+.workspace-split:not(.is-mobile) {
+    background: var(--background-2);
+    transition: .5s;
 }
 
 /*===== mobile fix */ body.is-mobile .titlebar-button-container.mod-right, body.is-mobile .workspace-split {background: var(--background-4) !important;}
 
 
 .view-header,
-.workspace-split.mod-left-split .workspace-sidedock-vault-profile,
 .empty-state,
 .markdown-rendered,
 .community-modal-details,
-.workspace-tab-container,
 .cm-scroller {
     background-color: var(--background-2) !important;
 }
@@ -409,9 +478,8 @@ body:has(.show-ribbon):not(.is-mobile, .morespace),:has(.workspace-ribbon.side-d
 /*==================== ADJUST RESIZE HANDLES ====================*/
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle { 
-    height: calc(var(--divider-vertical-height) - var(--header-height)) !important;
     bottom: 0px !important;
-    border-right-style: dashed;
+    border: solid transparent;
 }
 
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle { 
@@ -421,124 +489,272 @@ body:has(.show-ribbon):not(.is-mobile, .morespace),:has(.workspace-ribbon.side-d
 }
 
 /*=================== workspace rounded corners ===================*/
-body:has(.workspace-ribbon.side-dock-ribbon.mod-left.is-collapsed):not(.is-mobile)
+/*===== Main Workspace ============*/
+body:not(.is-mobile)
+.workspace:is(.is-left-sidedock-open, .is-right-sidedock-open)
 .mod-root {
+    border-bottom-right-radius: var(--cbr, 20px) !important;
     border-bottom-left-radius: var(--cbr, 20px) !important;
     overflow: hidden;
 }
+
 body:not(.is-mobile)
-.workspace:not(.is-right-sidedock-open)
-.mod-root {
-    border-bottom-right-radius: var(--cbr, 20px) !important;
-    overflow: hidden;
+.workspace:is(.is-left-sidedock-open, .is-right-sidedock-open)
+.mod-vertical .workspace-tabs:last-of-type .workspace-tab-container,
+div.workspace-split.mod-vertical.mod-root > div > div.workspace-tabs.mod-top:last-of-type > div.workspace-tab-container
+{
+border-top-right-radius: var(--cbr, 20px) !important;
 }
+
 body:not(.is-mobile)
-.workspace:not(.is-right-sidedock-open)
-.workspace-split:last-of-type .mod-top-right-space .workspace-tab-container {
-    border-top-right-radius: var(--cbr, 20px);
-}
-body:not(.is-mobile)
-.mod-top-left-space .workspace-tab-container {
+.workspace:is(.is-left-sidedock-open, .is-right-sidedock-open)
+.workspace-tabs:first-of-type .workspace-tab-container {
     border-top-left-radius: var(--cbr, 20px) !important;
 }
-body:not(.is-mobile)
-.workspace:not(.is-right-sidedock-open)
-.workspace-tabs.mod-top-right-space:last-of-type .workspace-tab-container {
-    border-top-right-radius: var(--cbr, 20px);
+
+
+
+
+
+
+/* Right Bar file corners*/
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container {
+    border-radius: var(--cbr, 20px) !important;
 }
-body:not(.is-mobile)
-.mod-sidedock.mod-right-split{
-    border-bottom-right-radius: var(--cbr, 20px);
-    overflow: hidden !important;
+
+/*========= Nav Bar ============*/
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div:nth-child(1) {
+    background: transparent;
 }
-body:not(.is-mobile)
-.workspace-sidedock-vault-profile {
-    border-bottom-left-radius: var(--cbr, 20px);
-    background: var(--background-3) !important;
-    border-bottom-right-radius: 0px !important;
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container {
+    background: transparent !important;
 }
-body:not(.is-mobile)
-.mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-container {
-    border-top-right-radius: var(--cbr, 20px);
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-sidedock-vault-profile {
+    background: transparent !important;
+    border: transparent;
+    height: 40px;
+    width: calc(100% - 1em);
+    margin-left: .5em;
+    margin-bottom: .5em;
 }
-body:not(.is-mobile)
-.mod-sidedock.mod-left-split .workspace-tabs.mod-top .workspace-tab-container {
-    border-top-left-radius: var(--cbr, 20px);
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-sidedock-vault-profile > div.workspace-drawer-vault-switcher {
+    height: 32px;
+    border-radius: 1em;
 }
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-sidedock-vault-profile > div.workspace-drawer-vault-actions > * {
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
+
+
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split {
+    margin-top: .5em;
+    margin-left: .5em;
+    margin-bottom: .5em;
+    height: calc(100% - .5em);
+    border-radius: var(--cbr, 20px);
+    outline: .01em solid var(--border-2);
+    background: var(--background-4) !important;
+    box-shadow: inset 0 0 0 .065em var(--border-callout), 0 0 .5em 0em var(--background-3-2);
+    transition: .5s;
+}
+
+
+body:is(.show-ribbon) > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split {
+    padding-left: 44px;
+    margin-left: -36px;
+}
+
+body > div.app-container > div.horizontal-main-container > .workspace.is-left-sidedock-open > div.workspace-ribbon.side-dock-ribbon.mod-left {
+    padding-left: 16px;
+    padding-right: 0px;
+    margin-top: 3px !important;
+}
+
+body > div.app-container > div.horizontal-main-container > .workspace:not(.workspace.is-left-sidedock-open) > div.workspace-ribbon.side-dock-ribbon.mod-left {
+    transition: .5s; 
+    align-items: center;
+    margin-top: 0 !important;
+    padding-top: 2px;
+    padding-left: .5em;
+}
+
+body > div.app-container > div.horizontal-main-container > .workspace.is-left-sidedock-open > div.workspace-ribbon.side-dock-ribbon.mod-left > div.sidebar-toggle-button.mod-left {
+    align-items: center;
+    padding: 0;
+    margin: 0 !important;
+    position: relative;
+    width: 28px;
+    transition: .5s;
+}
+
+body > div.app-container > div.horizontal-main-container > .workspace:not(.workspace.is-left-sidedock-open) > div.workspace-ribbon.side-dock-ribbon.mod-left > div.sidebar-toggle-button.mod-left {
+    align-items: center;
+    padding: 0;
+    margin: 0 !important;
+    position: relative;
+    width: 28px;
+    transition: .5s;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left > div.side-dock-actions > *,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon.mod-left > div.sidebar-toggle-button.mod-left > div {
+    background: transparent;
+    transition: .5s;
+    &:hover {
+        color: var(--text-color-inverted);
+        transition: .5s;
+    }
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div {
+    margin-top: 2px;
+    margin-right: 1px;
+    border-radius: .5em;
+    padding-top: .81em;
+    padding-bottom: .8em;
+    padding-left: .3em;
+    padding-right: .3em;
+    transition: .3s;
+    &:hover {
+        background: var(--background-2);
+        box-shadow: 0 0 .6em 0 var(--shadow-2);
+        transition: .3s;
+    }
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-left > div,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.sidebar-toggle-button.mod-right > div {
+    border-radius: .5em;
+    padding-top: .81em;
+    padding-bottom: .8em;
+    padding-left: .3em;
+    padding-right: .3em;
+    transition: .3s;
+    &:hover {
+        background: var(--background-2);
+        box-shadow: 0 0 .6em 0 var(--shadow-2);
+        transition: .3s;
+    }
+}
+
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.workspace-tab-header-tab-list > span,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container > div.workspace-tab-header-new-tab > span,
+span.clickable-icon,
+div.workspace-tab-header-inner-close-button {
+    padding: 2px;
+    border-radius: .4em;
+    &:hover {
+        background: var(--background-2);
+        box-shadow: 0 0 .6em 0 var(--shadow-2);
+        transition: .3s;
+    }
+}
+
+div.sidebar-toggle-button.mod-right > div {
+    border-radius: .4em;
+        &:hover {
+        background: var(--background-2);
+        box-shadow: 0 0 .6em 0 var(--shadow-2);
+        transition: .3s;
+    } 
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > *,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > * > *{
+    border-radius: .4em;
+    background: transparent;
+        &:hover {
+        background: var(--background-2);
+        box-shadow: 0 0 .3em 0 var(--shadow-3);
+        transition: .3s;
+    }
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space.mod-active > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > *:is(.is-active) {
+    background: var(--background-2);
+    box-shadow: 0 0 .3em 0 var(--shadow-3);
+    transition: .3s;
+}
+
 /*////////////////////////////////////////////////////////////////////////////// MAIN BODY - TAB BAR //////////////////////////////////////////////////////////////////////////////*/
 /*========================= TABS ===========================*/
-body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-header-container {
+
+
+.mod-vertical .workspace-tab-header-container {
+    align-items: center;
+    padding-top: 5px;
     padding-bottom: 3px;
+    height: 48px;
 }
-.workspace-split.mod-vertical .workspace-tab-header-container-inner { 
-    margin-top: 5px !important;
-    padding-top: 1.5px !important;
-    gap: 2px;
+
+.mod-vertical .workspace-tab-header-container-inner {
+    margin-top: 3px !important;
 }
+
 .workspace .mod-root .workspace-tab-header {
     box-shadow: none;
-    padding-bottom: 5.5px;
     background: transparent;
-    margin-left: 0px;
-    padding-left: 0px;
 }
-/*tabs AND buttons height adjustment*/
-.workspace-tab-header.tappable {
-    margin-top: -2px;
-    margin-bottom: -1px;
-}
+
 /*Tabs text color */
 .mod-vertical .workspace-tab-header.tappable.is-active .workspace-tab-header-inner-title {
     color: var(--text-color-inverted) !important;
 }
 .mod-vertical .workspace-tab-header.tappable .workspace-tab-header-inner-title {
     color: var(--tc) !important;
+    padding-left: 5px;
 }
 /*Tab headers*/
-.mod-vertical .workspace-tabs:not(.mod-stacked) .workspace-tab-header.tappable .workspace-tab-header-inner {
-    border-radius: 7px;
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root div.workspace-tab-header-container > div.workspace-tab-header-container-inner {
+    padding-left: 7px;
+}
+
+.mod-vertical .workspace-tabs .workspace-tab-header.tappable.is-active .workspace-tab-header-inner {
+    height: 32px;
+    border-radius: 1em !important;
     position: relative;
-    background-color: var(--background-6);
-    transition: all .5s !important;
-        &:hover {
-        background-color: var(--colored-accent-2) !important;
-        color: var(--colored-accent-i1) !important;
-        }
+    border-radius: var(--cbr, 20px);
+    outline: .01em solid var(--border-2);
+    background: rgba(0, 0, 0, 0.097);
+    box-shadow: inset 0 0 0 .02em var(--background-2), inset 0 0 2em 0 var(--background-4-2), 0 0 .3em 0em var(--background-3-2), inset 5px 10px 2em -1.5em white;
 }
-.mod-vertical .workspace-tabs:is(.mod-stacked) .workspace-tab-header.tappable .workspace-tab-header-inner {
-    position: relative;
-    transition: all .5s !important;
-        &:hover {
-        background-color: var(--colored-accent-2) !important;
-        color: var(--colored-accent-i1) !important;
-        }
+    
+.mod-vertical .workspace-tabs .workspace-tab-header.tappable:hover .workspace-tab-header-inner{
+    border-radius: 1em !important;
+    background-color: var(--background-4-1) !important;
+    box-shadow: inset 0 0 2em 0 var(--background-4-2), 0 0 .3em 0em var(--background-3-2);
+    color: var(--colored-accent-i1) !important;
 }
-.mod-vertical .workspace-tabs:is(.mod-stacked) .workspace-tab-header {
-    box-shadow: none !important;
-    transform: scale(1.001);
-}
+
+
 
 .mod-vertical .workspace-tab-header.tappable.is-active .workspace-tab-header-inner {
     position: relative;
-    background-color: var(--colored-accent-3) !important;
-    -border: .05em dashed var(--colored-accent-1);
+    background-color: var(--main-color-inverted) !important;
     font-weight: 600;
-    transition: all .5s !important;
-    transform: scale(1);
-        &:hover {
-        background-color: var(--colored-accent-2) !important;
-        color: var(--colored-accent-i2) !important;
-    }
+    transition: background .5s;
 }
 
 .workspace-tab-header-inner-close-button {
     color: var(--colored-accent-i1) !important;
     border-radius: 5px;
     transition: all .2s !important;
-            &:hover {
-        background-color: rgba(255, 255, 255, 0.7) !important;
-        color: var(--colored-accent-i1) !important;
-    }
+    margin-right: 3px;
 }
 
 body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-container {
@@ -565,6 +781,10 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
 
 
 /*////////////////////////////////////////////////////////////////////////////// LEFT WORKSPACE / RIBBON //////////////////////////////////////////////////////////////////////////////*/
+
+body > div.app-container > div.horizontal-main-container > div {
+    background: var(--background-2);
+}
 
 .tree-item.nav-file .tree-item-self.nav-file-title {
     padding-top: .7em;
@@ -597,13 +817,133 @@ body > div.titlebar > div > div.titlebar-button-container.mod-right {
 }
 .enhanced-folders
 .tree-item.nav-folder:not(.is-collapsed):not(:has(.tree-item.nav-folder:not(.is-collapsed))) {
-    background: var(--background-3-2);
+    background: var(--background-3-1);
     border-radius: .8em;
     transition: .4s;
 }
 
 
 
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > div:nth-child(3) > div,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-container > div.workspace-leaf {
+    background: var(--background-4) !important;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner {
+    app-region: no-drag;
+    padding-top: .3em;
+    padding-left: .2em;
+    padding-right: .25em;
+    padding-bottom: .2em;
+    margin-top: .5em;
+    border-radius: 5em;
+    transition: .5s;
+    &:hover {
+        background: var(--background-4-1);
+        transition: .5s;
+    }
+}
+
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > .workspace-tab-header.tappable,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > .workspace-tab-header.tappable >* {
+    margin-top: .01em;
+    margin-bottom: .01em;
+    background: transparent !important;
+    border-radius: 50em;
+    &:hover {
+        background: var(--background-4-2) !important;
+    }
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner:hover > .workspace-tab-header.tappable.is-active,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner:hover > .workspace-tab-header.tappable.is-active >* {
+    background: var(--background-3) !important;
+    transition: .5s;
+    box-shadow: 0 0 5em 0em var(--shadow-1), 0 0 1em 0em var(--shadow-3) ;
+}
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////// NAV HEADER //////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+div.nav-header
+div.nav-buttons-container
+.clickable-icon {
+    width: 0px;
+    height: 3px;
+    padding: 3px;
+    flex-grow: 0;
+    background: var(--background-3-2);
+    color: transparent;
+    border-radius: 50px;
+    transition: .2s;
+}
+div.nav-header:hover
+div.nav-buttons-container
+.clickable-icon {
+    height: 28px;
+    flex-grow: 1;
+    padding: .6em;
+    color: var(--nav-item-color);
+    background: transparent;
+    border-radius: .4em;
+    transition: .2s;
+}
+
+div.nav-header
+div.nav-buttons-container
+.clickable-icon:hover {
+    background: var(--background-3-2);
+}
+
+div.nav-header
+div.nav-buttons-container {
+    width: 40px;
+    max-width: 100%;
+    justify-self: center !important;
+    transition: .2s;
+}
+
+
+div.nav-header:hover
+div.nav-buttons-container {
+    padding: .2em;
+    width: 200px;
+    max-width: 100%;
+    justify-self: center !important;
+    border-radius: .5em !important;
+    background: var(--background-3-1) !important;
+    transition: .2s;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////// RIGHT WORKSPACE  //////////////////////////////////////////////////////////////////////////////*/
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space.mod-active > div.workspace-tab-container,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-container > div,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space.mod-active > div.workspace-tab-container > div.workspace-leaf.mod-active {    
+    background: var(--background-) !important;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > hr {
+    border: transparent;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > div.workspace-tabs.mod-top.mod-top-right-space > div.workspace-tab-header-container {
+    margin-top: .4em;
+}
 
 /*=============== HIDE ATTACHMENT FOLDER: "000_attachments_000" - if used ==================*/
 div[data-path$='000_attachments_000'], 
@@ -652,6 +992,15 @@ body:not(.native-scrollbars).hide-scrollbars
 
 
 /***************SETTINGS MODS********************/
+.tooltip {
+    background: var(--main-color-inverted);
+    color: var(--main-color);
+    padding: 10px;
+    border-radius: 2em;
+  --background-modifier-message: var(--main-color-inverted);
+    filter: drop-shadow(0 0 16px var(--shadow-3));
+}
+
 .setting-item-control .mod-cta {
     color: var(--main-color-inverted);
     border-radius: 20em;
@@ -693,18 +1042,36 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 
 .modal-content.vertical-tabs-container .vertical-tab-header .vertical-tab-header-group .vertical-tab-header-group-items .vertical-tab-nav-item.is-active {
     background: var(--main-color-05);
-    color: var(--text-color-inverted)
+    color: var(--text-color-inverted);
+    transition: .5s;
+}
+
+.modal-content.vertical-tabs-container .vertical-tab-header .vertical-tab-header-group .vertical-tab-header-group-items > * {
+    transition: .15s !important;
+}
+
+
+body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout {
+    border-radius: 2em !important;
+}
+
+body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout > div.modal-content.vertical-tabs-container > div.vertical-tab-header {
+    margin: .5em;
+    height: calc(100% - 1em) !important;
+    height: calc(100% - .5em);
+    border-radius: var(--cbr, 20px);
+    outline: .01em solid var(--border-2);
+    background: var(--background-4) !important;
+    box-shadow: inset 0 0 0 .065em var(--border-callout), 0 0 .5em 0em var(--background-3-2);
+    transition: .5s;
 }
 
 
 
 
-
-
-
-
-
-
+body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout > div.modal-content.vertical-tabs-container > div.vertical-tab-content-container div.setting-item.setting-item-heading.style-settings-heading {
+    border-radius: 0;
+}
 
 
 
@@ -747,7 +1114,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(68, 138, 255, .5) !important;
     background: rgba(68, 138, 255, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(68, 138, 255, .5);
     & .callout-icon {
     display: flex;
 }
@@ -761,7 +1127,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(0, 176, 255, .5) !important;
     background: rgba(0, 176, 255, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(0, 176, 255, .5);
     & .callout-icon {
     display: flex;
 }
@@ -774,7 +1139,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(0, 184, 212, .5) !important;
     background: rgba(0, 184, 212, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(0, 184, 212, .5);
     & .callout-icon {
     display: flex;
 }
@@ -788,7 +1152,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(0, 184, 212, .5) !important;
     background: rgba(0, 184, 212, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(0, 184, 212, .5);
     & .callout-icon {
     display: flex;
 }
@@ -802,7 +1165,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(0, 191, 165, .5) !important;
     background: rgba(0, 191, 165, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(0, 191, 165, .5);
     & .callout-icon {
     display: flex;
 }
@@ -817,7 +1179,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(0, 200, 83, .5) !important;    
     background: rgba(0, 200, 83, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(0, 200, 83, .5);
     & .callout-icon {
     display: flex;
 }
@@ -831,7 +1192,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(255, 160, 0, .5) !important;  
     background: rgba(255, 160, 0, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(255, 160, 0, .5);
     & .callout-icon {
     display: flex;
 }
@@ -845,7 +1205,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(255, 145, 0, .5) !important;  
     background: rgba(255, 145, 0, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(255, 145, 0, .5);
     & .callout-icon {
     display: flex;
 }
@@ -859,7 +1218,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(255, 82, 82, .5) !important; 
     background: rgba(255, 82, 82, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(255, 82, 82, .5);
     & .callout-icon {
     display: flex;
 }
@@ -873,7 +1231,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(255, 82, 82, .5) !important; 
     background: rgba(255, 82, 82, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(255, 82, 82, .5);
     & .callout-icon {
     display: flex;
 }
@@ -887,7 +1244,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(245, 0, 87, .5) !important; 
     background: rgba(255, 6, 93, 0.1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(245, 0, 87, .5);
     & .callout-icon {
     display: flex;
 }
@@ -899,7 +1255,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(124, 77, 255, .5) !important; 
     background: rgba(124, 77, 255, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(124, 77, 255, .5);
     & .callout-icon {
     display: flex;
 }
@@ -913,7 +1268,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid rgba(158, 158, 158, .5) !important; 
     background: rgba(158, 158, 158, .1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: rgba(158, 158, 158, .5);
     & .callout-icon {
     display: flex;
     }
@@ -927,7 +1281,6 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     outline: .1em solid hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5) !important;
     background: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1) !important;
     box-shadow: inset 0 0 0 .05em var(--border-callout) !important;
-    --callout-border-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
     & .callout-content blockquote, .callout-content .callout {
         outline: .1em solid hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5) !important;
     }
@@ -963,7 +1316,8 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
 
 /*================================= EDITOR =================================*/
 body:not(.cv1) .callout {
-    outline: .1em solid var(--background-3-2);
+    --callout-background: var(--background-3);
+    outline: .09em solid var(--background-3-2);
     color: inherit;
     margin-bottom: .6em !important;
     margin-top: .6em !important;
@@ -976,8 +1330,8 @@ body:not(.cv1) .callout {
     --callout-title-size: inherit;
     --callout-content-radius: 0px;
     --callout-blend-mode: normal;
-    background: var(--background-3);
-    box-shadow: inset 0 0 0 .05em var(--border-callout), inset 0 0 5em 1em var(--background-3-1);
+    background: var(--callout-background);
+    box-shadow: inset 0 0 0 .07em var(--border-callout), inset 0 0em 2em 1em var(--background-3-1);
     overflow: hidden !important;
 }
 body.cv1 .callout {
@@ -1066,7 +1420,7 @@ body.cv1 .cm-embed-block.cm-callout {
 body:not(.bv1) .markdown-rendered blockquote,
 body:not(.bv1) .blockquote{
     border-radius: var(--radius-m);
-    background-color: var(--background-3);
+    background-color: var(--background-3-3);
     border-left: none;
     padding-left: .8em;
     padding-right: .8em !important;
@@ -1287,7 +1641,7 @@ body:not(.hv1, .hv2)
 .cm-header.cm-header-1:not(.cm-formatting.cm-formatting-header.cm-formatting-header-1.cm-header.cm-header-1),
 body:not(.hv1, .hv2)
 .markdown-rendered h1 {
-    color: var(--main-color-2);
+    color: var(--headingcolor1, --main-color-2);
     display: inline-block;
     -background: var(--background-7);
     margin: 0em !important;
@@ -1315,7 +1669,7 @@ body.hv1
 .markdown-rendered h1 {
     color: var(--main-color-2);
     display: inline-block;
-    background: var(--background-7);
+    background: var(--headingcolor1, --background-7);
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
     margin: 0px;
@@ -1342,7 +1696,7 @@ body.hv2
 .cm-header.cm-header-1:not(.cm-formatting.cm-formatting-header.cm-formatting-header-1.cm-header.cm-header-1),
 body.hv2
 .markdown-rendered h1 {
-    color: var(--main-color-2);
+    color: var(--headingcolor1, --main-color-2);
     border-bottom: .1em solid var(--tc);
 }
 /* heading mark link color correction */
@@ -1360,7 +1714,7 @@ body:not(.hv1, .hv2)
 .cm-header.cm-header-2:not(.cm-formatting.cm-formatting-header.cm-formatting-header-2.cm-header.cm-header-2),
 body:not(.hv1, .hv2)
 .markdown-rendered h2 {
-    color: var(--main-color-2);
+    color: var(--headingcolor2, --main-color-2);
     display: inline-block;
     font-weight: 600;
     border-color: var(--colored-accent-4);
@@ -1394,7 +1748,7 @@ body.hv1
     border: .1em dashed;
     font-weight: 600;
     border-color: var(--colored-accent-4);
-    background-color: var(--colored-accent-5);
+    background-color: var(--headingcolor2, --colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
         border-bottom-left-radius: var(--mark-radius);
@@ -1417,7 +1771,7 @@ body.hv2
 .cm-header.cm-header-2:not(.cm-formatting.cm-formatting-header.cm-formatting-header-2.cm-header.cm-header-2),
 body.hv2
 .markdown-rendered h2 {
-    color: var(--main-color-2);
+    color: var(--headingcolor2, --main-color-2);
     border-bottom: .1em solid var(--tc);
 }
 
@@ -1426,6 +1780,7 @@ body:not(.hv1, .hv2)
 .cm-header.cm-header-3:not(.cm-formatting.cm-formatting-header.cm-formatting-header-3.cm-header.cm-header-3),
 body:not(.hv1, .hv2)
 .markdown-rendered h3 {
+    color: var(--headingcolor3, --main-color-2);
     display: inline-block;
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
@@ -1459,7 +1814,7 @@ body.hv1
     margin-bottom: 0px;
     border: .08em dashed;
     border-color: var(--colored-accent-4);
-    background-color: var(--colored-accent-5);
+    background-color: var(--headingcolor3, --colored-accent-5);
         -moz-border-bottom-left-radius: var(--mark-radius);
         -webkit-border-bottom-left-radius: var(--mark-radius);
         border-bottom-left-radius: var(--mark-radius);
@@ -1482,9 +1837,28 @@ body.hv2
 .cm-header.cm-header-3:not(.cm-formatting.cm-formatting-header.cm-formatting-header-3.cm-header.cm-header-3),
 body.hv2
 .markdown-rendered h3 {
-    color: var(--main-color-2);
+    color: var(--headingcolor3, --main-color-2);
     border-bottom: .1em solid var(--tc);
 }
+
+
+
+.cm-header.cm-header-4:not(.cm-formatting.cm-formatting-header.cm-formatting-header-4.cm-header.cm-header-4),
+.markdown-rendered h4 {
+    color: var(--headingcolor4, --main-color-2);
+}
+
+.cm-header.cm-header-5:not(.cm-formatting.cm-formatting-header.cm-formatting-header-5.cm-header.cm-header-5),
+.markdown-rendered h5 {
+    color: var(--headingcolor5, --main-color-2);
+}
+
+.cm-header.cm-header-6:not(.cm-formatting.cm-formatting-header.cm-formatting-header-6.cm-header.cm-header-6),
+.markdown-rendered h6 {
+    color: var(--headingcolor6, --main-color-2);
+}
+
+
 /*DYNAMIC HEADING SPACING ADJUST*/
 div.el-h1 {
     margin-top: var(--dynamic-heading-spacing, 0em);
@@ -1722,4 +2096,34 @@ body.status-bar-hover .status-bar{
 
 body.nc .markdown-embed-content .node-insert-event {
     background: var(--canvas-color) !important;
+}
+
+
+
+
+
+
+/* Level 1 (Root Folders) */
+body.coloredfolders
+.nav-files-container > div > .nav-folder > .nav-folder-title {
+  color: var(--foldercolor1, #ff0000);
+  font-weight: 600;
+}
+
+/* Level 2 (Subfolders) */
+body.coloredfolders
+.nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder > .nav-folder-title {
+  color: var(--foldercolor2, #ff8c00);
+}
+
+/* Level 3 (Deep Subfolders) */
+body.coloredfolders
+.nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder > .nav-folder-children > .nav-folder > .nav-folder-title {
+  color: var(--foldercolor3, #7abc00);
+}
+
+/* Level 4 (Deeper Subfolders) */
+body.coloredfolders
+.nav-files-container > div > .nav-folder > .nav-folder-children > .nav-folder > .nav-folder-children > .nav-folder > .nav-folder-children > .nav-folder > .nav-folder-title {
+  color: var(--foldercolor4, #00b75f);
 }
