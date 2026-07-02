@@ -1,6 +1,5 @@
 # Thank you for 10.000 Downloads!
-I have finally found some time to do some (very needed) changes! I will be providing some updates to the general appearance of the theme in the foreseeable future, aswell as trying to go after some feature requests.
-Thank you for your support, it really means a lot! <3
+I have finally found some time to do some (very needed) changes! Thank you for your support, it really means a lot! <3
 
 ---
 
