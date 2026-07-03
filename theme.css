@@ -390,7 +390,6 @@ body {
     --shadow-2: rgba(0, 0, 0, 0.257);
     --shadow-3: rgba(0, 0, 0, 0.08);
     --shadow-4: hsla(var(--background-2_h), calc(calc(var(--accent-s) * .5) + calc(.1% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 20%) + calc(var(--bgt_l, 0) * 1%)), .2);
-    --shadow-5: rgba(0, 0, 0, 0.257);
 
     --divider-color: rgba(200, 200, 200, 0.441);
 
@@ -440,7 +439,6 @@ body {
     --shadow-2: hsla(var(--accent-h), calc(var(--accent-s) * 0), calc(var(--accent-l) * .1), .4);
     --shadow-3: rgba(0, 0, 0, 0.26);
     --shadow-4: hsla(var(--background-2_h), calc(calc(var(--accent-s) * .5) + calc(.1% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 20%) + calc(var(--bgt_l, 0) * 1%)), .5);
-    --shadow-5: rgba(0, 0, 0, 0.473);
 
     --divider-color: rgba(105, 105, 105, 0.441);
 
