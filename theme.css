@@ -373,13 +373,13 @@ body {
     --background-2_l: 99%;
     --background-2: rgb(255, 255, 255);
 
-    --background-3: #f7f7f7;
+    --background-3: #ffffff;
     --background-3-1: #00000010;
     --background-3-2: rgb(202, 202, 202);
     --background-3-3: hsla(0, 0%, 73%, 0.112);
     --background-4: #F5F5F5;
     --background-4-1: #d3d3d3;
-    --background-4-2: #e4e4e4;
+    --background-4-2: #ffffff;
     --background-5: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 90%);
     --background-6: hsla(var(--accent-h), var(--accent-s), var(--accent-l), .2);
     --background-7: rgb(221, 221, 221);
@@ -390,11 +390,13 @@ body {
     --shadow-2: rgba(0, 0, 0, 0.257);
     --shadow-3: rgba(0, 0, 0, 0.08);
     --shadow-4: hsla(var(--background-2_h), calc(calc(var(--accent-s) * .5) + calc(.1% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 20%) + calc(var(--bgt_l, 0) * 1%)), .2);
+    --shadow-5: rgba(0, 0, 0, 0.257);
 
     --divider-color: rgba(200, 200, 200, 0.441);
 
     --text-color-inverted: black;
     --tc: rgb(67, 67, 67);
+    --tc-rgb: 67, 67, 67;
     --italic-color: rgb(154, 154, 154);
 
     /* Light scheme overrides the shared code background */
@@ -438,11 +440,13 @@ body {
     --shadow-2: hsla(var(--accent-h), calc(var(--accent-s) * 0), calc(var(--accent-l) * .1), .4);
     --shadow-3: rgba(0, 0, 0, 0.26);
     --shadow-4: hsla(var(--background-2_h), calc(calc(var(--accent-s) * .5) + calc(.1% * var(--bgt_s, 1))), calc(calc(var(--background-2_l) - 20%) + calc(var(--bgt_l, 0) * 1%)), .5);
+    --shadow-5: rgba(0, 0, 0, 0.473);
 
     --divider-color: rgba(105, 105, 105, 0.441);
 
     --text-color-inverted: rgb(223, 223, 223);
     --tc: rgb(194, 194, 194);
+    --tc-rgb: 194, 194, 194;    
     --italic-color: rgb(97, 97, 97);
 
     --main-color: white;
@@ -601,6 +605,12 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-sidedock-vault-profile > div.workspace-drawer-vault-switcher {
     height: 32px;
     border-radius: 1em;
+    transition: .5s;
+
+    &:hover {
+        box-shadow: 0 0 .35em var(--shadow-2) !important;
+        background: var(--main-color-inverted-2);
+    }
 }
 
 /* Spacing for the vault action buttons */
@@ -742,6 +752,18 @@ div.sidebar-toggle-button.mod-right > div {
     }
 }
 
+/* More buttons hover design */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-container > div > div > div.view-header > div.view-actions > button,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root > div > div.workspace-tab-container > div > div > div.view-header > div.view-header-left > div {
+    border-radius: .4em;
+
+    &:hover {
+        background: var(--background-2);
+        box-shadow: 0 0 .6em 0 var(--shadow-2);
+        transition: .3s;
+    }
+}
+
 body.mod-macos .sidebar-toggle-button.mod-right {
     margin-top: 6px;
 }
@@ -815,6 +837,11 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
     outline: .01em solid var(--border-2);
     background: rgba(0, 0, 0, 0.097);
     box-shadow: inset 0 0 0 .02em var(--background-2), inset 0 0 2em 0 var(--background-4-2), 0 0 .3em 0em var(--background-3-2), inset 5px 10px 2em -1.5em white;
+}
+
+/* Close button color */
+div.workspace-tab-header-inner-close-button {
+    color: var(--tc) !important;
 }
 
 /* Hovered tab: darker pill */
@@ -911,6 +938,8 @@ body > div.app-container > div.horizontal-main-container > div {
         font-weight: 900;
     }
 }
+
+
 
 /* "Enhanced Folders" toggle: highlight the deepest opened folder */
 .enhanced-folders .tree-item.nav-folder:not(.is-collapsed):not(:has(.tree-item.nav-folder:not(.is-collapsed))) {
@@ -1317,20 +1346,29 @@ body:not(.cv1) .callout {
     margin-left: .1em !important;
     border-radius: var(--radius-m);
     background: var(--callout-background);
-    box-shadow: inset 0 0 0 .07em var(--border-callout), inset 0 0em 2em 1em var(--background-3-1), inset 0 -100em 100em -90em rgba(0, 0, 0, 0.078), inset 0 10em 10em -9em rgba(255, 255, 255, 0.133);
+    box-shadow: inset 0 0 0 .07em var(--border-callout), inset 0 0em 2em 1em var(--background-3-1), inset 0 -100em 100em -90em rgba(0, 0, 0, 0.078), inset 0 10em 10em -9em rgba(255, 255, 255, 0.086);
     overflow: hidden !important;
 }
+
+body:not(.cv1) .callout .callout {
+    margin-bottom: 0 !important;
+}
+
 
 /* Variant 1 (.cv1): flat block with a thick left border */
 body.cv1 .callout {
     mix-blend-mode: normal !important;
     --callout-padding: 0;
-    border-left: .3em solid var(--tc);
+    border-left: .3em solid rgba(var(--callout-rgb, var(--tc-rgb)), .5);
     border-radius: .5em;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
     background: var(--background-3-3);
     box-shadow: none !important;
+    margin-bottom: .6em !important;
+    margin-top: .6em !important;
+    margin-right: .1em !important;
+    margin-left: .1em !important;
 }
 
 /* Extra vertical space around top-level callouts in reading view
@@ -1356,7 +1394,7 @@ li:not(:first-of-type):has(.callout) {
     margin-top: .2em !important;
 }
 .callout-content > *:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 0em !important;
 }
 blockquote > *:first-child {
     margin-top: 0 !important;
@@ -1388,11 +1426,7 @@ body.cv1 .cm-embed-block.cm-callout {
     overflow: hidden !important;
 }
 
-/* Callout title: larger, with a dashed separator to the content.
-   Merged with a formerly separate .callout-title rule that only set
-   border-color. Declaration order matters here: border-color comes first
-   so the border-bottom shorthand below still wins for the bottom edge,
-   exactly as in the original cascade. */
+/* Callout title: larger, with a dashed separator to the content. */
 .callout-title {
     border-color: var(--callout-border-color) !important;
     color: var(--text-color-inverted);
@@ -1648,7 +1682,7 @@ body.hv1 .markdown-rendered h1 {
     --h1-radius: .3em;
     color: var(--main-color-2);
     display: inline-block;
-    background: var(--headingcolor1, --background-7);
+    background: var(--headingcolor1, var(--background-7));
     translate: -.05em;
     padding: .1rem .3rem .08rem .3rem;
     margin: 0em !important;
@@ -1697,7 +1731,7 @@ body.hv1 .markdown-rendered h2 {
     border: .1em dashed;
     font-weight: 600;
     border-color: var(--colored-accent-4);
-    background-color: var(--headingcolor2, --colored-accent-5);
+    background-color: var(--headingcolor2, var(--colored-accent-5));
     border-radius: var(--mark-radius);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
@@ -1733,7 +1767,7 @@ body.hv1 .markdown-rendered h3 {
     margin-bottom: 0px;
     border: .08em dashed;
     border-color: var(--colored-accent-4);
-    background-color: var(--headingcolor3, --colored-accent-5);
+    background-color: var(--headingcolor3, var(--colored-accent-5));
     border-radius: var(--mark-radius);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
