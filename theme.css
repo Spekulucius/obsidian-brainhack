@@ -1,5 +1,5 @@
 /*===================================== INFORMATION =================================================
-This theme uses content created by other theme creators.
+This theme uses content created by other creators.
 Wherever such content is used, their author is attributed.
 If you have any questions or concerns, please contact me on GitHub: https://github.com/Spekulucius */
 
@@ -10,6 +10,12 @@ name: Theme Settings
 id: Brainhack
 description: "Thank you for using my theme. If you encounter issues or have suggestions, please open a ticket on my GitHub repo <3"
 settings:
+    - 
+        id: Info-Text
+        title: A word from the developer
+        description: "Thank you for 10k downloads! This is a milestone I never expected to reach. I started creating this theme just for myself, and it fills me with so much joy seeing that other people enjoy it! So: THANK YOU for using my theme! If you encounter issues or have suggestions, please open a ticket on my GitHub repo <3"
+        type: info-text
+        markdown: true
     -
         id: Text and Spacing
         title: Text and Spacing
