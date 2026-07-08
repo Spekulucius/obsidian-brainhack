@@ -61,6 +61,65 @@ settings:
         min: 1.5
         max: 2.5
         step: .1
+    - 
+        id: Bold Text Variants
+        title: Bold Text Variants
+        type: class-select
+        allowEmpty: false
+        default: default
+        options:
+            - 
+                label: brainhack default
+                value: default
+            - 
+                label: just bold
+                value: btv1
+            - 
+                label: colored bold
+                value: btv2
+    -
+        id: bold-weight
+        title: Bold Text Weight
+        description:
+        type: variable-number-slider
+        format: 
+        default: 900
+        min: 100
+        max: 900
+        step: 100
+    -
+        id: italic-weight
+        title: Italic Text Weight
+        description:
+        type: variable-number-slider
+        format: 
+        default: 300
+        min: 100
+        max: 900
+        step: 100
+    - 
+        id: italic-text-color
+        title: Italic Text Color
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#none'
+    - 
+        id: Highlighted Text Variants
+        title: Highlighted Text Variants
+        type: class-select
+        allowEmpty: false
+        default: default
+        options:
+            - 
+                label: brainhack default
+                value: default
+            - 
+                label: obsidian default
+                value: htv1
+            - 
+                label: obsidian default + accent color
+                value: htv2
     -
         id: Headings
         title: Headings
@@ -402,7 +461,7 @@ body {
     --text-color-inverted: black;
     --tc: rgb(67, 67, 67);
     --tc-rgb: 67, 67, 67;
-    --italic-color: rgb(154, 154, 154);
+    --italic-color: var(--italic-text-color, rgb(154, 154, 154));
 
     /* Light scheme overrides the shared code background */
     --code-background: var(--background-1_2);
@@ -451,7 +510,7 @@ body {
     --text-color-inverted: rgb(223, 223, 223);
     --tc: rgb(194, 194, 194);
     --tc-rgb: 194, 194, 194;    
-    --italic-color: rgb(97, 97, 97);
+    --italic-color: var(--italic-text-color, rgb(97, 97, 97));
 
     --main-color: white;
     --main-color-2: rgb(224, 224, 224);
@@ -1329,6 +1388,9 @@ body > div.modal-container.mod-dim > div.modal.mod-settings.mod-sidebar-layout >
     }
 }
 
+.callout-content blockquote {
+    border-color: rgb(var(--callout-rgb)) !important;
+}
 
 /* ============================================================================
    10. CALLOUTS & BLOCKQUOTES - STRUCTURE
@@ -1843,9 +1905,17 @@ div.el-h1 + div.el-h6, div.el-h2 + div.el-h6, div.el-h3 + div.el-h6, div.el-h4 +
    13. HIGHLIGHTING, BOLD & SEARCH
    ============================================================================ */
 
+
+/* Change italic text weight universally */
+.cm-em, em {
+    font-weight: var(--italic-weight); /* Adjust this value as needed */
+}
+
+
+
 /* ==Highlighted== text as a grey pill. */
-span.cm-highlight,
-.markdown-rendered mark {
+body:not(.htv1, .htv2) span.cm-highlight,
+body:not(.htv1, .htv2) .markdown-rendered mark {
     --mark-radius: .3rem;
     padding: 0rem .2rem 0rem .2rem;
     margin: .1rem .1rem .1rem .1rem;
@@ -1854,12 +1924,16 @@ span.cm-highlight,
     -webkit-box-decoration-break: clone; /* keep radius on wrapped lines */
     box-decoration-break: clone;
     font-weight: 600;
-    color: var(--tc);
+}
+
+body.htv2 span.cm-highlight,
+body.htv2 .markdown-rendered mark {
+    background: var(--colored-accent-3) !important;
 }
 
 /* **Bold** text as an accent-tinted pill */
-span.cm-strong:not(.cm-highlight),
-strong:not(:has(mark), mark strong) {
+body:not(.btv1, .btv2) span.cm-strong:not(.cm-highlight),
+body:not(.btv1, .btv2) strong:not(:has(mark), mark strong) {
     --mark-radius: .3rem;
     padding: 0rem .2rem 0rem .2rem;
     margin: -.2rem .1rem .1rem -.2rem;
@@ -1868,7 +1942,11 @@ strong:not(:has(mark), mark strong) {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     color: var(--colored-accent-1);
-    font-weight: 900;
+    font-weight: var(--bold-weight, 900);
+}
+body.btv2 span.cm-strong:not(.cm-highlight),
+body.btv2 strong:not(:has(mark), mark strong) { 
+    color: var(--colored-accent-1) !important;
 }
 
 /* The `==` markers themselves: accent color, no pill */
