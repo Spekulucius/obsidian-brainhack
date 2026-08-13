@@ -2076,7 +2076,7 @@ body.status-bar-hover .status-bar {
 
 /* --- Canvas: "Colored Nodes" option ---------------------------------------- */
 body.nc .markdown-embed-content .node-insert-event {
-    background: var(--canvas-color) !important;
+    background: rgba(var(--canvas-color)) !important;
 }
 
 /* --- "Colored Folders" toggle -----------------------------------------------
