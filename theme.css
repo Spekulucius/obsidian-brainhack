@@ -1123,6 +1123,13 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
     background: transparent !important;
 }
 
+div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split div.workspace-tab-container .markdown-preview-view,
+div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split div.workspace-tab-container .cm-scroller,
+div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header-container,
+.empty-state {
+    background: var(--background-4) !important;
+}
+
 /* Hide the divider line above the right sidebar */
 body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split > hr {
     border: transparent;
