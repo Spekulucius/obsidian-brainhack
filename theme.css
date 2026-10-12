@@ -567,7 +567,7 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
     border: none !important;
 }
 .workspace-tab-header-container {
-    background: transparent;
+    background: transparent !important;
 }
 
 /* --- Workspace background ------------------------------------------------ */
