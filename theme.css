@@ -874,7 +874,7 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
 }
 
 .workspace .mod-root .workspace-tab-header {
-    box-shadow: none;
+    box-shadow: none !important;
     background: transparent;
 }
 
@@ -1127,7 +1127,7 @@ div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split div.workspace-ta
 div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split div.workspace-tab-container .cm-scroller,
 div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header-container,
 .empty-state {
-    background: var(--background-4) !important;
+    background: var(--background-3) !important;
 }
 
 /* Hide the divider line above the right sidebar */
