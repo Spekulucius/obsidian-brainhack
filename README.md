@@ -1,3 +1,5 @@
+_Quick note: Obsidians newest update broke some things, so there's a possibility to encounter some visual bugs. I'm working on it! Feel free to open a ticket on Github if you find something._
+
 # Thank you for 10.000 Downloads!
 I have finally found some time to do some (very needed) changes! Thank you for your support, it really means a lot! <3
 
