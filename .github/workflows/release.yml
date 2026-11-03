@@ -1,0 +1,24 @@
+name: Release Obsidian theme
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create release from manifest version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(jq -r .version manifest.json)
+          gh release create "$version" \
+            --title "$version" \
+            --target "${{ github.sha }}" \
+            --generate-notes \
+            manifest.json theme.css
