@@ -1022,10 +1022,10 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
     app-region: no-drag;
     padding-top: .3em;
     padding-left: .2em;
-    padding-right: .25em;
+    padding-right: .2em;
     padding-bottom: .2em;
     margin-top: .5em;
-    border-radius: 5em;
+    border-radius: 10em;
     transition: .5s;
 
     &:hover {
@@ -1034,14 +1034,15 @@ body > div.app-container > div.horizontal-main-container > div > div.workspace-s
     }
 }
 
+
 /* Individual sidebar tabs: transparent pills with hover tint */
 body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > .workspace-tab-header.tappable,
 body > div.app-container > div.horizontal-main-container > div > div.workspace-split.mod-horizontal.mod-sidedock.mod-left-split > div.workspace-tabs.mod-top.mod-top-left-space > div.workspace-tab-header-container > div.workspace-tab-header-container-inner > .workspace-tab-header.tappable > * {
     margin-top: .01em;
     margin-bottom: .01em;
+    corner-shape: round;
     background: transparent !important;
-    border-radius: 50em;
-
+    border-radius: 10em !important;
     &:hover {
         background: var(--background-4-2) !important;
     }
