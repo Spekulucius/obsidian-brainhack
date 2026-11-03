@@ -1127,7 +1127,7 @@ div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split div.workspace-ta
 div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split div.workspace-tab-container .cm-scroller,
 div.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .workspace-tab-header-container,
 .empty-state {
-    background: var(--background-3) !important;
+    background: var(--background-3);
 }
 
 /* Hide the divider line above the right sidebar */
