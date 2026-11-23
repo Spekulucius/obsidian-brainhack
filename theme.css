@@ -2112,3 +2112,68 @@ body.coloredfolders .nav-files-container > div > .nav-folder > .nav-folder-child
     color: var(--foldercolor4, #00b75f);
 }
 
+
+/* Brainhack-Theme: Ribbon-Regeln fuer neue Klasse .mod-primary */
+
+.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) {
+    flex-basis: 44px;
+    background: transparent !important;
+    border: none !important;
+}
+
+.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary)::before {
+    display: none !important;
+}
+
+/* Sidebar offen */
+body:not(.mod-macos) > div.app-container > div.horizontal-main-container > .workspace.is-left-sidedock-open > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) {
+    padding-left: 16px;
+    padding-right: 0px;
+    margin-top: 3px !important;
+}
+
+body.mod-macos > div.app-container > div.horizontal-main-container > .workspace.is-left-sidedock-open > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) {
+    padding-left: 16px;
+    padding-right: 0px;
+    margin-top: 30px !important;
+}
+
+/* Sidebar geschlossen */
+body:not(.mod-macos) > div.app-container > div.horizontal-main-container > .workspace:not(.is-left-sidedock-open) > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) {
+    transition: .5s;
+    align-items: center;
+    margin-top: 0 !important;
+    padding-top: 2px;
+    padding-left: .5em;
+}
+
+body.mod-macos > div.app-container > div.horizontal-main-container > .workspace:not(.is-left-sidedock-open) > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) {
+    transition: .5s;
+    align-items: center;
+    margin-top: 0 !important;
+    padding-top: 40px;
+    padding-left: .5em;
+}
+
+/* Sidebar-Toggle in der Ribbon */
+body > div.app-container > div.horizontal-main-container > .workspace > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) > div.sidebar-toggle-button:is(.mod-left, .mod-primary) {
+    align-items: center;
+    padding: 0;
+    margin: 0 !important;
+    position: relative;
+    width: 28px;
+    transition: .5s;
+}
+
+/* Ribbon-Icons */
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) > div.side-dock-actions > *,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) > div.sidebar-toggle-button:is(.mod-left, .mod-primary) > div {
+    background: transparent;
+    transition: .5s;
+}
+
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) > div.side-dock-actions > *:hover,
+body > div.app-container > div.horizontal-main-container > div > div.workspace-ribbon.side-dock-ribbon:is(.mod-left, .mod-primary) > div.sidebar-toggle-button:is(.mod-left, .mod-primary) > div:hover {
+    color: var(--text-color-inverted);
+    transition: .5s;
+}
